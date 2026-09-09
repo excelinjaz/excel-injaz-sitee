@@ -2,1584 +2,553 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>إكسل وإنجاز للمقاولات | Excel & Injaz Contracting</title>
 
 <style>
 :root{
-  --navy:#072a48;
-  --navy2:#0b3a62;
-  --blue:#2d79b5;
-  --white:#ffffff;
-  --soft:#f4f8fb;
-  --line:#dce6ee;
-  --text:#0b2b48;
-  --gray:#6f8292;
+  --navy:#061f36;
+  --navy2:#0a3559;
+  --blue:#2580bd;
+  --white:#fff;
+  --bg:#f4f7f9;
+  --text:#092a45;
+  --muted:#718797;
 }
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Tahoma,Arial,sans-serif;background:#fff;color:var(--text)}
+a{text-decoration:none;color:inherit}
+img{width:100%;height:100%;object-fit:cover;display:block}
 
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  font-family:Tahoma,Arial,sans-serif;
-  background:#fff;
-  color:var(--text);
-}
-
-a{
-  text-decoration:none;
-  color:inherit;
-}
-
-img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
-
-/* =========================
-   HEADER
-========================= */
-
+/* HEADER */
 header{
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  z-index:100;
+  background:var(--navy);
+  position:relative;
+  z-index:50;
 }
-
-.navbar{
-  max-width:1380px;
-  height:90px;
+.nav{
+  max-width:1400px;
+  height:84px;
   margin:auto;
   padding:0 25px;
-
   display:flex;
   align-items:center;
   justify-content:space-between;
-
-  border-bottom:1px solid rgba(7,42,72,.15);
+  gap:25px;
 }
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:13px;
+.brand{display:flex;align-items:center;gap:13px}
+.xlogo{
+  width:55px;height:55px;position:relative;flex:none;
 }
-
-/* =========================
-   NEW X LOGO
-========================= */
-
-.x-logo{
-  width:62px;
-  height:56px;
-  position:relative;
-  flex:none;
+.xlogo:before,.xlogo:after{
+  content:"";position:absolute;left:21px;top:-2px;
+  width:13px;height:59px;border-radius:2px;
 }
-
-.x-logo .left,
-.x-logo .right{
-  position:absolute;
-  top:1px;
-
-  width:12px;
-  height:55px;
-
-  border-radius:2px;
+.xlogo:before{transform:rotate(39deg);background:#fff}
+.xlogo:after{transform:rotate(-39deg);background:#70b4dd}
+.brand strong{display:block;color:#fff;font-size:17px}
+.brand small{
+  display:block;color:#91a9ba;font-size:7px;
+  direction:ltr;letter-spacing:1.5px;margin-top:4px
 }
-
-.x-logo .left{
-  left:23px;
-  background:linear-gradient(
-    180deg,
-    #092f51,
-    #061d33
-  );
-
-  transform:rotate(39deg);
-}
-
-.x-logo .right{
-  left:27px;
-
-  background:linear-gradient(
-    180deg,
-    #3d8bc1,
-    #0d4e7c
-  );
-
-  transform:rotate(-39deg);
-}
-
-/* little cut for modern logo */
-
-.x-logo:after{
-  content:"";
-
-  position:absolute;
-
-  width:15px;
-  height:8px;
-
-  background:#fff;
-
-  top:24px;
-  left:23px;
-
-  transform:rotate(-39deg);
-
-  opacity:.14;
-}
-
-.brand-text strong{
-  display:block;
-  font-size:17px;
-  color:var(--navy);
-}
-
-.brand-text small{
-  display:block;
-  direction:ltr;
-
-  margin-top:5px;
-
-  font-size:8px;
-  letter-spacing:1.5px;
-
-  color:#536b7e;
-}
-
-.menu{
-  display:flex;
-  align-items:center;
-  gap:34px;
-
-  font-size:14px;
-  font-weight:bold;
-}
-
-.menu a{
-  padding:33px 0 11px;
-  border-bottom:3px solid transparent;
-}
-
-.menu a:hover{
-  border-color:var(--navy);
-}
-
-.header-actions{
-  display:flex;
-  align-items:center;
-  gap:9px;
-}
-
+.menu{display:flex;gap:32px;color:#d5e0e7;font-size:13px;font-weight:bold}
+.menu a:hover{color:#fff}
+.tools{display:flex;align-items:center;gap:9px}
 .lang{
-  display:flex;
-  padding:3px;
-
-  border-radius:8px;
-
-  background:#edf3f7;
+  padding:3px;background:#0a2b48;border-radius:7px;
+  border:1px solid rgba(255,255,255,.12)
 }
-
 .lang button{
-  border:0;
-  background:transparent;
-
-  padding:7px 9px;
-
-  border-radius:6px;
-
-  color:#60778a;
-
-  font-size:11px;
-  font-weight:bold;
-
-  cursor:pointer;
+  border:0;background:transparent;color:#9fb3c1;
+  padding:7px 9px;border-radius:5px;font-size:10px;font-weight:bold;cursor:pointer
+}
+.lang .active{background:#fff;color:var(--navy)}
+.contactTop{
+  padding:11px 16px;border:1px solid rgba(255,255,255,.5);
+  border-radius:6px;color:#fff;font-size:11px;font-weight:bold
 }
 
-.lang button.active{
-  background:#fff;
-  color:var(--navy);
-
-  box-shadow:0 1px 5px rgba(0,0,0,.10);
-}
-
-.contact-top{
-  padding:11px 17px;
-
-  border-radius:8px;
-
-  background:var(--navy);
-  color:#fff;
-
-  font-size:12px;
-  font-weight:bold;
-}
-
-/* =========================
-   HERO
-========================= */
-
+/* HERO */
 .hero{
-  min-height:720px;
-
+  min-height:640px;
   position:relative;
-
-  display:flex;
-  align-items:center;
-
   overflow:hidden;
-
-  background:#e7edf2;
+  background:#e8edf1;
 }
-
-.hero-bg{
-  position:absolute;
-  inset:0;
-
+.heroPhoto{
+  position:absolute;inset:0;
   background:
-    linear-gradient(
-      90deg,
+    linear-gradient(90deg,
       rgba(255,255,255,.99) 0%,
-      rgba(255,255,255,.96) 26%,
-      rgba(255,255,255,.76) 43%,
-      rgba(255,255,255,.15) 67%,
-      rgba(255,255,255,0) 100%
-    ),
-    url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2200&q=95");
-
-  background-size:cover;
-  background-position:center;
+      rgba(255,255,255,.96) 29%,
+      rgba(255,255,255,.72) 44%,
+      rgba(255,255,255,.08) 67%,
+      rgba(6,31,54,.12) 100%),
+    url("https://images.pexels.com/photos/12171800/pexels-photo-12171800.jpeg?auto=compress&cs=tinysrgb&w=2000")
+    center/cover no-repeat;
 }
-
-/* SUN */
-
-.sun{
-  position:absolute;
-
-  width:130px;
-  height:130px;
-
-  border-radius:50%;
-
-  top:125px;
-  right:29%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(255,235,170,.95) 0%,
-      rgba(255,210,105,.62) 30%,
-      rgba(255,184,70,.22) 53%,
-      rgba(255,184,70,0) 72%
-    );
-
-  filter:blur(2px);
-
-  z-index:1;
+.heroPhoto:after{
+  content:"";position:absolute;left:5%;bottom:4%;
+  width:260px;height:260px;border-radius:50%;
+  background:radial-gradient(circle,
+    rgba(255,243,183,.96) 0%,
+    rgba(255,204,93,.55) 25%,
+    rgba(255,171,62,.18) 47%,
+    transparent 70%);
 }
-
-.hero-inner{
-  width:100%;
-  max-width:1380px;
-
-  margin:auto;
-
-  padding:140px 30px 65px;
-
-  position:relative;
-  z-index:3;
+.heroInner{
+  max-width:1400px;min-height:640px;margin:auto;padding:70px 32px;
+  position:relative;z-index:4;display:flex;align-items:center
 }
-
-.hero-content{
-  max-width:620px;
-}
-
-.hero-tag{
-  margin-bottom:18px;
-
-  color:#45657d;
-
-  font-size:13px;
-  font-weight:bold;
-
-  word-spacing:12px;
-}
-
+.heroText{max-width:610px}
+.eyebrow{font-size:11px;color:#4e6d83;font-weight:bold;margin-bottom:18px}
 .hero h1{
-  font-size:57px;
-  line-height:1.25;
-
-  letter-spacing:-1px;
-
-  color:var(--navy);
+  font-size:58px;line-height:1.2;color:var(--navy);letter-spacing:-1px
 }
-
-.hero h1 span{
-  color:var(--blue);
-}
-
+.hero h1 span{color:var(--blue)}
 .hero p{
-  max-width:570px;
-
-  margin-top:18px;
-
-  color:#3f6079;
-
-  font-size:16px;
-  font-weight:bold;
-
-  line-height:2;
+  margin-top:18px;max-width:560px;color:#526f84;
+  font-size:15px;line-height:2;font-weight:bold
 }
-
-.hero-buttons{
-  display:flex;
-  gap:11px;
-  flex-wrap:wrap;
-
-  margin-top:27px;
-}
-
+.heroButtons{display:flex;gap:10px;margin-top:27px}
 .btn{
-  min-width:140px;
-  height:47px;
-
-  padding:0 20px;
-
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-
-  border-radius:7px;
-
-  font-size:13px;
-  font-weight:bold;
+  height:47px;padding:0 21px;border-radius:6px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:bold
 }
+.primary{background:var(--navy);color:#fff}
+.secondary{background:#fff;border:1px solid #bccbd5;color:var(--navy)}
 
-.btn-primary{
-  background:var(--navy);
-  color:#fff;
+/* logo on building */
+.buildingLogo{
+  position:absolute;z-index:5;left:17%;top:90px;
+  display:flex;align-items:center;gap:10px;
+  padding:10px 15px;background:rgba(5,27,46,.58);
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:5px
 }
-
-.btn-secondary{
-  background:#fff;
-
-  border:1px solid #bac9d5;
-
-  color:var(--navy);
+.buildingLogo .xlogo{width:40px;height:40px}
+.buildingLogo .xlogo:before,.buildingLogo .xlogo:after{
+  height:43px;width:9px;left:15px
 }
+.buildingLogo strong{color:#fff;font-size:11px}
+.buildingLogo small{display:block;color:#b7cad7;font-size:6px;direction:ltr;margin-top:3px}
 
-/* =========================
-   FEATURES
-========================= */
-
-.features{
-  background:#fff;
-
-  border-bottom:1px solid var(--line);
+/* FEATURES */
+.features{background:#fff;border-bottom:1px solid #e1e8ed}
+.featuresInner{
+  max-width:1250px;margin:auto;padding:19px 10px;
+  display:grid;grid-template-columns:repeat(4,1fr)
 }
-
-.features-inner{
-  max-width:1250px;
-
-  margin:auto;
-
-  padding:17px 15px;
-
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
+.feature{text-align:center;padding:12px 20px;border-left:1px solid #e0e7ec}
+.feature:last-child{border-left:0}
+.icon{
+  width:45px;height:45px;border-radius:50%;background:#eef4f8;
+  margin:0 auto 8px;display:flex;align-items:center;justify-content:center;
+  color:var(--navy);font-size:18px
 }
+.feature strong{display:block;font-size:12px;margin-bottom:5px}
+.feature small{color:#84949f;font-size:8px}
 
-.feature{
-  text-align:center;
-
-  padding:10px 20px;
-
-  border-left:1px solid #dce5ed;
-}
-
-.feature:last-child{
-  border-left:0;
-}
-
-.feature-icon{
-  width:49px;
-  height:49px;
-
-  margin:0 auto 9px;
-
-  border-radius:50%;
-
-  background:#eef4f8;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  color:var(--navy);
-
-  font-size:22px;
-}
-
-.feature strong{
-  display:block;
-
-  margin-bottom:5px;
-
-  font-size:13px;
-}
-
-.feature span{
-  font-size:9px;
-
-  color:#7b8d9b;
-}
-
-/* =========================
-   PROJECTS
-========================= */
-
-.projects{
-  padding:40px 14px 55px;
-
-  background:var(--soft);
-}
-
-.section-heading{
-  max-width:800px;
-
-  margin:auto;
-
-  text-align:center;
-}
-
-.section-heading small{
-  color:var(--blue);
-
-  font-size:11px;
-  font-weight:bold;
-}
-
-.section-heading h2{
-  margin-top:7px;
-
-  font-size:30px;
-
-  color:var(--navy);
-}
-
-.section-heading p{
-  max-width:650px;
-
-  margin:8px auto 0;
-
-  color:#738696;
-
-  font-size:12px;
-
-  line-height:1.8;
-}
-
-/* FILTERS */
+/* WORK */
+.work{background:var(--bg);padding:58px 12px 65px}
+.title{text-align:center;max-width:800px;margin:auto}
+.title small{color:var(--blue);font-weight:bold;font-size:10px}
+.title h2{font-size:30px;color:var(--navy);margin-top:7px}
+.title p{color:#7a8c99;font-size:11px;margin-top:8px}
 
 .filters{
-  max-width:1300px;
-
-  margin:21px auto 15px;
-
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-
-  gap:6px;
+  max-width:1300px;margin:24px auto 15px;
+  display:flex;justify-content:center;flex-wrap:wrap;gap:6px
 }
-
 .filter{
-  padding:9px 14px;
-
-  border:1px solid #d1dde6;
-
-  border-radius:5px;
-
-  background:#fff;
-
-  color:#36556e;
-
-  font-size:10px;
-
-  cursor:pointer;
+  background:#fff;border:1px solid #d2dde5;color:#486176;
+  padding:9px 13px;border-radius:5px;font-size:9px;cursor:pointer
 }
-
-.filter.active{
-  background:var(--navy);
-
-  border-color:var(--navy);
-
-  color:#fff;
-}
-
-/* GALLERY */
+.filter.active{background:var(--navy);color:#fff;border-color:var(--navy)}
 
 .gallery{
-  max-width:1360px;
-
-  margin:auto;
-
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-
-  gap:7px;
+  max-width:1380px;margin:auto;
+  display:grid;grid-template-columns:repeat(5,1fr);gap:7px
+}
+.card{
+  height:190px;position:relative;overflow:hidden;
+  border-radius:5px;background:#dce4e9
+}
+.card img{transition:.35s}
+.card:hover img{transform:scale(1.05)}
+.card:after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(4,28,48,.94),rgba(4,28,48,.15) 55%,transparent)
+}
+.cardName{
+  position:absolute;z-index:3;bottom:0;right:0;left:0;
+  padding:11px;color:#fff;font-size:10px;font-weight:bold
+}
+.note{
+  text-align:center;color:#8c9ba6;font-size:8px;
+  margin:15px auto 0;max-width:900px
 }
 
-.project{
-  height:185px;
-
-  position:relative;
-
-  overflow:hidden;
-
-  border-radius:6px;
-
-  background:#dce5eb;
+/* FOOTER */
+footer{background:var(--navy);color:#fff;padding:42px 20px 14px}
+.footerMain{
+  max-width:1300px;margin:auto;
+  display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px
+}
+.footerBrand{display:flex;gap:12px;align-items:center}
+.footerBrand strong{font-size:15px}
+.footerBrand small{display:block;color:#829aaa;font-size:6px;direction:ltr;margin-top:4px}
+.col h3{font-size:10px;margin-bottom:10px}
+.col,.col a{font-size:9px;color:#a8bac6;line-height:2.1}
+.bottom{
+  max-width:1300px;margin:30px auto 0;padding-top:12px;
+  border-top:1px solid rgba(255,255,255,.08);
+  display:flex;justify-content:space-between;
+  color:#668094;font-size:7px
 }
 
-.project img{
-  transition:.35s;
+.en{display:none}
+body.english{direction:ltr}
+body.english .ar{display:none!important}
+body.english .en{display:inline!important}
+
+/* MOBILE */
+@media(max-width:900px){
+  .menu{display:none}
+  .gallery{grid-template-columns:repeat(3,1fr)}
 }
-
-.project:hover img{
-  transform:scale(1.045);
-}
-
-.project:after{
-  content:"";
-
-  position:absolute;
-  inset:0;
-
-  background:
-    linear-gradient(
-      to top,
-      rgba(3,29,51,.91) 0%,
-      rgba(3,29,51,.40) 23%,
-      transparent 58%
-    );
-}
-
-.project-name{
-  position:absolute;
-
-  right:0;
-  left:0;
-  bottom:0;
-
-  z-index:3;
-
-  padding:11px;
-
-  color:#fff;
-
-  font-size:11px;
-  font-weight:bold;
-}
-
-.photo-note{
-  max-width:1000px;
-
-  margin:17px auto 0;
-
-  text-align:center;
-
-  color:#8999a5;
-
-  font-size:9px;
-
-  line-height:1.8;
-}
-
-/* =========================
-   ALL SERVICES
-========================= */
-
-.services{
-  padding:45px 20px;
-
-  background:#fff;
-}
-
-.services h2{
-  text-align:center;
-
-  margin-bottom:25px;
-
-  font-size:26px;
-
-  color:var(--navy);
-}
-
-.services-grid{
-  max-width:1200px;
-
-  margin:auto;
-
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-
-  gap:8px;
-}
-
-.service{
-  min-height:54px;
-
-  padding:12px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  text-align:center;
-
-  border:1px solid #e0e8ef;
-
-  border-radius:7px;
-
-  background:#f8fafc;
-
-  color:#183e5d;
-
-  font-size:12px;
-  font-weight:bold;
-}
-
-/* =========================
-   SECTORS
-========================= */
-
-.sectors{
-  padding:34px 15px;
-
-  background:#f7fafc;
-
-  border-top:1px solid #e2e9ef;
-}
-
-.sectors h2{
-  margin-bottom:25px;
-
-  text-align:center;
-
-  color:var(--navy);
-
-  font-size:23px;
-}
-
-.sector-grid{
-  max-width:1000px;
-
-  margin:auto;
-
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-}
-
-.sector{
-  padding:10px;
-
-  text-align:center;
-
-  border-left:1px solid #dbe4eb;
-}
-
-.sector:last-child{
-  border-left:0;
-}
-
-.sector-icon{
-  margin-bottom:8px;
-
-  font-size:27px;
-}
-
-.sector b{
-  font-size:12px;
-}
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact{
-  padding:37px 20px;
-
-  background:var(--navy);
-
-  color:#fff;
-}
-
-.contact-inner{
-  max-width:1280px;
-
-  margin:auto;
-
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-
-  gap:30px;
-}
-
-.footer-brand{
-  display:flex;
-  align-items:center;
-
-  gap:12px;
-}
-
-.footer-brand .x-logo .left{
-  background:#fff;
-}
-
-.footer-brand .x-logo .right{
-  background:#acd0e9;
-}
-
-.footer-brand strong{
-  display:block;
-
-  font-size:17px;
-}
-
-.footer-brand small{
-  display:block;
-
-  direction:ltr;
-
-  margin-top:4px;
-
-  color:#b8ccda;
-
-  font-size:7px;
-}
-
-.contact-details{
-  display:flex;
-  flex-wrap:wrap;
-
-  gap:24px;
-
-  font-size:12px;
-}
-
-.contact-details a{
-  color:#fff;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-  padding:14px 20px;
-
-  background:#041d32;
-
-  color:#7792a6;
-
-  font-size:8px;
-}
-
-.footer-inner{
-  max-width:1280px;
-
-  margin:auto;
-
-  display:flex;
-  justify-content:space-between;
-}
-
-/* =========================
-   LANGUAGE
-========================= */
-
-.en{
-  display:none;
-}
-
-body.english .ar{
-  display:none;
-}
-
-body.english .en{
-  display:inline;
-}
-
-body.english{
-  direction:ltr;
-}
-
-/* =========================
-   TABLET
-========================= */
-
-@media(max-width:1000px){
-
-  .menu{
-    display:none;
-  }
-
-  .gallery{
-    grid-template-columns:repeat(3,1fr);
-  }
-
-  .services-grid{
-    grid-template-columns:repeat(3,1fr);
-  }
-}
-
-/* =========================
-   MOBILE
-========================= */
-
 @media(max-width:650px){
+  .nav{height:70px;padding:0 11px}
+  .xlogo{width:40px;height:40px}
+  .xlogo:before,.xlogo:after{width:9px;height:43px;left:15px}
+  .brand strong{font-size:10px}
+  .brand small{font-size:5px}
+  .contactTop{display:none}
 
-  .navbar{
-    height:70px;
-    padding:0 12px;
-  }
-
-  .x-logo{
-    width:43px;
-    height:42px;
-  }
-
-  .x-logo .left,
-  .x-logo .right{
-    width:8px;
-    height:42px;
-    left:17px;
-  }
-
-  .x-logo .right{
-    left:20px;
-  }
-
-  .brand-text strong{
-    font-size:11px;
-  }
-
-  .brand-text small{
-    font-size:5px;
-  }
-
-  .contact-top{
-    display:none;
-  }
-
-  .hero{
-    min-height:590px;
-  }
-
-  .hero-bg{
+  .hero{min-height:620px}
+  .heroPhoto{
     background:
-      linear-gradient(
-        90deg,
-        rgba(255,255,255,.97),
-        rgba(255,255,255,.86) 50%,
-        rgba(255,255,255,.26)
-      ),
-      url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=92");
-
-    background-size:cover;
-    background-position:center;
+      linear-gradient(to bottom,
+        rgba(255,255,255,.05) 0%,
+        rgba(255,255,255,.08) 42%,
+        rgba(255,255,255,.96) 61%,
+        #fff 75%),
+      url("https://images.pexels.com/photos/12171800/pexels-photo-12171800.jpeg?auto=compress&cs=tinysrgb&w=1200")
+      center top/100% 390px no-repeat;
   }
+  .buildingLogo{left:auto;right:14px;top:25px;transform:scale(.75)}
+  .heroInner{min-height:620px;padding:330px 18px 35px;align-items:flex-start}
+  .hero h1{font-size:38px}
+  .hero p{font-size:11px;line-height:1.9}
+  .eyebrow{font-size:8px}
+  .btn{height:43px;padding:0 15px;font-size:10px}
 
-  .sun{
-    width:100px;
-    height:100px;
+  .featuresInner{grid-template-columns:1fr 1fr;padding:0}
+  .feature{border-bottom:1px solid #e4eaee}
+  .feature:nth-child(2){border-left:0}
 
-    top:100px;
-    right:15%;
-  }
-
-  .hero-inner{
-    padding:110px 17px 40px;
-  }
-
-  .hero-content{
-    max-width:400px;
-  }
-
-  .hero-tag{
-    font-size:10px;
-  }
-
-  .hero h1{
-    font-size:38px;
-  }
-
-  .hero p{
-    font-size:12px;
-  }
-
-  .features-inner{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .feature:nth-child(2){
-    border-left:0;
-  }
-
-  .feature{
-    border-bottom:1px solid #e4ebf0;
-  }
-
+  .work{padding:45px 6px}
+  .title h2{font-size:23px}
   .filters{
-    flex-wrap:nowrap;
-
-    overflow-x:auto;
-
-    justify-content:flex-start;
+    flex-wrap:nowrap;justify-content:flex-start;
+    overflow-x:auto;padding-bottom:6px
   }
+  .filter{white-space:nowrap}
+  .gallery{grid-template-columns:1fr 1fr;gap:5px}
+  .card{height:145px}
+  .cardName{font-size:8px;padding:8px}
 
-  .filter{
-    min-width:max-content;
-  }
-
-  .gallery{
-    grid-template-columns:1fr 1fr;
-
-    gap:5px;
-  }
-
-  .project{
-    height:145px;
-  }
-
-  .project-name{
-    font-size:9px;
-  }
-
-  .services-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .sector-grid{
-    grid-template-columns:1fr 1fr;
-
-    gap:20px 0;
-  }
-
-  .sector:nth-child(2){
-    border-left:0;
-  }
-
-  .contact-inner{
-    display:block;
-
-    text-align:center;
-  }
-
-  .footer-brand{
-    justify-content:center;
-
-    margin-bottom:23px;
-  }
-
-  .contact-details{
-    flex-direction:column;
-
-    gap:11px;
-  }
-
-  .footer-inner{
-    display:block;
-
-    text-align:center;
-
-    line-height:2;
-  }
+  .footerMain{grid-template-columns:1fr}
+  .bottom{display:block;text-align:center;line-height:2}
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-
 <header>
+<div class="nav">
 
-<div class="navbar">
+  <div class="brand">
+    <div class="xlogo"></div>
+    <div>
+      <strong class="ar">إكسل وإنجاز للمقاولات</strong>
+      <strong class="en">Excel & Injaz Contracting</strong>
+      <small>EXCEL & INJAZ CONTRACTING</small>
+    </div>
+  </div>
 
-<div class="brand">
+  <nav class="menu">
+    <a href="#home"><span class="ar">الرئيسية</span><span class="en">Home</span></a>
+    <a href="#work"><span class="ar">أعمالنا</span><span class="en">Our Work</span></a>
+    <a href="#contact"><span class="ar">تواصل معنا</span><span class="en">Contact</span></a>
+  </nav>
 
-<div class="x-logo">
-<span class="left"></span>
-<span class="right"></span>
-</div>
-
-<div class="brand-text">
-
-<strong>
-<span class="ar">إكسل وإنجاز للمقاولات</span>
-<span class="en">Excel & Injaz Contracting</span>
-</strong>
-
-<small>EXCEL & INJAZ CONTRACTING</small>
-
-</div>
-
-</div>
-
-
-<nav class="menu">
-
-<a href="#home">
-<span class="ar">الرئيسية</span>
-<span class="en">Home</span>
-</a>
-
-<a href="#services">
-<span class="ar">خدماتنا</span>
-<span class="en">Services</span>
-</a>
-
-<a href="#projects">
-<span class="ar">أعمالنا</span>
-<span class="en">Our Work</span>
-</a>
-
-<a href="#contact">
-<span class="ar">تواصل معنا</span>
-<span class="en">Contact</span>
-</a>
-
-</nav>
-
-
-<div class="header-actions">
-
-<div class="lang">
-<button id="arBtn" class="active">AR</button>
-<button id="enBtn">EN</button>
-</div>
-
-<a
-href="https://wa.me/966554726980"
-target="_blank"
-class="contact-top">
-
-<span class="ar">تواصل معنا</span>
-<span class="en">Contact</span>
-
-</a>
+  <div class="tools">
+    <div class="lang">
+      <button id="ar" class="active">AR</button>
+      <button id="en">EN</button>
+    </div>
+    <a class="contactTop" href="https://wa.me/966554726980" target="_blank">تواصل معنا</a>
+  </div>
 
 </div>
-
-</div>
-
 </header>
 
-
-<!-- HERO -->
-
 <section class="hero" id="home">
+  <div class="heroPhoto"></div>
 
-<div class="hero-bg"></div>
-<div class="sun"></div>
+  <div class="buildingLogo">
+    <div class="xlogo"></div>
+    <div>
+      <strong>إكسل وإنجاز</strong>
+      <small>EXCEL & INJAZ</small>
+    </div>
+  </div>
 
-<div class="hero-inner">
+  <div class="heroInner">
+    <div class="heroText">
 
-<div class="hero-content">
+      <div class="eyebrow ar">مقاولات حديدية • إنشاءات معدنية • حلول عملية</div>
+      <div class="eyebrow en">STEEL WORKS • METAL STRUCTURES • CONTRACTING</div>
 
-<div class="hero-tag">
+      <h1 class="ar">نبني لك أساس أقوى<br><span>لمشاريعك</span></h1>
+      <h1 class="en">Strong Foundations<br><span>For Your Projects</span></h1>
 
-<span class="ar">
-مقاولات • حديد • إنشاءات معدنية
-</span>
+      <p class="ar">
+        تنفيذ أعمال الحديد والإنشاءات المعدنية بجودة ودقة،
+        للمشاريع بمختلف أحجامها، من الهياكل والهناجر والمستودعات
+        إلى المظلات والأسوار والسلالم والهاندريل.
+      </p>
 
-<span class="en">
-CONTRACTING • STEEL • METAL WORKS
-</span>
+      <p class="en">
+        Steel and metal construction solutions for projects of different sizes,
+        including structures, warehouses, hangars, canopies, fences,
+        stairs and handrails.
+      </p>
 
-</div>
+      <div class="heroButtons">
+        <a class="btn primary" href="https://wa.me/966554726980" target="_blank">
+          <span class="ar">تواصل معنا ←</span><span class="en">Contact Us →</span>
+        </a>
+        <a class="btn secondary" href="#work">
+          <span class="ar">أعمالنا</span><span class="en">Our Work</span>
+        </a>
+      </div>
 
-
-<h1 class="ar">
-شريكك في بناء<br>
-<span>مشاريعك بثقة</span>
-</h1>
-
-<h1 class="en">
-Your Partner For<br>
-<span>Steel Projects</span>
-</h1>
-
-
-<p class="ar">
-ننفذ أعمال الحديد والإنشاءات المعدنية للمشاريع
-بمختلف أحجامها، من الهياكل والهناجر والمستودعات
-إلى السلالم والهاندريل والمظلات والأسوار والبوابات.
-</p>
-
-<p class="en">
-Steel and metal works for projects of different scales,
-including structures, warehouses, hangars, stairs,
-handrails, canopies, fences and gates.
-</p>
-
-
-<div class="hero-buttons">
-
-<a
-href="https://wa.me/966554726980"
-target="_blank"
-class="btn btn-primary">
-
-<span class="ar">تواصل معنا ←</span>
-<span class="en">Contact Us</span>
-
-</a>
-
-<a
-href="#projects"
-class="btn btn-secondary">
-
-<span class="ar">أعمالنا</span>
-<span class="en">Our Work</span>
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
+    </div>
+  </div>
 </section>
-
-
-<!-- FEATURES -->
 
 <section class="features">
-
-<div class="features-inner">
-
-<div class="feature">
-<div class="feature-icon">◇</div>
-<strong>جودة التنفيذ</strong>
-<span>اهتمام بالتفاصيل وجودة العمل</span>
+<div class="featuresInner">
+  <div class="feature"><div class="icon">◆</div><strong>جودة عالية</strong><small>مواد ممتازة وتنفيذ احترافي</small></div>
+  <div class="feature"><div class="icon">◷</div><strong>الالتزام بالمواعيد</strong><small>تنظيم العمل حسب متطلبات المشروع</small></div>
+  <div class="feature"><div class="icon">⚙</div><strong>تنفيذ متخصص</strong><small>حلول لمختلف الأعمال المعدنية</small></div>
+  <div class="feature"><div class="icon">▦</div><strong>حلول متكاملة</strong><small>من التجهيز إلى التركيب</small></div>
 </div>
-
-<div class="feature">
-<div class="feature-icon">◷</div>
-<strong>الالتزام بالمواعيد</strong>
-<span>تنظيم العمل حسب متطلبات المشروع</span>
-</div>
-
-<div class="feature">
-<div class="feature-icon">⚙</div>
-<strong>أعمال متنوعة</strong>
-<span>حلول متعددة للأعمال المعدنية</span>
-</div>
-
-<div class="feature">
-<div class="feature-icon">▦</div>
-<strong>حلول متكاملة</strong>
-<span>تجهيز وتنفيذ وتركيب</span>
-</div>
-
-</div>
-
 </section>
 
+<section class="work" id="work">
 
-<!-- PROJECTS -->
-
-<section class="projects" id="projects">
-
-<div class="section-heading">
-
-<small>أعمالنا</small>
-
-<h2>
-مجالات أعمال الحديد والإنشاءات المعدنية
-</h2>
-
-<p>
-أعمال متنوعة للمشاريع الكبيرة والصغيرة تشمل
-الهياكل المعدنية والهناجر والمستودعات والمظلات
-والسلالم والهاندريل والأسوار والبوابات.
-</p>
-
+<div class="title">
+  <small>أعمالنا</small>
+  <h2>مجموعة من أعمال الحديد والإنشاءات المعدنية</h2>
+  <p>نقدم حلولاً متنوعة تناسب مختلف المشاريع</p>
 </div>
-
 
 <div class="filters">
-
-<button class="filter active" data-filter="all">
-الكل
-</button>
-
-<button class="filter" data-filter="warehouse">
-هناجر ومستودعات
-</button>
-
-<button class="filter" data-filter="structure">
-هياكل معدنية
-</button>
-
-<button class="filter" data-filter="canopy">
-مظلات
-</button>
-
-<button class="filter" data-filter="gate">
-أسوار وبوابات
-</button>
-
-<button class="filter" data-filter="stairs">
-سلالم وهاندريل
-</button>
-
-<button class="filter" data-filter="other">
-أعمال متنوعة
-</button>
-
+  <button class="filter active" data-filter="all">الكل</button>
+  <button class="filter" data-filter="warehouse">مستودعات وهناجر</button>
+  <button class="filter" data-filter="structure">هياكل معدنية</button>
+  <button class="filter" data-filter="canopy">مظلات</button>
+  <button class="filter" data-filter="gate">أسوار وبوابات</button>
+  <button class="filter" data-filter="stairs">سلالم وهاندريل</button>
+  <button class="filter" data-filter="elevator">تأسيس مصاعد</button>
+  <button class="filter" data-filter="other">أعمال متنوعة</button>
 </div>
-
 
 <div class="gallery">
 
-<div class="project" data-cat="structure">
-<img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=88">
-<div class="project-name">هياكل معدنية</div>
+<div class="card" data-cat="structure">
+<img src="https://images.pexels.com/photos/32239084/pexels-photo-32239084.jpeg?auto=compress&cs=tinysrgb&w=800">
+<div class="cardName">هياكل معدنية</div>
 </div>
 
-<div class="project" data-cat="warehouse">
-<img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=900&q=88">
-<div class="project-name">هناجر ومستودعات</div>
+<div class="card" data-cat="warehouse">
+<img src="https://images.pexels.com/photos/12171800/pexels-photo-12171800.jpeg?auto=compress&cs=tinysrgb&w=800">
+<div class="cardName">مستودعات وهناجر</div>
 </div>
 
-<div class="project" data-cat="structure">
-<img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=88">
-<div class="project-name">إنشاءات معدنية</div>
+<div class="card" data-cat="canopy">
+<img src="https://images.pexels.com/photos/8192657/pexels-photo-8192657.jpeg?auto=compress&cs=tinysrgb&w=800">
+<div class="cardName">مظلات مواقف سيارات</div>
 </div>
 
-<div class="project" data-cat="canopy">
-<img src="https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?auto=format&fit=crop&w=900&q=88">
-<div class="project-name">مظلات معدنية</div>
+<div class="card" data-cat="gate">
+<img src="https://images.pexels.com/photos/31517290/pexels-photo-31517290.jpeg?auto=compress&cs=tinysrgb&w=800">
+<div class="cardName">أسوار وبوابات</div>
 </div>
 
-<div class="project" data-cat="gate">
-<img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=88">
-<div class="project-name">أسوار وبوابات</div>
+<div class="card" data-cat="stairs">
+<img src="https://images.pexels.com/photos/12003137/pexels-photo-12003137.jpeg?auto=compress&cs=tinysrgb&w=800">
+<div class="cardName">سلالم وهاندريل</div>
 </div>
 
-<div class="project" data-cat="stairs">
-<img src="https://images.unsplash.com/photo-1505843513577-22bb7d21e455?auto=format&fit=crop&w=900&q=88">
-<div class="project-name">سلالم وهاندريل</div>
+<div class="card" data-cat="warehouse">
+<img src="https://images.pexels.com/photos/16029880/pexels-photo-16029880.jpeg?auto=compress&cs=tinysrgb&w=800">
+<div class="cardName">هياكل مستودعات</div>
 </div>
 
-<div class="project" data-cat="warehouse">
-<img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=88">
-<div class="project-name">مبانٍ ومستودعات معدنية</div>
+<div class="card" data-cat="structure">
+<img src="https://images.pexels.com/photos/2383650/pexels-photo-2383650.jpeg?auto=compress&cs=tinysrgb&w=800">
+<div class="cardName">تركيب هياكل معدنية</div>
 </div>
 
-<div class="project" data-cat="structure">
-<img src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?auto=format&fit=crop&w=900&q=88">
-<div class="project-name">جمالونات حديدية</div>
+<div class="card" data-cat="warehouse">
+<img src="https://images.pexels.com/photos/12706241/pexels-photo-12706241.jpeg?auto=compress&cs=tinysrgb&w=800">
+<div class="cardName">رفوف وتجهيز مستودعات</div>
 </div>
 
-<div class="project" data-cat="other">
-<img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=900&q=88">
-<div class="project-name">أعمال قص ولحام</div>
+<div class="card" data-cat="warehouse">
+<img src="https://images.pexels.com/photos/5843171/pexels-photo-5843171.jpeg?auto=compress&cs=tinysrgb&w=800">
+<div class="cardName">مستودعات داخلية</div>
 </div>
 
-<div class="project" data-cat="warehouse">
-<img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=900&q=88">
-<div class="project-name">مستودعات بمساحات كبيرة</div>
+<div class="card" data-cat="other">
+<img src="https://images.pexels.com/photos/15508178/pexels-photo-15508178.jpeg?auto=compress&cs=tinysrgb&w=800">
+<div class="cardName">توريد وتجهيز الحديد</div>
 </div>
 
-<div class="project" data-cat="canopy">
-<img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=900&q=88">
-<div class="project-name">مظلات مداخل</div>
+<div class="card" data-cat="structure">
+<img src="https://images.pexels.com/photos/1804170/pexels-photo-1804170.jpeg?auto=compress&cs=tinysrgb&w=800">
+<div class="cardName">جمالونات معدنية</div>
 </div>
 
-<div class="project" data-cat="gate">
-<img src="https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?auto=format&fit=crop&w=900&q=88">
-<div class="project-name">بوابات وأعمال خارجية</div>
+<div class="card" data-cat="other">
+<img src="https://images.pexels.com/photos/16708396/pexels-photo-16708396.jpeg?auto=compress&cs=tinysrgb&w=800">
+<div class="cardName">قواعد ومساند معدنية</div>
 </div>
 
-<div class="project" data-cat="other">
-<img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=900&q=88">
-<div class="project-name">لحام وتجهيز الحديد</div>
+<div class="card" data-cat="gate">
+<img src="https://images.pexels.com/photos/5919806/pexels-photo-5919806.jpeg?auto=compress&cs=tinysrgb&w=800">
+<div class="cardName">أسوار حماية</div>
 </div>
 
-<div class="project" data-cat="structure">
-<img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=82">
-<div class="project-name">مشاريع هياكل معدنية</div>
+<div class="card" data-cat="warehouse">
+<img src="https://images.pexels.com/photos/5759147/pexels-photo-5759147.jpeg?auto=compress&cs=tinysrgb&w=800">
+<div class="cardName">تجهيز مستودعات</div>
 </div>
 
-<div class="project" data-cat="stairs">
-<img src="https://images.unsplash.com/photo-1505843513577-22bb7d21e455?auto=format&fit=crop&w=900&q=82">
-<div class="project-name">درابزين وهاندريل</div>
+<div class="card" data-cat="other">
+<img src="https://images.pexels.com/photos/36122954/pexels-photo-36122954.jpeg?auto=compress&cs=tinysrgb&w=800">
+<div class="cardName">أعمال وتجهيزات حديد</div>
 </div>
 
-<div class="project" data-cat="warehouse">
-<img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=900&q=82">
-<div class="project-name">أعمال الهناجر</div>
+<div class="card" data-cat="warehouse">
+<img src="https://images.pexels.com/photos/11667731/pexels-photo-11667731.jpeg?auto=compress&cs=tinysrgb&w=800">
+<div class="cardName">أسقف وهياكل معدنية</div>
 </div>
 
-<div class="project" data-cat="structure">
-<img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=82">
-<div class="project-name">قواعد ومساند حديدية</div>
+<div class="card" data-cat="other">
+<img src="https://images.pexels.com/photos/36126305/pexels-photo-36126305.jpeg?auto=compress&cs=tinysrgb&w=800">
+<div class="cardName">منصات معدنية</div>
 </div>
 
-<div class="project" data-cat="canopy">
-<img src="https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?auto=format&fit=crop&w=900&q=82">
-<div class="project-name">مظلات وممرات</div>
+<div class="card" data-cat="elevator">
+<img src="https://images.pexels.com/photos/32239084/pexels-photo-32239084.jpeg?auto=compress&cs=tinysrgb&w=800">
+<div class="cardName">تأسيس هياكل المصاعد</div>
 </div>
 
-<div class="project" data-cat="gate">
-<img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=82">
-<div class="project-name">أسوار حديدية</div>
+<div class="card" data-cat="canopy">
+<img src="https://images.pexels.com/photos/8192657/pexels-photo-8192657.jpeg?auto=compress&cs=tinysrgb&w=800">
+<div class="cardName">مظلات خارجية</div>
 </div>
 
-<div class="project" data-cat="other">
-<img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=900&q=82">
-<div class="project-name">أعمال حديد حسب المخططات</div>
+<div class="card" data-cat="stairs">
+<img src="https://images.pexels.com/photos/12003137/pexels-photo-12003137.jpeg?auto=compress&cs=tinysrgb&w=800">
+<div class="cardName">درابزين حديد وهاندريل</div>
 </div>
 
 </div>
 
-
-<div class="photo-note">
+<div class="note">
 الصور المعروضة توضيحية لمجالات الأعمال وليست توثيقًا لمشاريع منفذة باسم إكسل وإنجاز.
 </div>
 
 </section>
 
+<footer id="contact">
+<div class="footerMain">
 
-<!-- SERVICES -->
-
-<section class="services" id="services">
-
-<h2>جميع أعمال الحدادة</h2>
-
-<div class="services-grid">
-
-<div class="service">الهياكل المعدنية</div>
-<div class="service">الهناجر</div>
-<div class="service">المستودعات</div>
-<div class="service">الجمالونات</div>
-
-<div class="service">السلالم الحديدية</div>
-<div class="service">الهاندريل</div>
-<div class="service">الدرابزين</div>
-<div class="service">المظلات المعدنية</div>
-
-<div class="service">مظلات السيارات</div>
-<div class="service">مظلات الممرات</div>
-<div class="service">الأسوار الحديدية</div>
-<div class="service">البوابات الحديدية</div>
-
-<div class="service">الأبواب الحديدية</div>
-<div class="service">الشبك والحواجز</div>
-<div class="service">تأسيس المصاعد</div>
-<div class="service">المنصات الحديدية</div>
-
-<div class="service">قواعد ومساند الحديد</div>
-<div class="service">غرف المعدات</div>
-<div class="service">مظلات المعدات</div>
-<div class="service">رفوف المستودعات</div>
-
-<div class="service">أعمال القص</div>
-<div class="service">أعمال اللحام</div>
-<div class="service">أعمال حسب المخططات</div>
-<div class="service">أعمال حديد متنوعة</div>
-
+<div class="footerBrand">
+  <div class="xlogo"></div>
+  <div>
+    <strong>إكسل وإنجاز للمقاولات</strong>
+    <small>EXCEL & INJAZ CONTRACTING</small>
+  </div>
 </div>
 
-</section>
-
-
-<!-- SECTORS -->
-
-<section class="sectors">
-
-<h2>قطاعات نعمل معها</h2>
-
-<div class="sector-grid">
-
-<div class="sector">
-<div class="sector-icon">⌂</div>
-<b>القطاع السكني</b>
+<div class="col">
+<h3>مسؤول المشاريع</h3>
+<a href="tel:0551889096">0551889096</a>
 </div>
 
-<div class="sector">
-<div class="sector-icon">▥</div>
-<b>القطاع الصناعي</b>
+<div class="col">
+<h3>التواصل</h3>
+<a href="https://wa.me/966554726980" target="_blank">واتساب 0554726980</a>
+<a href="mailto:excel1lnjaz@gmail.com">excel1lnjaz@gmail.com</a>
 </div>
 
-<div class="sector">
-<div class="sector-icon">▣</div>
-<b>القطاع التجاري</b>
-</div>
-
-<div class="sector">
-<div class="sector-icon">▦</div>
-<b>المشاريع العامة</b>
+<div class="col">
+<h3>الموقع</h3>
+<div>الرياض - حي السلي</div>
+<div>المملكة العربية السعودية</div>
 </div>
 
 </div>
 
-</section>
-
-
-<!-- CONTACT -->
-
-<section class="contact" id="contact">
-
-<div class="contact-inner">
-
-<div class="footer-brand">
-
-<div class="x-logo">
-<span class="left"></span>
-<span class="right"></span>
-</div>
-
-<div>
-<strong>إكسل وإنجاز للمقاولات</strong>
-<small>EXCEL & INJAZ CONTRACTING</small>
-</div>
-
-</div>
-
-
-<div class="contact-details">
-
-<span>📍 الرياض - حي السلي</span>
-
-<a href="tel:0551889096">
-☎ 0551889096
-</a>
-
-<a
-href="https://wa.me/966554726980"
-target="_blank">
-واتساب 0554726980
-</a>
-
-<a href="mailto:excel1lnjaz@gmail.com">
-✉ excel1lnjaz@gmail.com
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-<footer>
-
-<div class="footer-inner">
-
-<span>جميع الحقوق محفوظة © 2026</span>
-
+<div class="bottom">
+<span>© 2026 إكسل وإنجاز للمقاولات</span>
 <span>السجل التجاري: 7038272063</span>
-
 </div>
-
 </footer>
 
-
 <script>
+const filters=document.querySelectorAll(".filter");
+const cards=document.querySelectorAll(".card");
 
-/* FILTERS */
-
-const filters =
-document.querySelectorAll(".filter");
-
-const projects =
-document.querySelectorAll(".project");
-
-filters.forEach(button => {
-
-  button.addEventListener("click", function(){
-
-    filters.forEach(btn =>
-      btn.classList.remove("active")
-    );
-
-    this.classList.add("active");
-
-    const category =
-      this.dataset.filter;
-
-    projects.forEach(project => {
-
-      if(
-        category === "all" ||
-        project.dataset.cat === category
-      ){
-        project.style.display = "block";
-      }else{
-        project.style.display = "none";
-      }
-
-    });
-
+filters.forEach(btn=>{
+ btn.onclick=()=>{
+  filters.forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  const f=btn.dataset.filter;
+  cards.forEach(card=>{
+   card.style.display=(f==="all"||card.dataset.cat===f)?"block":"none";
   });
-
+ };
 });
 
+const ar=document.getElementById("ar");
+const en=document.getElementById("en");
 
-/* LANGUAGE */
+ar.onclick=()=>{
+ document.body.classList.remove("english");
+ document.documentElement.dir="rtl";
+ document.documentElement.lang="ar";
+ ar.classList.add("active");
+ en.classList.remove("active");
+};
 
-const arBtn =
-document.getElementById("arBtn");
-
-const enBtn =
-document.getElementById("enBtn");
-
-arBtn.addEventListener("click",function(){
-
-  document.body.classList.remove("english");
-
-  document.documentElement.dir = "rtl";
-  document.documentElement.lang = "ar";
-
-  arBtn.classList.add("active");
-  enBtn.classList.remove("active");
-
-});
-
-enBtn.addEventListener("click",function(){
-
-  document.body.classList.add("english");
-
-  document.documentElement.dir = "ltr";
-  document.documentElement.lang = "en";
-
-  enBtn.classList.add("active");
-  arBtn.classList.remove("active");
-
-});
-
+en.onclick=()=>{
+ document.body.classList.add("english");
+ document.documentElement.dir="ltr";
+ document.documentElement.lang="en";
+ en.classList.add("active");
+ ar.classList.remove("active");
+};
 </script>
 
 </body>
