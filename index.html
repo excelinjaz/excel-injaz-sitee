@@ -2,220 +2,545 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
 <title>إكسل وإنجاز للمقاولات | Excel & Injaz Contracting</title>
 
 <style>
 :root{
-  --navy:#0a2a4a;
-  --navy2:#0d365f;
-  --blue:#2e79b7;
-  --white:#fff;
-  --soft:#f4f8fc;
-  --text:#10263d;
-  --gray:#718397;
-  --line:#dfe7ef;
+  --navy:#081f38;
+  --navy2:#0d3154;
+  --blue:#2f78ad;
+  --white:#ffffff;
+  --soft:#f5f8fb;
+  --line:#e1e8ef;
+  --text:#12283d;
+  --muted:#6f8191;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   margin:0;
   font-family:Tahoma,Arial,sans-serif;
   background:#fff;
   color:var(--text);
 }
-a{text-decoration:none;color:inherit}
-img{display:block;width:100%;height:100%;object-fit:cover}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.en{
+  display:none;
+}
+
+body.eng .ar{
+  display:none;
+}
+
+body.eng .en{
+  display:inline;
+}
+
+body.eng{
+  direction:ltr;
+}
+
+
+/* HEADER */
 
 header{
-  position:absolute;
-  top:0;left:0;right:0;
-  z-index:20;
+  position:fixed;
+  top:0;
+  right:0;
+  left:0;
+  z-index:999;
+
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(14px);
+
+  border-bottom:1px solid var(--line);
 }
+
 .nav{
-  max-width:1280px;
+  height:78px;
+  max-width:1320px;
   margin:auto;
-  height:95px;
-  padding:0 25px;
+
+  padding:0 22px;
+
   display:flex;
   align-items:center;
   justify-content:space-between;
+
   gap:20px;
 }
+
 .brand{
   display:flex;
   align-items:center;
   gap:12px;
 }
+
+.brand strong{
+  color:var(--navy);
+  display:block;
+  font-size:17px;
+}
+
+.brand small{
+  display:block;
+  margin-top:3px;
+  font-size:9px;
+  letter-spacing:1.7px;
+  color:#718397;
+  direction:ltr;
+}
+
+
+/* X LOGO */
+
 .logo{
-  width:60px;height:52px;
+  width:50px;
+  height:50px;
+
   position:relative;
 }
-.logo:before,.logo:after{
+
+.logo:before,
+.logo:after{
   content:"";
   position:absolute;
-  left:23px;top:0;
-  width:11px;height:54px;
+
+  width:9px;
+  height:48px;
+
+  left:20px;
+  top:1px;
+
   border-radius:3px;
 }
+
 .logo:before{
-  background:#0a2a4a;
   transform:rotate(40deg);
+  background:var(--navy);
 }
+
 .logo:after{
-  background:#3b85be;
   transform:rotate(-40deg);
+  background:linear-gradient(180deg,#3f89be,#0d3154);
 }
-.brand strong{
-  display:block;
-  font-size:18px;
-}
-.brand small{
-  font-size:10px;
-  letter-spacing:1px;
-}
+
+
+/* MENU */
+
 .menu{
   display:flex;
-  gap:35px;
+  align-items:center;
+
+  gap:29px;
+
   font-size:14px;
   font-weight:bold;
 }
-.contact-btn{
+
+.menu a:hover{
+  color:var(--blue);
+}
+
+.head-right{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.lang{
+  display:flex;
+  gap:3px;
+
+  background:#edf3f8;
+  padding:3px;
+
+  border-radius:8px;
+}
+
+.lang button{
+  border:0;
+  background:transparent;
+
+  padding:7px 9px;
+
+  border-radius:6px;
+
+  cursor:pointer;
+  font-weight:bold;
+  color:#63778a;
+}
+
+.lang button.active{
   background:var(--navy);
   color:#fff;
+}
+
+.contact-top{
+  background:var(--navy);
+  color:#fff;
+
+  padding:11px 17px;
+
+  border-radius:8px;
+  font-weight:bold;
+  font-size:13px;
+}
+
+
+/* HERO */
+
+.hero{
+  min-height:720px;
+
+  padding-top:78px;
+
+  display:flex;
+  align-items:center;
+
+  position:relative;
+  overflow:hidden;
+
+  background:#f4f8fb;
+}
+
+.hero-grid{
+  width:100%;
+  max-width:1320px;
+
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:.88fr 1.12fr;
+
+  align-items:center;
+  gap:50px;
+
+  padding:45px 25px;
+}
+
+.hero-text{
+  position:relative;
+  z-index:2;
+}
+
+.tag{
+  display:inline-flex;
+  align-items:center;
+
+  gap:10px;
+
+  padding:8px 13px;
+
+  background:#e9f1f7;
+
+  border-radius:7px;
+
+  color:var(--navy2);
+
+  font-size:12px;
+  font-weight:bold;
+
+  margin-bottom:18px;
+}
+
+.hero h1{
+  margin:0;
+
+  font-size:55px;
+  line-height:1.32;
+
+  color:var(--navy);
+
+  letter-spacing:-1px;
+}
+
+.hero h1 span{
+  color:var(--blue);
+}
+
+.hero p{
+  margin:20px 0 0;
+
+  max-width:580px;
+
+  line-height:1.95;
+
+  color:#566c7e;
+
+  font-size:17px;
+}
+
+.hero-actions{
+  display:flex;
+  gap:11px;
+  flex-wrap:wrap;
+
+  margin-top:27px;
+}
+
+.btn{
   padding:13px 22px;
-  border-radius:10px;
+  border-radius:8px;
+
   font-weight:bold;
 }
 
-.hero{
-  min-height:820px;
-  display:flex;
-  align-items:center;
-  background:
-    linear-gradient(90deg,rgba(255,255,255,.97) 0%,rgba(255,255,255,.8) 34%,rgba(255,255,255,.08) 67%),
-    url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2200&q=95") center/cover no-repeat;
-}
-.hero-inner{
-  width:100%;
-  max-width:1280px;
-  margin:auto;
-  padding:150px 30px 70px;
-}
-.hero-box{max-width:610px}
-.kicker{
-  color:#71869a;
-  font-size:15px;
-  margin-bottom:20px;
-}
-.hero h1{
-  font-size:60px;
-  line-height:1.35;
-  margin:0;
-  color:var(--navy);
-}
-.hero h1 span{color:var(--blue)}
-.hero p{
-  color:#405970;
-  font-size:19px;
-  line-height:2;
-  margin:20px 0 0;
-}
-.hero-actions{
-  display:flex;
-  gap:14px;
-  margin-top:28px;
-}
-.btn{
-  padding:14px 24px;
-  border-radius:9px;
-  font-weight:bold;
-}
 .btn-dark{
   background:var(--navy);
   color:#fff;
 }
+
 .btn-light{
   background:#fff;
-  border:1px solid #9eafbf;
   color:var(--navy);
+
+  border:1px solid #ccd8e2;
 }
 
-.features{
-  background:#fff;
+.hero-photo{
+  height:570px;
+
+  position:relative;
+
+  border-radius:18px;
+  overflow:hidden;
+
+  box-shadow:0 25px 70px rgba(12,43,72,.18);
 }
-.features-grid{
+
+.hero-photo:after{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:linear-gradient(
+    0deg,
+    rgba(5,24,42,.18),
+    transparent 55%
+  );
+}
+
+
+/* INTRO */
+
+.intro{
+  background:#fff;
+
+  border-bottom:1px solid var(--line);
+}
+
+.intro-grid{
   max-width:1200px;
   margin:auto;
-  padding:30px 20px;
+
+  padding:31px 20px;
+
   display:grid;
   grid-template-columns:repeat(4,1fr);
 }
-.feature{
+
+.intro-item{
   text-align:center;
-  padding:15px;
+
+  padding:13px 20px;
+
   border-left:1px solid var(--line);
 }
-.feature:last-child{border-left:0}
-.feature-icon{
-  width:58px;height:58px;
-  margin:auto auto 12px;
-  border-radius:50%;
-  background:#edf4fa;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:25px;
+
+.intro-item:last-child{
+  border-left:0;
 }
-.feature strong{
+
+.intro-item b{
   display:block;
-  font-size:17px;
+
+  font-size:16px;
+
+  color:var(--navy);
+
   margin-bottom:6px;
 }
-.feature small{color:var(--gray)}
+
+.intro-item span{
+  color:var(--muted);
+
+  font-size:12px;
+}
+
+
+/* GENERAL */
 
 .section{
-  padding:75px 18px;
+  padding:78px 20px;
 }
+
 .container{
-  max-width:1280px;
+  max-width:1320px;
   margin:auto;
 }
-.section-title{
-  text-align:center;
-  margin-bottom:35px;
+
+.heading{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+
+  gap:30px;
+
+  margin-bottom:32px;
 }
-.section-title small{
+
+.heading small{
   color:var(--blue);
   font-weight:bold;
+  letter-spacing:1px;
 }
-.section-title h2{
-  margin:8px 0;
+
+.heading h2{
+  margin:8px 0 0;
+
   font-size:38px;
   color:var(--navy);
 }
-.section-title p{
-  margin:auto;
-  max-width:700px;
-  color:var(--gray);
+
+.heading p{
+  max-width:600px;
+
+  margin:0;
+
   line-height:1.8;
+
+  color:var(--muted);
+}
+
+
+/* SERVICES */
+
+.services{
+  background:var(--soft);
+}
+
+.service-grid{
+  display:grid;
+
+  grid-template-columns:repeat(4,1fr);
+
+  gap:12px;
+}
+
+.service{
+  background:#fff;
+
+  border:1px solid var(--line);
+
+  padding:23px 20px;
+
+  min-height:150px;
+
+  border-radius:11px;
+
+  transition:.25s;
+}
+
+.service:hover{
+  transform:translateY(-4px);
+
+  box-shadow:0 13px 35px rgba(14,48,78,.08);
+}
+
+.service-number{
+  font-size:12px;
+  color:var(--blue);
+  font-weight:bold;
+}
+
+.service h3{
+  margin:25px 0 7px;
+
+  color:var(--navy);
+
+  font-size:17px;
+}
+
+.service p{
+  margin:0;
+  color:#80909d;
+  font-size:11px;
+  direction:ltr;
+}
+
+
+/* PROJECTS */
+
+.projects{
+  background:#fff;
+}
+
+.project-note{
+  background:#eff5f9;
+
+  border:1px solid #dce8f0;
+
+  color:#6c7e8d;
+
+  padding:12px 15px;
+
+  border-radius:8px;
+
+  margin-bottom:20px;
+
+  font-size:11px;
+
+  line-height:1.7;
 }
 
 .filters{
   display:flex;
-  justify-content:center;
-  gap:8px;
+
+  gap:7px;
+
   flex-wrap:wrap;
-  margin-bottom:22px;
+
+  margin-bottom:20px;
 }
+
 .filter{
-  border:1px solid var(--line);
   background:#fff;
+
   color:var(--navy);
-  padding:10px 17px;
+
+  border:1px solid #d9e2ea;
+
+  padding:9px 15px;
+
   border-radius:7px;
-  font-size:13px;
+
+  font-size:12px;
+
+  cursor:pointer;
 }
+
 .filter.active{
   background:var(--navy);
   color:#fff;
@@ -223,418 +548,1178 @@ header{
 
 .gallery{
   display:grid;
+
   grid-template-columns:repeat(4,1fr);
-  grid-auto-rows:230px;
+
+  grid-auto-rows:235px;
+
   gap:10px;
 }
+
 .project{
   position:relative;
-  border-radius:9px;
+
   overflow:hidden;
-  background:#ddd;
+
+  border-radius:10px;
+
+  background:#dce4eb;
 }
-.project.large{
+
+.project.big{
   grid-column:span 2;
   grid-row:span 2;
 }
+
 .project.wide{
   grid-column:span 2;
 }
+
+.project img{
+  transition:.4s;
+}
+
+.project:hover img{
+  transform:scale(1.05);
+}
+
 .project:after{
   content:"";
+
   position:absolute;
   inset:0;
-  background:linear-gradient(0deg,rgba(7,28,50,.72),transparent 58%);
+
+  background:linear-gradient(
+    0deg,
+    rgba(4,24,42,.76),
+    transparent 57%
+  );
 }
-.project span{
+
+.project-info{
   position:absolute;
-  right:14px;
-  bottom:12px;
+
   z-index:2;
+
+  right:14px;
+  left:14px;
+  bottom:13px;
+
   color:#fff;
-  font-weight:bold;
+}
+
+.project-info strong{
+  display:block;
+
   font-size:14px;
 }
-.project img{transition:.35s}
-.project:hover img{transform:scale(1.04)}
 
-.stats{
+.project-info small{
+  font-size:9px;
+
+  color:#dce8f0;
+
+  direction:ltr;
+}
+
+
+/* CTA */
+
+.cta{
+  padding:65px 20px;
+
   background:var(--navy);
+
   color:#fff;
 }
-.stats-grid{
-  max-width:1100px;
+
+.cta-inner{
+  max-width:1050px;
   margin:auto;
-  padding:35px 20px;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
+
   text-align:center;
-}
-.stat{
-  border-left:1px solid rgba(255,255,255,.18);
-}
-.stat:last-child{border-left:0}
-.stat b{
-  display:block;
-  font-size:34px;
-}
-.stat span{
-  color:#d4e0ea;
-  font-size:13px;
 }
 
-.sectors{
+.cta h2{
+  margin:0;
+
+  font-size:36px;
+}
+
+.cta p{
+  margin:15px auto 25px;
+
+  max-width:600px;
+
+  line-height:1.8;
+
+  color:#cbd9e5;
+}
+
+.cta .btn{
+  display:inline-block;
+
   background:#fff;
-}
-.sector-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
-}
-.sector{
-  padding:25px;
-  border:1px solid var(--line);
-  border-radius:10px;
-  text-align:center;
-}
-.sector b{
-  display:block;
-  margin-top:10px;
+
   color:var(--navy);
 }
 
-footer{
-  background:#071d35;
-  color:#fff;
-}
-.footer-main{
-  max-width:1280px;
-  margin:auto;
-  padding:35px 20px;
-  display:grid;
-  grid-template-columns:1.3fr 2fr;
-  gap:30px;
-  align-items:center;
-}
-.footer-contact{
-  display:flex;
-  gap:22px;
-  flex-wrap:wrap;
-  color:#d9e4ed;
-  font-size:13px;
-}
-.footer-bottom{
-  border-top:1px solid rgba(255,255,255,.1);
-  padding:15px 20px;
-  text-align:center;
-  color:#8094a7;
-  font-size:10px;
+
+/* CONTACT */
+
+.contact{
+  background:#f6f8fa;
 }
 
-@media(max-width:900px){
-  .menu{display:none}
-  .hero h1{font-size:44px}
-  .features-grid{grid-template-columns:1fr 1fr}
-  .gallery{grid-template-columns:1fr 1fr}
-  .project.large,.project.wide{
+.contact-grid{
+  display:grid;
+
+  grid-template-columns:repeat(4,1fr);
+
+  gap:10px;
+}
+
+.contact-card{
+  background:#fff;
+
+  border:1px solid var(--line);
+
+  padding:22px;
+
+  border-radius:10px;
+
+  min-height:125px;
+}
+
+.contact-card small{
+  color:#84939f;
+}
+
+.contact-card strong{
+  display:block;
+
+  color:var(--navy);
+
+  margin:13px 0 6px;
+}
+
+.contact-card span{
+  color:#607586;
+
+  font-size:13px;
+}
+
+
+/* FOOTER */
+
+footer{
+  background:#06192c;
+
+  color:#fff;
+
+  padding:27px 20px;
+}
+
+.footer{
+  max-width:1320px;
+
+  margin:auto;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:20px;
+}
+
+.footer small{
+  color:#8198ac;
+}
+
+.cr{
+  font-size:9px;
+
+  margin-top:5px;
+
+  color:#597388;
+}
+
+
+/* ENGLISH */
+
+body.eng .heading,
+body.eng .hero-text{
+  direction:ltr;
+  text-align:left;
+}
+
+body.eng .project-info{
+  direction:ltr;
+  text-align:left;
+}
+
+
+/* TABLET */
+
+@media(max-width:950px){
+
+  .menu{
+    display:none;
+  }
+
+  .hero-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:45px;
+  }
+
+  .hero-photo{
+    height:430px;
+  }
+
+  .intro-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .service-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .gallery{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .project.big,
+  .project.wide{
     grid-column:auto;
     grid-row:auto;
   }
-  .stats-grid{grid-template-columns:1fr 1fr}
-  .sector-grid{grid-template-columns:1fr 1fr}
-  .footer-main{grid-template-columns:1fr}
+
+  .contact-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
 }
 
+
+/* MOBILE */
+
 @media(max-width:560px){
-  .nav{height:75px;padding:0 14px}
-  .contact-btn{display:none}
-  .brand strong{font-size:14px}
-  .brand small{display:none}
-  .logo{width:45px;height:42px}
-  .logo:before,.logo:after{
-    left:17px;width:9px;height:43px;
+
+  .nav{
+    height:70px;
+
+    padding:0 13px;
   }
+
+  .contact-top{
+    display:none;
+  }
+
+  .logo{
+    width:42px;
+    height:42px;
+  }
+
+  .logo:before,
+  .logo:after{
+    left:17px;
+    width:8px;
+    height:41px;
+  }
+
+  .brand strong{
+    font-size:13px;
+  }
+
+  .brand small{
+    display:none;
+  }
+
   .hero{
-    min-height:650px;
-    background-position:58% center;
+    padding-top:70px;
   }
-  .hero-inner{padding:110px 17px 45px}
-  .hero h1{font-size:35px}
-  .hero p{font-size:15px}
-  .features-grid{padding:20px 8px}
-  .feature{padding:12px 6px}
-  .section{padding:55px 12px}
-  .section-title h2{font-size:29px}
+
+  .hero-grid{
+    padding:35px 15px 28px;
+
+    gap:30px;
+  }
+
+  .hero h1{
+    font-size:34px;
+  }
+
+  .hero p{
+    font-size:15px;
+  }
+
+  .hero-photo{
+    height:300px;
+
+    border-radius:12px;
+  }
+
+  .intro-grid{
+    padding:18px 8px;
+  }
+
+  .intro-item{
+    padding:14px 5px;
+  }
+
+  .section{
+    padding:55px 12px;
+  }
+
+  .heading{
+    display:block;
+  }
+
+  .heading h2{
+    font-size:29px;
+
+    margin-bottom:10px;
+  }
+
+  .service-grid{
+    grid-template-columns:1fr 1fr;
+
+    gap:8px;
+  }
+
+  .service{
+    min-height:140px;
+
+    padding:17px 12px;
+  }
+
+  .service h3{
+    font-size:14px;
+  }
+
   .gallery{
     grid-template-columns:1fr 1fr;
-    grid-auto-rows:160px;
-    gap:7px;
+
+    grid-auto-rows:165px;
+
+    gap:6px;
   }
-  .project span{font-size:11px}
-  .stats-grid{grid-template-columns:1fr 1fr}
-  .sector-grid{grid-template-columns:1fr 1fr}
+
+  .project-info{
+    right:9px;
+    bottom:9px;
+  }
+
+  .project-info strong{
+    font-size:11px;
+  }
+
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer{
+    flex-direction:column;
+    text-align:center;
+  }
+
 }
+
 </style>
 </head>
 
 <body>
 
+
 <header>
-  <div class="nav">
-    <div class="brand">
-      <div class="logo"></div>
-      <div>
-        <strong>إكسل وإنجاز للمقاولات</strong>
-        <small>EXCEL & INJAZ CONTRACTING</small>
-      </div>
-    </div>
 
-    <nav class="menu">
-      <a href="#home">الرئيسية</a>
-      <a href="#projects">أعمالنا</a>
-      <a href="#services">خدماتنا</a>
-      <a href="#contact">من نحن</a>
-    </nav>
+<div class="nav">
 
-    <a href="https://wa.me/966554726980" class="contact-btn" target="_blank">
-      تواصل معنا
-    </a>
-  </div>
+<div class="brand">
+
+<div class="logo"></div>
+
+<div>
+
+<strong>
+<span class="ar">إكسل وإنجاز للمقاولات</span>
+<span class="en">Excel & Injaz Contracting</span>
+</strong>
+
+<small>EXCEL & INJAZ CONTRACTING</small>
+
+</div>
+
+</div>
+
+
+<nav class="menu">
+
+<a href="#home">
+<span class="ar">الرئيسية</span>
+<span class="en">Home</span>
+</a>
+
+<a href="#services">
+<span class="ar">خدماتنا</span>
+<span class="en">Services</span>
+</a>
+
+<a href="#projects">
+<span class="ar">مجالات أعمالنا</span>
+<span class="en">Our Work</span>
+</a>
+
+<a href="#contact">
+<span class="ar">تواصل معنا</span>
+<span class="en">Contact</span>
+</a>
+
+</nav>
+
+
+<div class="head-right">
+
+<div class="lang">
+
+<button id="arBtn" class="active">AR</button>
+<button id="enBtn">EN</button>
+
+</div>
+
+<a
+href="https://wa.me/966554726980"
+target="_blank"
+class="contact-top">
+
+<span class="ar">طلب عرض سعر</span>
+<span class="en">Request Quote</span>
+
+</a>
+
+</div>
+
+</div>
+
 </header>
 
+
 <section class="hero" id="home">
-  <div class="hero-inner">
-    <div class="hero-box">
-      <div class="kicker">مقاولات • حديد • إنشاءات معدنية</div>
 
-      <h1>
-        شريكك في بناء<br>
-        مشاريعك <span>بثقة</span>
-      </h1>
+<div class="hero-grid">
 
-      <p>
-        ننفذ أعمال الحديد والإنشاءات المعدنية بجودة عالية
-        ودقة في التنفيذ، لنحقق لك مشاريع متينة تدوم.
-      </p>
+<div class="hero-text">
 
-      <div class="hero-actions">
-        <a href="https://wa.me/966554726980" class="btn btn-dark" target="_blank">
-          تواصل معنا
-        </a>
+<div class="tag">
 
-        <a href="#projects" class="btn btn-light">
-          أعمالنا
-        </a>
-      </div>
-    </div>
-  </div>
+<span class="ar">
+مقاولات • أعمال حديد • إنشاءات معدنية
+</span>
+
+<span class="en">
+CONTRACTING • STEEL • METAL WORKS
+</span>
+
+</div>
+
+
+<h1>
+
+<span class="ar">
+حلول حديد<br>
+<span>للمشاريع الكبيرة والصغيرة</span>
+</span>
+
+<span class="en">
+Steel Solutions<br>
+<span>For Projects Of Every Scale</span>
+</span>
+
+</h1>
+
+
+<p>
+
+<span class="ar">
+إكسل وإنجاز للمقاولات تقدم حلولًا متكاملة في أعمال الحدادة
+والإنشاءات المعدنية والهياكل والهناجر والمستودعات،
+بالإضافة إلى مختلف الأعمال الحديدية حسب احتياج المشروع والمخططات.
+</span>
+
+<span class="en">
+Excel & Injaz Contracting provides comprehensive steel
+and metal construction solutions for projects of different sizes.
+</span>
+
+</p>
+
+
+<div class="hero-actions">
+
+<a
+href="#projects"
+class="btn btn-dark">
+
+<span class="ar">استعرض مجالات الأعمال</span>
+<span class="en">View Our Work</span>
+
+</a>
+
+
+<a
+href="https://wa.me/966554726980"
+target="_blank"
+class="btn btn-light">
+
+<span class="ar">تواصل معنا</span>
+<span class="en">Contact Us</span>
+
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-photo">
+
+<img
+src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=92"
+alt="Steel construction">
+
+</div>
+
+</div>
+
 </section>
 
-<section class="features">
-  <div class="features-grid">
 
-    <div class="feature">
-      <div class="feature-icon">♢</div>
-      <strong>جودة عالية</strong>
-      <small>مواد ممتازة وتنفيذ احترافي</small>
-    </div>
+<section class="intro">
 
-    <div class="feature">
-      <div class="feature-icon">◷</div>
-      <strong>الالتزام بالمواعيد</strong>
-      <small>ننجز أعمالك في الوقت المحدد</small>
-    </div>
+<div class="intro-grid">
 
-    <div class="feature">
-      <div class="feature-icon">⚙</div>
-      <strong>خبرة في المجال</strong>
-      <small>تنفيذ أعمال حديد متنوعة</small>
-    </div>
+<div class="intro-item">
+<b>جودة التنفيذ</b>
+<span>اهتمام بالتفاصيل وجودة العمل</span>
+</div>
 
-    <div class="feature">
-      <div class="feature-icon">⌂</div>
-      <strong>حلول متكاملة</strong>
-      <small>من التنفيذ إلى التسليم</small>
-    </div>
+<div class="intro-item">
+<b>حلول للمشاريع</b>
+<span>أعمال صغيرة ومتوسطة وكبيرة</span>
+</div>
 
-  </div>
+<div class="intro-item">
+<b>أعمال حسب المخططات</b>
+<span>تنفيذ وفق متطلبات المشروع</span>
+</div>
+
+<div class="intro-item">
+<b>تنوع الأعمال</b>
+<span>مجموعة واسعة من أعمال الحديد</span>
+</div>
+
+</div>
+
 </section>
 
-<section class="section" id="projects">
-  <div class="container">
 
-    <div class="section-title">
-      <small>أعمالنا</small>
-      <h2>مشاريع وأعمال متنوعة</h2>
-      <p>
-        نماذج توضيحية واقعية لمجالات أعمال الحديد والإنشاءات المعدنية،
-        من المشاريع الصغيرة حتى المشاريع الكبيرة.
-      </p>
-    </div>
+<section class="section services" id="services">
 
-    <div class="filters">
-      <button class="filter active">الكل</button>
-      <button class="filter">مستودعات وهناجر</button>
-      <button class="filter">هياكل معدنية</button>
-      <button class="filter">مظلات</button>
-      <button class="filter">أسوار وبوابات</button>
-      <button class="filter">سلالم وهاندريل</button>
-      <button class="filter">تأسيس مصاعد</button>
-    </div>
+<div class="container">
 
-    <div class="gallery">
 
-      <div class="project large">
-        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1400&q=90">
-        <span>هياكل معدنية لمشاريع كبيرة</span>
-      </div>
+<div class="heading">
 
-      <div class="project">
-        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=900&q=90">
-        <span>مستودعات وهناجر</span>
-      </div>
+<div>
 
-      <div class="project">
-        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=90">
-        <span>إنشاءات معدنية</span>
-      </div>
+<small>OUR SERVICES</small>
 
-      <div class="project">
-        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=90">
-        <span>واجهات معدنية</span>
-      </div>
+<h2>
+<span class="ar">جميع أعمال الحدادة</span>
+<span class="en">Steel & Metal Services</span>
+</h2>
 
-      <div class="project">
-        <img src="https://images.unsplash.com/photo-1505843513577-22bb7d21e455?auto=format&fit=crop&w=900&q=90">
-        <span>سلالم وهاندريل</span>
-      </div>
+</div>
 
-      <div class="project wide">
-        <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1200&q=90">
-        <span>هناجر ومبانٍ معدنية</span>
-      </div>
+<p>
 
-      <div class="project">
-        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=90">
-        <span>أسوار وبوابات</span>
-      </div>
+<span class="ar">
+مجموعة واسعة من أعمال الحديد والحدادة والإنشاءات المعدنية
+لتغطية متطلبات المشاريع المختلفة.
+</span>
 
-      <div class="project">
-        <img src="https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?auto=format&fit=crop&w=900&q=90">
-        <span>مظلات معدنية</span>
-      </div>
+<span class="en">
+A wide range of steel and metal works for different project requirements.
+</span>
 
-      <div class="project">
-        <img src="https://images.unsplash.com/photo-1508450859948-4e04fabaa4ea?auto=format&fit=crop&w=900&q=90">
-        <span>أعمال صغيرة ومتوسطة</span>
-      </div>
+</p>
 
-      <div class="project">
-        <img src="https://images.unsplash.com/photo-1531835551805-16d864c8d311?auto=format&fit=crop&w=900&q=90">
-        <span>تفاصيل حديدية</span>
-      </div>
+</div>
 
-      <div class="project">
-        <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=900&q=90">
-        <span>مشاريع تجارية</span>
-      </div>
 
-      <div class="project">
-        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=90">
-        <span>أعمال داخلية</span>
-      </div>
+<div class="service-grid">
 
-    </div>
 
-  </div>
+<div class="service">
+<div class="service-number">01</div>
+<h3>الهياكل المعدنية</h3>
+<p>STEEL STRUCTURES</p>
+</div>
+
+<div class="service">
+<div class="service-number">02</div>
+<h3>الهناجر والمستودعات</h3>
+<p>HANGARS & WAREHOUSES</p>
+</div>
+
+<div class="service">
+<div class="service-number">03</div>
+<h3>الجسور الحديدية</h3>
+<p>STEEL BRIDGES</p>
+</div>
+
+<div class="service">
+<div class="service-number">04</div>
+<h3>المنصات الحديدية</h3>
+<p>STEEL PLATFORMS</p>
+</div>
+
+<div class="service">
+<div class="service-number">05</div>
+<h3>السلالم الحديدية</h3>
+<p>STEEL STAIRS</p>
+</div>
+
+<div class="service">
+<div class="service-number">06</div>
+<h3>الهاندريل والدرابزين</h3>
+<p>HANDRAILS</p>
+</div>
+
+<div class="service">
+<div class="service-number">07</div>
+<h3>المظلات المعدنية</h3>
+<p>STEEL CANOPIES</p>
+</div>
+
+<div class="service">
+<div class="service-number">08</div>
+<h3>الأسوار الحديدية</h3>
+<p>STEEL FENCES</p>
+</div>
+
+<div class="service">
+<div class="service-number">09</div>
+<h3>البوابات الحديدية</h3>
+<p>STEEL GATES</p>
+</div>
+
+<div class="service">
+<div class="service-number">10</div>
+<h3>الأبواب الحديدية</h3>
+<p>STEEL DOORS</p>
+</div>
+
+<div class="service">
+<div class="service-number">11</div>
+<h3>الواجهات المعدنية</h3>
+<p>METAL FACADES</p>
+</div>
+
+<div class="service">
+<div class="service-number">12</div>
+<h3>تأسيس المصاعد</h3>
+<p>ELEVATOR STEEL WORKS</p>
+</div>
+
+<div class="service">
+<div class="service-number">13</div>
+<h3>مظلات المعدات</h3>
+<p>EQUIPMENT SHELTERS</p>
+</div>
+
+<div class="service">
+<div class="service-number">14</div>
+<h3>غرف وهياكل المعدات</h3>
+<p>EQUIPMENT STRUCTURES</p>
+</div>
+
+<div class="service">
+<div class="service-number">15</div>
+<h3>منصات التحميل</h3>
+<p>LOADING PLATFORMS</p>
+</div>
+
+<div class="service">
+<div class="service-number">16</div>
+<h3>حواجز الحماية</h3>
+<p>SAFETY BARRIERS</p>
+</div>
+
+<div class="service">
+<div class="service-number">17</div>
+<h3>شبك الحماية</h3>
+<p>PROTECTION MESH</p>
+</div>
+
+<div class="service">
+<div class="service-number">18</div>
+<h3>قواعد ومساند حديدية</h3>
+<p>STEEL SUPPORTS</p>
+</div>
+
+<div class="service">
+<div class="service-number">19</div>
+<h3>رفوف المستودعات</h3>
+<p>WAREHOUSE RACKS</p>
+</div>
+
+<div class="service">
+<div class="service-number">20</div>
+<h3>أعمال اللحام والقص</h3>
+<p>WELDING & CUTTING</p>
+</div>
+
+<div class="service">
+<div class="service-number">21</div>
+<h3>أعمال حديد زخرفية</h3>
+<p>DECORATIVE METAL WORKS</p>
+</div>
+
+<div class="service">
+<div class="service-number">22</div>
+<h3>أعمال حسب المخططات</h3>
+<p>CUSTOM STEEL WORKS</p>
+</div>
+
+
+</div>
+
+</div>
+
 </section>
 
-<section class="stats">
-  <div class="stats-grid">
 
-    <div class="stat">
-      <b>100+</b>
-      <span>مشروع متنوع</span>
-    </div>
+<section class="section projects" id="projects">
 
-    <div class="stat">
-      <b>10+</b>
-      <span>سنوات خبرة</span>
-    </div>
+<div class="container">
 
-    <div class="stat">
-      <b>50+</b>
-      <span>عميل وشريك نجاح</span>
-    </div>
 
-    <div class="stat">
-      <b>98%</b>
-      <span>رضا العملاء</span>
-    </div>
+<div class="heading">
 
-  </div>
+<div>
+
+<small>WORK GALLERY</small>
+
+<h2>
+<span class="ar">مجالات أعمالنا</span>
+<span class="en">Work Gallery</span>
+</h2>
+
+</div>
+
+<p>
+
+<span class="ar">
+أمثلة مرئية على مجالات العمل من المشاريع المعدنية الكبيرة
+إلى الأعمال الحديدية المتخصصة والتفاصيل الصغيرة.
+</span>
+
+<span class="en">
+Visual examples covering large steel construction
+and smaller specialized metal works.
+</span>
+
+</p>
+
+</div>
+
+
+<div class="project-note">
+الصور المعروضة صور فوتوغرافية توضيحية لمجالات العمل وليست توثيقًا لمشاريع منفذة باسم المؤسسة. يمكن استبدالها لاحقًا بصور مشاريع إكسل وإنجاز الفعلية.
+</div>
+
+
+<div class="filters">
+
+<button class="filter active">جميع الأعمال</button>
+<button class="filter">مشاريع كبيرة</button>
+<button class="filter">هناجر</button>
+<button class="filter">هياكل معدنية</button>
+<button class="filter">مظلات</button>
+<button class="filter">سلالم</button>
+<button class="filter">أسوار وبوابات</button>
+
+</div>
+
+
+<div class="gallery">
+
+
+<div class="project big">
+<img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1500&q=90">
+<div class="project-info">
+<strong>مشاريع هياكل معدنية كبيرة</strong>
+<small>LARGE STEEL STRUCTURES</small>
+</div>
+</div>
+
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=900&q=88">
+<div class="project-info">
+<strong>هناجر ومستودعات</strong>
+<small>HANGARS & WAREHOUSES</small>
+</div>
+</div>
+
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=88">
+<div class="project-info">
+<strong>إنشاءات حديدية</strong>
+<small>STEEL CONSTRUCTION</small>
+</div>
+</div>
+
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=88">
+<div class="project-info">
+<strong>واجهات وهياكل</strong>
+<small>METAL FACADES</small>
+</div>
+</div>
+
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=900&q=88">
+<div class="project-info">
+<strong>مشاريع تجارية</strong>
+<small>COMMERCIAL PROJECTS</small>
+</div>
+</div>
+
+
+<div class="project wide">
+<img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1200&q=88">
+<div class="project-info">
+<strong>مبانٍ وهياكل معدنية</strong>
+<small>STEEL BUILDINGS</small>
+</div>
+</div>
+
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1505843513577-22bb7d21e455?auto=format&fit=crop&w=900&q=88">
+<div class="project-info">
+<strong>سلالم معدنية</strong>
+<small>STEEL STAIRS</small>
+</div>
+</div>
+
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?auto=format&fit=crop&w=900&q=88">
+<div class="project-info">
+<strong>مظلات وهياكل خارجية</strong>
+<small>STEEL CANOPIES</small>
+</div>
+</div>
+
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=88">
+<div class="project-info">
+<strong>بوابات وأسوار</strong>
+<small>GATES & FENCES</small>
+</div>
+</div>
+
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1508450859948-4e04fabaa4ea?auto=format&fit=crop&w=900&q=88">
+<div class="project-info">
+<strong>أعمال حديد متنوعة</strong>
+<small>GENERAL STEEL WORKS</small>
+</div>
+</div>
+
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1531835551805-16d864c8d311?auto=format&fit=crop&w=900&q=88">
+<div class="project-info">
+<strong>تفاصيل معدنية</strong>
+<small>METAL DETAILS</small>
+</div>
+</div>
+
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=88">
+<div class="project-info">
+<strong>أعمال حديد داخلية</strong>
+<small>INTERIOR METAL WORKS</small>
+</div>
+</div>
+
+
+<div class="project wide">
+<img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1300&q=86">
+<div class="project-info">
+<strong>مشاريع صناعية وإنشائية</strong>
+<small>INDUSTRIAL PROJECTS</small>
+</div>
+</div>
+
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=900&q=86">
+<div class="project-info">
+<strong>أعمال دعم وهياكل</strong>
+<small>STEEL SUPPORTS</small>
+</div>
+</div>
+
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=86">
+<div class="project-info">
+<strong>قواعد حديدية</strong>
+<small>STEEL BASES</small>
+</div>
+</div>
+
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=86">
+<div class="project-info">
+<strong>منصات وممرات معدنية</strong>
+<small>STEEL PLATFORMS</small>
+</div>
+</div>
+
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=86">
+<div class="project-info">
+<strong>واجهات تجارية</strong>
+<small>COMMERCIAL FACADES</small>
+</div>
+</div>
+
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1505843513577-22bb7d21e455?auto=format&fit=crop&w=900&q=86">
+<div class="project-info">
+<strong>درابزين وهاندريل</strong>
+<small>HANDRAILS</small>
+</div>
+</div>
+
+
+</div>
+
+</div>
+
 </section>
 
-<section class="section sectors">
-  <div class="container">
 
-    <div class="section-title">
-      <h2>قطاعات نعمل معها</h2>
-    </div>
+<section class="cta">
 
-    <div class="sector-grid">
+<div class="cta-inner">
 
-      <div class="sector">
-        <div>⌂</div>
-        <b>القطاع السكني</b>
-      </div>
+<h2>
+<span class="ar">عندك مشروع يحتاج أعمال حديد؟</span>
+<span class="en">Have a Steel Project?</span>
+</h2>
 
-      <div class="sector">
-        <div>🏭</div>
-        <b>القطاع الصناعي</b>
-      </div>
+<p>
 
-      <div class="sector">
-        <div>▣</div>
-        <b>القطاع التجاري</b>
-      </div>
+<span class="ar">
+تواصل معنا لمناقشة متطلبات المشروع والأعمال المطلوبة.
+</span>
 
-      <div class="sector">
-        <div>🏢</div>
-        <b>المشاريع العامة</b>
-      </div>
+<span class="en">
+Contact us to discuss your project requirements.
+</span>
 
-    </div>
+</p>
 
-  </div>
+<a
+href="https://wa.me/966554726980"
+target="_blank"
+class="btn">
+
+<span class="ar">تواصل عبر WhatsApp</span>
+<span class="en">Contact on WhatsApp</span>
+
+</a>
+
+</div>
+
 </section>
 
-<footer id="contact">
 
-  <div class="footer-main">
+<section class="section contact" id="contact">
 
-    <div class="brand">
-      <div class="logo"></div>
-      <div>
-        <strong>إكسل وإنجاز للمقاولات</strong>
-        <small>EXCEL & INJAZ CONTRACTING</small>
-      </div>
-    </div>
+<div class="container">
 
-    <div class="footer-contact">
-      <span>📍 الرياض – حي السلي</span>
-      <span>☎ 0551889096</span>
-      <span>WhatsApp 0554726980</span>
-      <span>✉ excel1lnjaz@gmail.com</span>
-    </div>
 
-  </div>
+<div class="heading">
 
-  <div class="footer-bottom">
-    جميع الحقوق محفوظة © 2026 — السجل التجاري: 7038272063
-  </div>
+<div>
+
+<small>CONTACT</small>
+
+<h2>
+<span class="ar">تواصل معنا</span>
+<span class="en">Contact Us</span>
+</h2>
+
+</div>
+
+</div>
+
+
+<div class="contact-grid">
+
+
+<div class="contact-card">
+
+<small>LOCATION</small>
+
+<strong>الموقع</strong>
+
+<span>الرياض – حي السلي</span>
+
+</div>
+
+
+<a href="tel:0551889096" class="contact-card">
+
+<small>PROJECTS MANAGER</small>
+
+<strong>مسؤول المشاريع</strong>
+
+<span>0551889096</span>
+
+</a>
+
+
+<a
+href="https://wa.me/966554726980"
+target="_blank"
+class="contact-card">
+
+<small>WHATSAPP</small>
+
+<strong>واتساب</strong>
+
+<span>0554726980</span>
+
+</a>
+
+
+<a
+href="mailto:excel1lnjaz@gmail.com"
+class="contact-card">
+
+<small>EMAIL</small>
+
+<strong>البريد الإلكتروني</strong>
+
+<span>excel1lnjaz@gmail.com</span>
+
+</a>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<div class="footer">
+
+<div>
+
+<strong>إكسل وإنجاز للمقاولات</strong>
+
+<br>
+
+<small>EXCEL & INJAZ CONTRACTING</small>
+
+</div>
+
+
+<div>
+
+<small>© 2026 جميع الحقوق محفوظة</small>
+
+<div class="cr">
+السجل التجاري: 7038272063
+</div>
+
+</div>
+
+</div>
 
 </footer>
+
+
+<script>
+
+const arBtn =
+document.getElementById("arBtn");
+
+const enBtn =
+document.getElementById("enBtn");
+
+
+function setLang(lang){
+
+if(lang === "en"){
+
+document.body.classList.add("eng");
+
+document.documentElement.lang = "en";
+document.documentElement.dir = "ltr";
+
+enBtn.classList.add("active");
+arBtn.classList.remove("active");
+
+}else{
+
+document.body.classList.remove("eng");
+
+document.documentElement.lang = "ar";
+document.documentElement.dir = "rtl";
+
+arBtn.classList.add("active");
+enBtn.classList.remove("active");
+
+}
+
+localStorage.setItem("siteLanguage",lang);
+
+}
+
+
+arBtn.onclick = ()=>setLang("ar");
+enBtn.onclick = ()=>setLang("en");
+
+setLang(
+localStorage.getItem("siteLanguage") || "ar"
+);
+
+</script>
 
 </body>
 </html>
