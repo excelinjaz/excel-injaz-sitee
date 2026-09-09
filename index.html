@@ -7,7 +7,8 @@
 
 <title>إكسل وإنجاز للمقاولات | Excel & Injaz Contracting</title>
 
-<meta name="description" content="إكسل وإنجاز للمقاولات - أعمال الحديد والحدادة والمنشآت والهياكل المعدنية.">
+<meta name="description"
+content="إكسل وإنجاز للمقاولات - حلول متكاملة لجميع أعمال الحديد والحدادة والهياكل والمنشآت المعدنية.">
 
 <style>
 
@@ -86,12 +87,12 @@ header{
   flex:1;
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:11px;
 }
 
 .logo{
-  width:39px;
-  height:39px;
+  width:37px;
+  height:37px;
   position:relative;
   flex:none;
 }
@@ -101,9 +102,9 @@ header{
   content:"";
   position:absolute;
   top:2px;
-  left:16px;
+  left:15px;
   width:7px;
-  height:35px;
+  height:33px;
   border-radius:2px;
 }
 
@@ -119,13 +120,17 @@ header{
 
 .brand-name strong{
   display:block;
-  font-size:17px;
+  font-size:15px;
+  font-weight:700;
+  line-height:1.4;
 }
 
 .brand-name small{
+  display:block;
+  margin-top:2px;
   color:#899499;
-  font-size:9px;
-  letter-spacing:1.4px;
+  font-size:8px;
+  letter-spacing:1.2px;
 }
 
 nav{
@@ -167,8 +172,8 @@ nav a:hover{
     linear-gradient(
       90deg,
       rgba(7,11,13,.97) 0%,
-      rgba(7,11,13,.80) 48%,
-      rgba(7,11,13,.30) 100%
+      rgba(7,11,13,.82) 48%,
+      rgba(7,11,13,.32) 100%
     ),
     url("https://iqrorwxhpikllr5q.ldycdn.com/cloud/pkBpiKlkRllSlknirjmpj/Image_2025-08-18_161030_191.jpg")
     center/cover no-repeat;
@@ -187,33 +192,34 @@ nav a:hover{
 .hero-content{
   position:relative;
   z-index:2;
-  max-width:720px;
+  max-width:760px;
   padding:90px 0 120px;
 }
 
 .hero-brand{
   display:flex;
   align-items:center;
-  gap:13px;
+  gap:11px;
   margin-bottom:25px;
 }
 
 .hero-brand .logo{
-  width:49px;
-  height:49px;
+  width:38px;
+  height:38px;
 }
 
 .hero-brand .logo:before,
 .hero-brand .logo:after{
-  left:20px;
-  height:45px;
-  width:8px;
+  left:15px;
+  height:35px;
+  width:7px;
 }
 
 .hero-company{
-  color:#bec6c9;
-  font-size:14px;
-  font-weight:bold;
+  color:#aeb8bc;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.1px;
 }
 
 .kicker{
@@ -223,8 +229,9 @@ nav a:hover{
 }
 
 .hero h1{
-  font-size:50px;
-  line-height:1.2;
+  max-width:760px;
+  font-size:48px;
+  line-height:1.25;
   margin:14px 0 18px;
 }
 
@@ -241,11 +248,11 @@ nav a:hover{
 }
 
 .hero p{
-  max-width:680px;
+  max-width:720px;
   margin:0;
   color:#c6ced1;
-  font-size:17px;
-  line-height:1.95;
+  font-size:16px;
+  line-height:2;
 }
 
 .promise{
@@ -307,7 +314,7 @@ section{
 }
 
 .section-head{
-  max-width:720px;
+  max-width:780px;
   margin:0 auto 38px;
   text-align:center;
 }
@@ -325,7 +332,7 @@ section{
 
 .section-head p{
   color:#aeb8bc;
-  line-height:1.8;
+  line-height:1.9;
   margin:0;
   font-size:15px;
 }
@@ -383,7 +390,7 @@ section{
 }
 
 .work-info h3{
-  font-size:24px;
+  font-size:23px;
   margin:0 0 8px;
 }
 
@@ -438,20 +445,6 @@ body.english .work-info{
   margin:0;
 }
 
-/* CR */
-
-.cr-small{
-  margin-top:20px;
-  font-size:10px;
-  font-weight:400;
-  color:#737b7e !important;
-  opacity:.72;
-}
-
-.cr-small span{
-  color:#737b7e !important;
-}
-
 /* SERVICES */
 
 .services-section{
@@ -465,7 +458,7 @@ body.english .work-info{
 }
 
 .service{
-  min-height:135px;
+  min-height:138px;
   padding:22px 20px;
   border-radius:9px;
   border:1px solid rgba(255,255,255,.055);
@@ -497,7 +490,7 @@ body.english .service:before{
   margin:0;
   color:#929da1;
   font-size:12px;
-  line-height:1.7;
+  line-height:1.75;
 }
 
 /* CONTACT */
@@ -550,11 +543,18 @@ body.english .service:before{
 
 footer{
   text-align:center;
-  padding:25px 15px;
+  padding:25px 15px 20px;
   background:#070b0d;
   border-top:1px solid rgba(255,255,255,.04);
   color:#798387;
   font-size:11px;
+}
+
+.footer-cr{
+  margin-top:9px;
+  color:#656f73;
+  font-size:9px;
+  font-weight:400;
 }
 
 /* MOBILE */
@@ -590,7 +590,7 @@ footer{
   }
 
   .brand-name strong{
-    font-size:14px;
+    font-size:13px;
   }
 
   .brand-name small{
@@ -598,14 +598,14 @@ footer{
   }
 
   .logo{
-    width:34px;
-    height:34px;
+    width:33px;
+    height:33px;
   }
 
   .logo:before,
   .logo:after{
-    left:14px;
-    height:31px;
+    left:13px;
+    height:30px;
     width:6px;
   }
 
@@ -615,7 +615,7 @@ footer{
   }
 
   .hero{
-    min-height:580px;
+    min-height:590px;
     background-position:center;
   }
 
@@ -623,12 +623,21 @@ footer{
     padding:80px 0 110px;
   }
 
+  .hero-brand{
+    margin-bottom:21px;
+  }
+
+  .hero-company{
+    font-size:11px;
+  }
+
   .hero h1{
-    font-size:33px;
+    font-size:32px;
   }
 
   .hero p{
     font-size:14px;
+    line-height:1.9;
   }
 
   section{
@@ -662,9 +671,7 @@ footer{
 </style>
 </head>
 
-
 <body>
-
 
 <header>
 
@@ -686,7 +693,6 @@ footer{
     </div>
 
   </div>
-
 
   <nav>
 
@@ -717,10 +723,7 @@ footer{
 
   </nav>
 
-
-  <button class="lang" onclick="toggleLanguage()">
-    English
-  </button>
+  <button class="lang" onclick="toggleLanguage()">English</button>
 
 </div>
 
@@ -744,65 +747,44 @@ footer{
 
   </div>
 
-
   <div class="kicker">
-
-    <span class="ar">
-      متخصصون في أعمال الحديد والإنشاءات المعدنية
-    </span>
-
-    <span class="en">
-      Steel & Metal Construction Specialists
-    </span>
-
+    <span class="ar">حلول متخصصة في أعمال الحديد والإنشاءات المعدنية</span>
+    <span class="en">Specialized Steel & Metal Construction Solutions</span>
   </div>
 
-
   <h1>
-
     <span class="ar">
-      أعمال حديد متكاملة
-      <em>للمشاريع</em>
+      حلول متكاملة
+      <em>لجميع أعمال الحديد والحدادة</em>
     </span>
 
     <span class="en">
-      Complete Steel Solutions
-      <em>For Projects</em>
+      Complete Solutions
+      <em>For Steel & Metal Works</em>
     </span>
-
   </h1>
 
-
   <div class="hero-line"></div>
-
 
   <p>
 
     <span class="ar">
-      تنفيذ وتصنيع وتركيب أعمال الحديد والحدادة والهياكل المعدنية
+      تنفيذ وتصنيع وتركيب أعمال الحديد والحدادة والهياكل والمنشآت المعدنية
       للمشاريع السكنية والتجارية والصناعية،
-      وفق المخططات ومتطلبات الموقع.
+      وفق المخططات ومتطلبات المشروع والموقع.
     </span>
 
     <span class="en">
-      Fabrication and installation of steel and metal works
+      Fabrication and installation of steel, metal and structural works
       for residential, commercial and industrial projects,
-      according to drawings and site requirements.
+      according to drawings, project requirements and site conditions.
     </span>
 
   </p>
 
-
   <div class="promise">
-
-    <span class="ar">
-      جودة • دقة • التزام
-    </span>
-
-    <span class="en">
-      QUALITY • PRECISION • COMMITMENT
-    </span>
-
+    <span class="ar">جودة • دقة • التزام</span>
+    <span class="en">QUALITY • PRECISION • COMMITMENT</span>
   </div>
 
 </div>
@@ -817,62 +799,47 @@ footer{
 <div class="container feature-grid">
 
   <div class="feature">
-
     <b>
       <span class="ar">جودة التنفيذ</span>
       <span class="en">Quality</span>
     </b>
-
     <small>
       <span class="ar">اهتمام بالتفاصيل</span>
       <span class="en">Attention to Detail</span>
     </small>
-
   </div>
 
-
   <div class="feature">
-
     <b>
       <span class="ar">دقة العمل</span>
       <span class="en">Precision</span>
     </b>
-
     <small>
       <span class="ar">وفق متطلبات المشروع</span>
       <span class="en">Project Requirements</span>
     </small>
-
   </div>
 
-
   <div class="feature">
-
     <b>
       <span class="ar">تصنيع وتركيب</span>
       <span class="en">Fabrication</span>
     </b>
-
     <small>
       <span class="ar">حلول متكاملة</span>
       <span class="en">Integrated Solutions</span>
     </small>
-
   </div>
 
-
   <div class="feature">
-
     <b>
       <span class="ar">الالتزام</span>
       <span class="en">Commitment</span>
     </b>
-
     <small>
       <span class="ar">تنفيذ منظم</span>
       <span class="en">Organized Execution</span>
     </small>
-
   </div>
 
 </div>
@@ -895,21 +862,21 @@ footer{
 
     <h2>
       <span class="ar">جميع أعمال الحديد والحدادة</span>
-      <span class="en">Steel & Metal Works</span>
+      <span class="en">Complete Steel & Metal Works</span>
     </h2>
 
     <p>
-
       <span class="ar">
-        حلول حديدية متكاملة للمشاريع
-        من الهياكل الرئيسية إلى التفاصيل والتشطيبات المعدنية.
+        نقدم حلولاً متكاملة لأعمال الحديد،
+        من الهياكل والمنشآت الرئيسية إلى السلالم والهاندريل والأسوار
+        والبوابات والمصاعد والهناجر وأعمال التصنيع والتشطيب المعدني.
       </span>
 
       <span class="en">
-        Integrated steel solutions from structural works
-        to detailed metal fabrication and finishing.
+        Integrated steel solutions covering structural works,
+        stairs, handrails, fences, gates, elevator structures,
+        warehouses and custom metal fabrication.
       </span>
-
     </p>
 
   </div>
@@ -918,14 +885,12 @@ footer{
   <div class="works">
 
 
-    <!-- STEEL STRUCTURES -->
-
     <article class="work">
 
       <img
-        src="https://iqrorwxhpikllr5q.ldycdn.com/cloud/pkBpiKlkRllSlknirjmpj/Image_2025-08-18_161030_191.jpg"
-        alt="هياكل ومنشآت حديدية"
-        referrerpolicy="no-referrer">
+      src="https://iqrorwxhpikllr5q.ldycdn.com/cloud/pkBpiKlkRllSlknirjmpj/Image_2025-08-18_161030_191.jpg"
+      alt="هياكل ومنشآت معدنية"
+      referrerpolicy="no-referrer">
 
       <div class="work-info">
 
@@ -935,8 +900,12 @@ footer{
         </h3>
 
         <p>
-          <span class="ar">تصنيع وتركيب الهياكل والأعمال الإنشائية المعدنية.</span>
-          <span class="en">Fabrication and installation of structural steel works.</span>
+          <span class="ar">
+            تصنيع وتجهيز وتركيب الهياكل والأعمال الإنشائية المعدنية.
+          </span>
+          <span class="en">
+            Fabrication and installation of structural steel works.
+          </span>
         </p>
 
         <small>STEEL STRUCTURES</small>
@@ -946,25 +915,27 @@ footer{
     </article>
 
 
-    <!-- STAIRS -->
-
     <article class="work">
 
       <img
-        src="https://ktc-steel.com/wp-content/uploads/2021/01/WhatsApp-Image-2020-12-31-at-7.49.08-AM-2.jpeg"
-        alt="سلالم وهاندريل"
-        referrerpolicy="no-referrer">
+      src="https://ktc-steel.com/wp-content/uploads/2021/01/WhatsApp-Image-2020-12-31-at-7.49.08-AM-2.jpeg"
+      alt="سلالم وهاندريل"
+      referrerpolicy="no-referrer">
 
       <div class="work-info">
 
         <h3>
-          <span class="ar">السلالم والهاندريل</span>
+          <span class="ar">السلالم والهاندريل والدرابزين</span>
           <span class="en">Stairs & Handrails</span>
         </h3>
 
         <p>
-          <span class="ar">تنفيذ السلالم والدرابزين والهاندريل للمشاريع.</span>
-          <span class="en">Steel stairs, railings and handrail works.</span>
+          <span class="ar">
+            تنفيذ السلالم الحديدية والهاندريل والدرابزين للمشاريع.
+          </span>
+          <span class="en">
+            Steel stairs, railings and handrail works.
+          </span>
         </p>
 
         <small>STAIRS & HANDRAILS</small>
@@ -974,25 +945,27 @@ footer{
     </article>
 
 
-    <!-- FENCES -->
-
     <article class="work">
 
       <img
-        src="https://static1.s123-cdn-static-a.com/uploads/5773528/2000_644604b789eee.jpg"
-        alt="أسوار وبوابات حديدية"
-        referrerpolicy="no-referrer">
+      src="https://static1.s123-cdn-static-a.com/uploads/5773528/2000_644604b789eee.jpg"
+      alt="أسوار وبوابات حديدية"
+      referrerpolicy="no-referrer">
 
       <div class="work-info">
 
         <h3>
-          <span class="ar">الأسوار والبوابات الحديدية</span>
+          <span class="ar">الأسوار والأبواب والبوابات</span>
           <span class="en">Fences & Gates</span>
         </h3>
 
         <p>
-          <span class="ar">تنفيذ الأسوار والحواجز والأبواب والبوابات الحديدية.</span>
-          <span class="en">Steel fences, barriers, doors and gates.</span>
+          <span class="ar">
+            تنفيذ الأسوار والحواجز والأبواب والبوابات الحديدية.
+          </span>
+          <span class="en">
+            Steel fences, barriers, doors and gates.
+          </span>
         </p>
 
         <small>FENCES & GATES</small>
@@ -1002,14 +975,12 @@ footer{
     </article>
 
 
-    <!-- ELEVATOR -->
-
     <article class="work">
 
       <img
-        src="https://www.ferronex.com/uploadfile/2025/03/18/20250318161931ONKU1k.jpg"
-        alt="هياكل مصاعد حديدية"
-        referrerpolicy="no-referrer">
+      src="https://www.ferronex.com/uploadfile/2025/03/18/20250318161931ONKU1k.jpg"
+      alt="هياكل المصاعد"
+      referrerpolicy="no-referrer">
 
       <div class="work-info">
 
@@ -1019,8 +990,12 @@ footer{
         </h3>
 
         <p>
-          <span class="ar">تجهيز وتصنيع الهياكل الحديدية الخاصة بأعمال المصاعد.</span>
-          <span class="en">Fabrication of steel structures for elevator works.</span>
+          <span class="ar">
+            تجهيز وتصنيع وتركيب الهياكل الحديدية الخاصة بأعمال المصاعد.
+          </span>
+          <span class="en">
+            Steel structures for elevator installations.
+          </span>
         </p>
 
         <small>ELEVATOR STRUCTURES</small>
@@ -1030,14 +1005,12 @@ footer{
     </article>
 
 
-    <!-- WAREHOUSES -->
-
     <article class="work">
 
       <img
-        src="https://iqrorwxhpikllr5q.ldycdn.com/cloud/pkBpiKlkRllSlknirjmpj/Image_2025-08-18_161030_191.jpg"
-        alt="هناجر ومستودعات حديدية"
-        referrerpolicy="no-referrer">
+      src="https://iqrorwxhpikllr5q.ldycdn.com/cloud/pkBpiKlkRllSlknirjmpj/Image_2025-08-18_161030_191.jpg"
+      alt="هناجر ومستودعات"
+      referrerpolicy="no-referrer">
 
       <div class="work-info">
 
@@ -1047,8 +1020,12 @@ footer{
         </h3>
 
         <p>
-          <span class="ar">هياكل ومنشآت معدنية للمستودعات والمشاريع الصناعية.</span>
-          <span class="en">Steel structures for warehouses and industrial projects.</span>
+          <span class="ar">
+            تنفيذ الهياكل والمنشآت الحديدية للمستودعات والمشاريع الصناعية.
+          </span>
+          <span class="en">
+            Steel structures for warehouses and industrial facilities.
+          </span>
         </p>
 
         <small>HANGARS & WAREHOUSES</small>
@@ -1058,14 +1035,12 @@ footer{
     </article>
 
 
-    <!-- CUSTOM -->
-
     <article class="work">
 
       <img
-        src="https://ktc-steel.com/wp-content/uploads/2021/01/WhatsApp-Image-2020-12-31-at-7.49.08-AM-2.jpeg"
-        alt="تصنيع وأعمال حديد"
-        referrerpolicy="no-referrer">
+      src="https://ktc-steel.com/wp-content/uploads/2021/01/WhatsApp-Image-2020-12-31-at-7.49.08-AM-2.jpeg"
+      alt="أعمال حديد حسب المخططات"
+      referrerpolicy="no-referrer">
 
       <div class="work-info">
 
@@ -1075,8 +1050,12 @@ footer{
         </h3>
 
         <p>
-          <span class="ar">تصنيع وقص ولحام وتشكيل الأعمال الحديدية حسب الطلب.</span>
-          <span class="en">Custom cutting, welding and steel fabrication.</span>
+          <span class="ar">
+            قص ولحام وتشكيل وتصنيع الأعمال الحديدية حسب المقاسات والمخططات.
+          </span>
+          <span class="en">
+            Cutting, welding and steel fabrication to drawings and dimensions.
+          </span>
         </p>
 
         <small>CUSTOM FABRICATION</small>
@@ -1107,47 +1086,28 @@ footer{
     </div>
 
     <h2>
-
-      <span class="ar">
-        شريككم في أعمال الحديد
-      </span>
-
-      <span class="en">
-        Your Steel Works Partner
-      </span>
-
+      <span class="ar">شريككم في أعمال الحديد والإنشاءات المعدنية</span>
+      <span class="en">Your Steel & Metal Works Partner</span>
     </h2>
 
     <p>
 
       <span class="ar">
-        إكسل وإنجاز للمقاولات متخصصة في أعمال الحديد والحدادة
-        والهياكل والمنشآت المعدنية،
-        ونقدم خدمات التصنيع والتجهيز والتركيب
-        وفق المخططات ومتطلبات المشروع.
+        إكسل وإنجاز للمقاولات متخصصة في تنفيذ وتصنيع وتركيب جميع أعمال الحديد
+        والحدادة والهياكل والمنشآت المعدنية.
+        نقدم حلولاً للمشاريع السكنية والتجارية والصناعية
+        وفق المخططات ومتطلبات الموقع، مع التركيز على جودة التنفيذ
+        ودقة التصنيع والتركيب.
       </span>
 
       <span class="en">
-        Excel & Injaz Contracting specializes in steel,
-        metalwork and structural fabrication,
-        providing fabrication and installation
-        according to drawings and project requirements.
+        Excel & Injaz Contracting specializes in fabrication,
+        installation and execution of steel and metal works
+        for residential, commercial and industrial projects,
+        according to drawings and site requirements.
       </span>
 
     </p>
-
-
-    <div class="cr-small">
-
-      <span class="ar">
-        السجل التجاري: 7038272063
-      </span>
-
-      <span class="en">
-        CR: 7038272063
-      </span>
-
-    </div>
 
   </div>
 
@@ -1165,23 +1125,26 @@ footer{
   <div class="section-head">
 
     <div class="label">
-
       <span class="ar">خدماتنا</span>
       <span class="en">SERVICES</span>
-
     </div>
 
     <h2>
+      <span class="ar">حلول متكاملة لجميع أعمال الحديد</span>
+      <span class="en">Integrated Steel Solutions</span>
+    </h2>
 
+    <p>
       <span class="ar">
-        قدرات تنفيذية متكاملة
+        تصنيع وتجهيز وتركيب مختلف الأعمال الحديدية
+        وفق احتياج المشروع والمخططات والمقاسات المطلوبة.
       </span>
 
       <span class="en">
-        Integrated Steel Solutions
+        Fabrication and installation of steel works
+        according to project drawings and requirements.
       </span>
-
-    </h2>
+    </p>
 
   </div>
 
@@ -1190,137 +1153,146 @@ footer{
 
 
     <div class="service">
-
       <h3>
         <span class="ar">الهياكل والمنشآت المعدنية</span>
         <span class="en">Steel Structures</span>
       </h3>
-
       <p>
-        <span class="ar">تصنيع وتجهيز وتركيب الهياكل المعدنية.</span>
-        <span class="en">Steel fabrication and structural installation.</span>
+        <span class="ar">تصنيع وتجهيز وتركيب الهياكل والمنشآت الحديدية.</span>
+        <span class="en">Structural steel fabrication and installation.</span>
       </p>
-
     </div>
 
 
     <div class="service">
-
       <h3>
         <span class="ar">الهناجر والمستودعات</span>
         <span class="en">Hangars & Warehouses</span>
       </h3>
-
       <p>
-        <span class="ar">تنفيذ الهياكل الحديدية للمستودعات والمنشآت.</span>
+        <span class="ar">هياكل حديدية للمستودعات والمنشآت الصناعية.</span>
         <span class="en">Steel structures for warehouses and facilities.</span>
       </p>
-
     </div>
 
 
     <div class="service">
-
       <h3>
-        <span class="ar">تأسيس المصاعد</span>
+        <span class="ar">تأسيس وهياكل المصاعد</span>
         <span class="en">Elevator Structures</span>
       </h3>
-
       <p>
-        <span class="ar">هياكل وتجهيزات حديدية لأعمال المصاعد.</span>
+        <span class="ar">تجهيز وتنفيذ الهياكل الحديدية لأعمال المصاعد.</span>
         <span class="en">Steel structures for elevator installations.</span>
       </p>
-
     </div>
 
 
     <div class="service">
-
       <h3>
-        <span class="ar">السلالم والهاندريل</span>
+        <span class="ar">السلالم والهاندريل والدرابزين</span>
         <span class="en">Stairs & Handrails</span>
       </h3>
-
       <p>
-        <span class="ar">سلالم ودرابزين وهاندريل حديدي.</span>
+        <span class="ar">سلالم وهاندريل ودرابزين للمشاريع والمنشآت.</span>
         <span class="en">Steel stairs, railings and handrails.</span>
       </p>
-
     </div>
 
 
     <div class="service">
-
       <h3>
-        <span class="ar">الأسوار والبوابات</span>
-        <span class="en">Fences & Gates</span>
+        <span class="ar">الأسوار والحواجز</span>
+        <span class="en">Fences & Barriers</span>
       </h3>
-
       <p>
-        <span class="ar">أسوار وحواجز وأبواب وبوابات حديدية.</span>
-        <span class="en">Steel fences, barriers, doors and gates.</span>
+        <span class="ar">تنفيذ الأسوار والحواجز الحديدية حسب الموقع.</span>
+        <span class="en">Steel fences and barriers.</span>
       </p>
-
     </div>
 
 
     <div class="service">
+      <h3>
+        <span class="ar">الأبواب والبوابات الحديدية</span>
+        <span class="en">Steel Doors & Gates</span>
+      </h3>
+      <p>
+        <span class="ar">تصنيع وتركيب الأبواب والبوابات الحديدية.</span>
+        <span class="en">Fabrication and installation of steel gates.</span>
+      </p>
+    </div>
 
+
+    <div class="service">
       <h3>
         <span class="ar">المظلات والسواتر</span>
         <span class="en">Canopies & Screens</span>
       </h3>
-
       <p>
-        <span class="ar">هياكل ومظلات وأعمال حديد خارجية.</span>
-        <span class="en">Canopies and outdoor steel structures.</span>
+        <span class="ar">مظلات وهياكل وأعمال حديدية خارجية.</span>
+        <span class="en">Canopies and outdoor steel works.</span>
       </p>
-
     </div>
 
 
     <div class="service">
-
       <h3>
-        <span class="ar">التدعيمات الحديدية</span>
+        <span class="ar">التدعيمات والتعديلات الحديدية</span>
         <span class="en">Steel Reinforcement</span>
       </h3>
-
       <p>
-        <span class="ar">تدعيم وتعديل الأعمال حسب متطلبات المشروع.</span>
-        <span class="en">Steel reinforcement and project modifications.</span>
+        <span class="ar">تدعيم وتعديل الهياكل والأعمال حسب متطلبات المشروع.</span>
+        <span class="en">Steel reinforcement and structural modifications.</span>
       </p>
-
     </div>
 
 
     <div class="service">
-
       <h3>
         <span class="ar">القص واللحام والتشكيل</span>
         <span class="en">Cutting & Welding</span>
       </h3>
-
       <p>
         <span class="ar">قص ولحام وتشكيل مختلف القطاعات الحديدية.</span>
         <span class="en">Cutting, welding and steel forming.</span>
       </p>
-
     </div>
 
 
     <div class="service">
-
       <h3>
-        <span class="ar">أعمال حسب المخططات</span>
+        <span class="ar">قواعد وحوامل حديدية</span>
+        <span class="en">Steel Supports</span>
+      </h3>
+      <p>
+        <span class="ar">تصنيع القواعد والحوامل والدعامات المعدنية.</span>
+        <span class="en">Steel bases, supports and brackets.</span>
+      </p>
+    </div>
+
+
+    <div class="service">
+      <h3>
+        <span class="ar">أعمال الحديد للفلل والمباني</span>
+        <span class="en">Residential Steel Works</span>
+      </h3>
+      <p>
+        <span class="ar">تنفيذ مختلف الأعمال الحديدية للفلل والمشاريع السكنية.</span>
+        <span class="en">Steel works for villas and residential projects.</span>
+      </p>
+    </div>
+
+
+    <div class="service">
+      <h3>
+        <span class="ar">التصنيع حسب المخططات</span>
         <span class="en">Custom Fabrication</span>
       </h3>
-
       <p>
-        <span class="ar">تنفيذ وتصنيع الأعمال حسب المقاسات والمخططات.</span>
+        <span class="ar">تنفيذ وتصنيع الأعمال حسب المخططات والمقاسات.</span>
         <span class="en">Custom fabrication to drawings and dimensions.</span>
       </p>
-
     </div>
 
 
@@ -1340,27 +1312,19 @@ footer{
   <div>
 
     <h2>
-
-      <span class="ar">
-        جاهزون لدراسة متطلبات مشروعكم
-      </span>
-
-      <span class="en">
-        Ready to Review Your Project
-      </span>
-
+      <span class="ar">جاهزون لدراسة متطلبات مشروعكم</span>
+      <span class="en">Ready to Review Your Project</span>
     </h2>
 
     <p>
-
       <span class="ar">
-        نستقبل نطاق العمل والمخططات وطلبات التسعير للمشاريع.
+        نستقبل نطاق العمل والمخططات وطلبات التسعير
+        للمشاريع الحالية والقادمة.
       </span>
 
       <span class="en">
         We welcome project scopes, drawings and quotation requests.
       </span>
-
     </p>
 
   </div>
@@ -1368,36 +1332,25 @@ footer{
 
   <div class="contact-links">
 
-
     <a href="tel:+966551889096">
-
       <b>
         <span class="ar">مسؤول المشاريع</span>
         <span class="en">Project Manager</span>
       </b>
-
       — 0551889096
-
     </a>
-
 
     <a
-      href="https://wa.me/966554726980"
-      target="_blank">
-
+    href="https://wa.me/966554726980"
+    target="_blank">
       <b>WhatsApp</b>
       — 0554726980
-
     </a>
-
 
     <a href="mailto:excel1lnjaz@gmail.com">
-
       <b>Email</b>
       — excel1lnjaz@gmail.com
-
     </a>
-
 
   </div>
 
@@ -1410,13 +1363,25 @@ footer{
 
 <div class="container">
 
-  <span class="ar">
-    © إكسل وإنجاز للمقاولات — جميع الحقوق محفوظة
-  </span>
+  <div>
+    <span class="ar">
+      © إكسل وإنجاز للمقاولات — جميع الحقوق محفوظة
+    </span>
 
-  <span class="en">
-    © Excel & Injaz Contracting — All Rights Reserved
-  </span>
+    <span class="en">
+      © Excel & Injaz Contracting — All Rights Reserved
+    </span>
+  </div>
+
+  <div class="footer-cr">
+    <span class="ar">
+      السجل التجاري: 7038272063
+    </span>
+
+    <span class="en">
+      CR: 7038272063
+    </span>
+  </div>
 
 </div>
 
@@ -1428,21 +1393,20 @@ footer{
 function toggleLanguage(){
 
   const english =
-    document.body.classList.toggle("english");
+  document.body.classList.toggle("english");
 
   document.documentElement.lang =
-    english ? "en" : "ar";
+  english ? "en" : "ar";
 
   document.documentElement.dir =
-    english ? "ltr" : "rtl";
+  english ? "ltr" : "rtl";
 
   document.querySelector(".lang").textContent =
-    english ? "العربية" : "English";
+  english ? "العربية" : "English";
 
 }
 
 </script>
-
 
 </body>
 </html>
