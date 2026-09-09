@@ -1,1046 +1,988 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>إكسل وإنجاز للمقاولات | Excel & Injaz Contracting</title>
-
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
-
-    html{
-      scroll-behavior:smooth;
-    }
-
-    body{
-      font-family:Arial, Tahoma, sans-serif;
-      background:#f4f7fa;
-      color:#122033;
-      line-height:1.8;
-    }
-
-    a{
-      text-decoration:none;
-      color:inherit;
-    }
-
-    img{
-      width:100%;
-      display:block;
-    }
-
-    :root{
-      --navy:#071d32;
-      --navy2:#0b2b49;
-      --blue:#1f6fae;
-      --light:#f4f7fa;
-      --white:#ffffff;
-      --text:#122033;
-      --muted:#6c7885;
-      --line:#dfe6ec;
-    }
-
-    .container{
-      width:min(1180px,92%);
-      margin:auto;
-    }
-
-    /* HEADER */
-    header{
-      position:absolute;
-      top:0;
-      right:0;
-      left:0;
-      z-index:20;
-      background:linear-gradient(to bottom,rgba(4,19,34,.84),rgba(4,19,34,.25),transparent);
-    }
-
-    .nav{
-      min-height:88px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:22px;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      color:white;
-    }
-
-    .x-logo{
-      width:56px;
-      height:56px;
-      position:relative;
-      flex:0 0 56px;
-    }
-
-    .x-logo::before,
-    .x-logo::after{
-      content:"";
-      position:absolute;
-      top:4px;
-      right:24px;
-      width:9px;
-      height:48px;
-      border-radius:10px;
-      background:white;
-      transform-origin:center;
-    }
-
-    .x-logo::before{
-      transform:rotate(42deg);
-    }
-
-    .x-logo::after{
-      transform:rotate(-42deg);
-      background:#77b4df;
-    }
-
-    .brand-name strong{
-      display:block;
-      font-size:17px;
-      line-height:1.25;
-    }
-
-    .brand-name span{
-      display:block;
-      font-size:10px;
-      letter-spacing:.5px;
-      opacity:.78;
-      margin-top:4px;
-      direction:ltr;
-    }
-
-    nav{
-      display:flex;
-      align-items:center;
-      gap:27px;
-      color:white;
-      font-size:14px;
-    }
-
-    nav a{
-      opacity:.82;
-      transition:.25s;
-    }
-
-    nav a:hover{
-      opacity:1;
-    }
-
-    .lang{
-      display:flex;
-      gap:7px;
-      color:white;
-      font-size:12px;
-      align-items:center;
-    }
-
-    .lang span:first-child{
-      background:white;
-      color:var(--navy);
-      padding:5px 9px;
-      border-radius:20px;
-      font-weight:bold;
-    }
-
-    /* HERO */
-    .hero{
-      min-height:760px;
-      position:relative;
-      display:flex;
-      align-items:center;
-      overflow:hidden;
-      color:white;
-      background:
-        linear-gradient(90deg,rgba(4,19,34,.96) 0%,rgba(4,19,34,.82) 28%,rgba(4,19,34,.30) 63%,rgba(4,19,34,.06) 100%),
-        url("https://images.pexels.com/photos/12171800/pexels-photo-12171800.jpeg?auto=compress&cs=tinysrgb&w=1800")
-        center/cover no-repeat;
-    }
-
-    .hero::after{
-      content:"";
-      position:absolute;
-      inset:auto 0 0;
-      height:190px;
-      background:linear-gradient(to top,#f4f7fa,transparent);
-      pointer-events:none;
-    }
-
-    .sun-glow{
-      position:absolute;
-      left:8%;
-      top:41%;
-      width:170px;
-      height:170px;
-      border-radius:50%;
-      background:radial-gradient(circle,rgba(255,221,154,.9) 0%,rgba(255,196,104,.38) 28%,rgba(255,179,70,.12) 48%,transparent 71%);
-      filter:blur(2px);
-      opacity:.85;
-    }
-
-    .hero-content{
-      position:relative;
-      z-index:3;
-      width:min(720px,94%);
-      padding-top:90px;
-    }
-
-    .eyebrow{
-      font-size:13px;
-      letter-spacing:1px;
-      color:#b8d6ec;
-      margin-bottom:12px;
-    }
-
-    .hero h1{
-      font-size:clamp(38px,6vw,72px);
-      line-height:1.18;
-      margin-bottom:22px;
-      max-width:760px;
-    }
-
-    .hero h1 span{
-      color:#85c3ee;
-    }
-
-    .hero p{
-      max-width:650px;
-      color:rgba(255,255,255,.80);
-      font-size:17px;
-      margin-bottom:28px;
-    }
-
-    .hero-actions{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:48px;
-      padding:0 23px;
-      border-radius:8px;
-      font-size:14px;
-      transition:.25s;
-    }
-
-    .btn-primary{
-      background:white;
-      color:var(--navy);
-      font-weight:bold;
-    }
-
-    .btn-secondary{
-      border:1px solid rgba(255,255,255,.35);
-      color:white;
-      background:rgba(255,255,255,.05);
-    }
-
-    .btn:hover{
-      transform:translateY(-2px);
-    }
-
-    /* FEATURES */
-    .features-wrap{
-      margin-top:-60px;
-      position:relative;
-      z-index:10;
-    }
-
-    .features{
-      background:white;
-      border-radius:18px;
-      box-shadow:0 20px 55px rgba(10,35,55,.10);
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      overflow:hidden;
-    }
-
-    .feature{
-      padding:27px 22px;
-      border-left:1px solid #edf1f4;
-    }
-
-    .feature:last-child{
-      border-left:none;
-    }
-
-    .feature strong{
-      display:block;
-      font-size:16px;
-      margin-bottom:4px;
-      color:var(--navy);
-    }
-
-    .feature span{
-      display:block;
-      color:var(--muted);
-      font-size:12px;
-    }
-
-    /* COMMON */
-    section{
-      padding:95px 0;
-    }
-
-    .section-head{
-      margin-bottom:35px;
-    }
-
-    .section-head small{
-      color:var(--blue);
-      font-weight:bold;
-      font-size:12px;
-    }
-
-    .section-head h2{
-      color:var(--navy);
-      font-size:clamp(27px,4vw,42px);
-      margin-top:5px;
-      line-height:1.35;
-    }
-
-    .section-head p{
-      color:var(--muted);
-      max-width:760px;
-      margin-top:12px;
-    }
-
-    /* SERVICES */
-    .services{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:17px;
-    }
-
-    .service{
-      background:white;
-      padding:26px 22px;
-      border-radius:16px;
-      border:1px solid #edf1f4;
-      min-height:150px;
-      transition:.25s;
-    }
-
-    .service:hover{
-      transform:translateY(-4px);
-      box-shadow:0 15px 35px rgba(12,43,73,.08);
-    }
-
-    .service .num{
-      color:#8eabbf;
-      font-size:12px;
-      margin-bottom:20px;
-    }
-
-    .service h3{
-      color:var(--navy);
-      font-size:17px;
-      margin-bottom:5px;
-    }
-
-    .service p{
-      color:var(--muted);
-      font-size:13px;
-    }
-
-    /* GALLERY */
-    .works{
-      background:#eaf0f4;
-    }
-
-    .work-grid{
-      display:grid;
-      grid-template-columns:repeat(12,1fr);
-      grid-auto-rows:190px;
-      gap:14px;
-    }
-
-    .work{
-      position:relative;
-      overflow:hidden;
-      border-radius:16px;
-      background:#ccd6dd;
-    }
-
-    .work img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      transition:.4s;
-    }
-
-    .work:hover img{
-      transform:scale(1.04);
-    }
-
-    .work::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(to top,rgba(3,18,31,.82),rgba(3,18,31,0) 58%);
-    }
-
-    .work-label{
-      position:absolute;
-      right:18px;
-      left:18px;
-      bottom:15px;
-      color:white;
-      z-index:2;
-    }
-
-    .work-label strong{
-      display:block;
-      font-size:15px;
-    }
-
-    .work-label span{
-      display:block;
-      font-size:11px;
-      opacity:.72;
-      margin-top:2px;
-    }
-
-    .w1{grid-column:span 7;grid-row:span 2;}
-    .w2{grid-column:span 5;}
-    .w3{grid-column:span 5;}
-    .w4{grid-column:span 4;}
-    .w5{grid-column:span 4;}
-    .w6{grid-column:span 4;}
-    .w7{grid-column:span 6;}
-    .w8{grid-column:span 6;}
-    .w9{grid-column:span 4;}
-    .w10{grid-column:span 4;}
-    .w11{grid-column:span 4;}
-    .w12{grid-column:span 6;}
-    .w13{grid-column:span 6;}
-    .w14{grid-column:span 4;}
-    .w15{grid-column:span 4;}
-    .w16{grid-column:span 4;}
-
-    .gallery-note{
-      margin-top:18px;
-      color:#6f7f8c;
-      font-size:11px;
-    }
-
-    /* ABOUT */
-    .about{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:60px;
-      align-items:center;
-    }
-
-    .about-card{
-      background:var(--navy);
-      padding:45px;
-      border-radius:20px;
-      color:white;
-    }
-
-    .about-card h3{
-      font-size:30px;
-      margin-bottom:16px;
-    }
-
-    .about-card p{
-      color:#c9d5df;
-      font-size:14px;
-    }
-
-    .about-list{
-      display:grid;
-      gap:13px;
-    }
-
-    .about-list div{
-      background:white;
-      border:1px solid #e9eef2;
-      border-radius:13px;
-      padding:16px 18px;
-      color:#334657;
-      font-size:14px;
-    }
-
-    /* CONTACT - SUBTLE */
-    .contact{
-      background:#0b2239;
-      padding:55px 0 30px;
-      color:white;
-    }
-
-    .contact-grid{
-      display:grid;
-      grid-template-columns:1.5fr 1fr;
-      gap:50px;
-      align-items:start;
-    }
-
-    .contact .brand-name strong{
-      font-size:15px;
-    }
-
-    .contact-intro{
-      color:#9fb1c0;
-      max-width:520px;
-      font-size:13px;
-      margin-top:18px;
-    }
-
-    .contact-info{
-      display:grid;
-      gap:9px;
-      font-size:12px;
-      color:#aebdca;
-    }
-
-    .contact-info a:hover{
-      color:white;
-    }
-
-    footer{
-      margin-top:40px;
-      padding-top:18px;
-      border-top:1px solid rgba(255,255,255,.08);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
-      color:#7f93a3;
-      font-size:10px;
-    }
-
-    .cr{
-      opacity:.55;
-      font-size:9px;
-    }
-
-    @media(max-width:900px){
-      nav{
-        display:none;
-      }
-
-      .hero{
-        min-height:700px;
-        background-position:62% center;
-      }
-
-      .hero-content{
-        padding-top:100px;
-      }
-
-      .hero p{
-        font-size:15px;
-      }
-
-      .features{
-        grid-template-columns:repeat(2,1fr);
-      }
-
-      .feature:nth-child(2){
-        border-left:none;
-      }
-
-      .feature:nth-child(-n+2){
-        border-bottom:1px solid #edf1f4;
-      }
-
-      .services{
-        grid-template-columns:repeat(2,1fr);
-      }
-
-      .about{
-        grid-template-columns:1fr;
-      }
-
-      .work-grid{
-        grid-template-columns:repeat(2,1fr);
-        grid-auto-rows:220px;
-      }
-
-      .work{
-        grid-column:span 1 !important;
-        grid-row:span 1 !important;
-      }
-
-      .w1{
-        grid-column:span 2 !important;
-      }
-
-      .contact-grid{
-        grid-template-columns:1fr;
-      }
-    }
-
-    @media(max-width:600px){
-      .container{
-        width:90%;
-      }
-
-      .nav{
-        min-height:74px;
-      }
-
-      .brand-name strong{
-        font-size:13px;
-      }
-
-      .brand-name span{
-        font-size:8px;
-      }
-
-      .x-logo{
-        width:46px;
-        height:46px;
-        flex-basis:46px;
-      }
-
-      .x-logo::before,
-      .x-logo::after{
-        height:41px;
-        right:19px;
-        top:3px;
-      }
-
-      .lang{
-        font-size:10px;
-      }
-
-      .hero{
-        min-height:650px;
-        background-position:66% center;
-      }
-
-      .hero h1{
-        font-size:39px;
-      }
-
-      .hero p{
-        font-size:14px;
-      }
-
-      .features{
-        grid-template-columns:1fr 1fr;
-      }
-
-      section{
-        padding:70px 0;
-      }
-
-      .services{
-        grid-template-columns:1fr;
-      }
-
-      .work-grid{
-        grid-template-columns:1fr;
-        grid-auto-rows:250px;
-      }
-
-      .work,
-      .w1{
-        grid-column:span 1 !important;
-      }
-
-      .about-card{
-        padding:30px 24px;
-      }
-
-      footer{
-        align-items:flex-start;
-        flex-direction:column;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>إكسل وإنجاز للمقاولات | Excel & Injaz Contracting</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{scroll-behavior:smooth;}
+
+body{
+  font-family:Arial,Tahoma,sans-serif;
+  background:#f5f7f8;
+  color:#132536;
+  line-height:1.7;
+}
+
+a{text-decoration:none;color:inherit;}
+img{display:block;width:100%;}
+
+:root{
+  --navy:#071d30;
+  --navy2:#0b2c48;
+  --blue:#4c91bd;
+  --softblue:#9bc9e5;
+  --white:#fff;
+  --muted:#71808c;
+  --bg:#f5f7f8;
+}
+
+.container{
+  width:min(1180px,92%);
+  margin:auto;
+}
+
+/* HEADER */
+header{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  z-index:20;
+  background:linear-gradient(
+    to bottom,
+    rgba(4,20,34,.82),
+    rgba(4,20,34,.28),
+    transparent
+  );
+}
+
+.nav{
+  min-height:94px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  color:white;
+}
+
+/* X LOGO */
+.logo-x{
+  position:relative;
+  width:61px;
+  height:61px;
+  flex:0 0 61px;
+}
+
+.logo-x::before,
+.logo-x::after{
+  content:"";
+  position:absolute;
+  top:4px;
+  right:26px;
+  width:9px;
+  height:53px;
+  border-radius:10px;
+  transform-origin:center;
+}
+
+.logo-x::before{
+  background:#fff;
+  transform:rotate(42deg);
+}
+
+.logo-x::after{
+  background:#83c2e8;
+  transform:rotate(-42deg);
+}
+
+.brand-text strong{
+  display:block;
+  font-size:19px;
+  line-height:1.25;
+  font-weight:800;
+}
+
+.brand-text span{
+  display:block;
+  direction:ltr;
+  text-align:right;
+  font-size:9px;
+  letter-spacing:1px;
+  opacity:.75;
+  margin-top:4px;
+}
+
+nav{
+  display:flex;
+  gap:28px;
+  align-items:center;
+  color:white;
+  font-size:13px;
+}
+
+nav a{
+  opacity:.78;
+  transition:.25s;
+}
+
+nav a:hover{opacity:1;}
+
+.lang{
+  display:flex;
+  gap:8px;
+  color:white;
+  align-items:center;
+  font-size:11px;
+}
+
+.lang .active{
+  background:white;
+  color:var(--navy);
+  padding:5px 10px;
+  border-radius:20px;
+  font-weight:bold;
+}
+
+/* HERO */
+.hero{
+  position:relative;
+  min-height:790px;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  color:white;
+
+  /*
+  مستودع حقيقي - خلفية هادئة
+  */
+  background:
+    linear-gradient(
+      90deg,
+      rgba(4,20,34,.92) 0%,
+      rgba(4,20,34,.76) 30%,
+      rgba(4,20,34,.30) 60%,
+      rgba(4,20,34,.08) 100%
+    ),
+    url("https://live.staticflickr.com/7285/8737800799_d51d63b695_o.jpg")
+    center center / cover no-repeat;
+}
+
+/* SUNRISE */
+.hero::before{
+  content:"";
+  position:absolute;
+  left:7%;
+  top:34%;
+  width:280px;
+  height:280px;
+  border-radius:50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,236,190,.90) 0%,
+      rgba(255,203,120,.55) 14%,
+      rgba(255,177,76,.26) 31%,
+      rgba(255,165,65,.10) 48%,
+      transparent 70%
+    );
+  filter:blur(5px);
+  pointer-events:none;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  height:150px;
+  background:linear-gradient(to top,#f5f7f8,transparent);
+}
+
+.hero-content{
+  position:relative;
+  z-index:4;
+  max-width:750px;
+  padding-top:85px;
+}
+
+.hero-small{
+  font-size:13px;
+  color:#b5d7ea;
+  margin-bottom:13px;
+}
+
+.hero h1{
+  font-size:clamp(40px,6vw,70px);
+  line-height:1.18;
+  margin-bottom:21px;
+  font-weight:800;
+}
+
+.hero h1 span{
+  color:#9ed0ed;
+}
+
+.hero p{
+  max-width:650px;
+  color:rgba(255,255,255,.78);
+  font-size:16px;
+  margin-bottom:28px;
+}
+
+.buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:11px;
+}
+
+.btn{
+  min-height:48px;
+  padding:0 23px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:8px;
+  font-size:13px;
+}
+
+.btn-main{
+  background:white;
+  color:var(--navy);
+  font-weight:bold;
+}
+
+.btn-line{
+  border:1px solid rgba(255,255,255,.30);
+  color:white;
+  background:rgba(255,255,255,.04);
+}
+
+/* FEATURES */
+.features-holder{
+  position:relative;
+  z-index:10;
+  margin-top:-62px;
+}
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  background:white;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 18px 55px rgba(8,35,55,.10);
+}
+
+.feature{
+  padding:27px 22px;
+  border-left:1px solid #edf1f3;
+}
+
+.feature:last-child{border-left:0;}
+
+.feature strong{
+  display:block;
+  color:var(--navy);
+  font-size:15px;
+  margin-bottom:4px;
+}
+
+.feature span{
+  color:var(--muted);
+  font-size:11px;
+}
+
+/* SECTIONS */
+.section{
+  padding:95px 0;
+}
+
+.section-head{
+  margin-bottom:35px;
+}
+
+.section-head small{
+  color:#397fae;
+  font-size:12px;
+  font-weight:bold;
+}
+
+.section-head h2{
+  color:var(--navy);
+  font-size:clamp(28px,4vw,42px);
+  line-height:1.35;
+  margin-top:5px;
+}
+
+.section-head p{
+  max-width:760px;
+  color:var(--muted);
+  font-size:14px;
+  margin-top:10px;
+}
+
+/* SERVICES */
+.services{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+
+.service{
+  background:white;
+  border:1px solid #e8edf0;
+  border-radius:15px;
+  padding:25px 20px;
+  transition:.25s;
+}
+
+.service:hover{
+  transform:translateY(-4px);
+  box-shadow:0 15px 30px rgba(10,35,55,.08);
+}
+
+.service small{
+  color:#92a9b8;
+  font-size:10px;
+}
+
+.service h3{
+  color:var(--navy);
+  font-size:16px;
+  margin:15px 0 5px;
+}
+
+.service p{
+  color:var(--muted);
+  font-size:12px;
+}
+
+/* WORKS */
+.works{
+  background:#eaf0f3;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  grid-auto-rows:210px;
+  gap:14px;
+}
+
+.work{
+  position:relative;
+  overflow:hidden;
+  border-radius:16px;
+  background:#cdd6dc;
+}
+
+.work img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.45s;
+}
+
+.work:hover img{transform:scale(1.04);}
+
+.work::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to top,
+    rgba(4,20,34,.86),
+    transparent 65%
+  );
+}
+
+.work-info{
+  position:absolute;
+  z-index:3;
+  right:17px;
+  left:17px;
+  bottom:15px;
+  color:white;
+}
+
+.work-info strong{
+  display:block;
+  font-size:15px;
+}
+
+.work-info span{
+  font-size:10px;
+  opacity:.72;
+}
+
+.big{grid-column:span 7;grid-row:span 2;}
+.five{grid-column:span 5;}
+.six{grid-column:span 6;}
+.four{grid-column:span 4;}
+
+/* ABOUT */
+.about{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:55px;
+  align-items:center;
+}
+
+.about-main{
+  background:var(--navy);
+  border-radius:20px;
+  padding:43px;
+  color:white;
+}
+
+.about-main h2{
+  font-size:31px;
+  margin-bottom:14px;
+}
+
+.about-main p{
+  color:#bfccd5;
+  font-size:14px;
+}
+
+.about-list{
+  display:grid;
+  gap:12px;
+}
+
+.about-list div{
+  background:white;
+  border:1px solid #e7edf0;
+  border-radius:12px;
+  padding:15px 18px;
+  color:#455865;
+  font-size:13px;
+}
+
+/* CONTACT */
+.contact{
+  background:#081f34;
+  color:white;
+  padding:48px 0 25px;
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1.5fr 1fr;
+  gap:50px;
+}
+
+.contact-text{
+  color:#849aa9;
+  font-size:12px;
+  margin-top:14px;
+}
+
+.contact-info{
+  display:grid;
+  gap:7px;
+  font-size:11px;
+  color:#9db0bd;
+}
+
+.contact-info a:hover{
+  color:white;
+}
+
+footer{
+  margin-top:34px;
+  padding-top:16px;
+  border-top:1px solid rgba(255,255,255,.07);
+  display:flex;
+  justify-content:space-between;
+  color:#708695;
+  font-size:9px;
+}
+
+.cr{opacity:.45;}
+
+/* MOBILE */
+@media(max-width:900px){
+
+  nav{display:none;}
+
+  .hero{
+    min-height:720px;
+    background-position:58% center;
+  }
+
+  .features{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .services{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .gallery{
+    grid-template-columns:repeat(2,1fr);
+    grid-auto-rows:230px;
+  }
+
+  .work{
+    grid-column:span 1 !important;
+    grid-row:span 1 !important;
+  }
+
+  .big{
+    grid-column:span 2 !important;
+  }
+
+  .about,
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:600px){
+
+  .container{width:90%;}
+
+  .nav{min-height:78px;}
+
+  .logo-x{
+    width:48px;
+    height:48px;
+    flex-basis:48px;
+  }
+
+  .logo-x::before,
+  .logo-x::after{
+    height:43px;
+    right:20px;
+    top:2px;
+  }
+
+  .brand-text strong{font-size:14px;}
+  .brand-text span{font-size:7px;}
+
+  .hero{
+    min-height:680px;
+    background-position:61% center;
+  }
+
+  .hero::before{
+    left:-8%;
+    top:31%;
+    width:230px;
+    height:230px;
+  }
+
+  .hero h1{font-size:39px;}
+  .hero p{font-size:14px;}
+
+  .features{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .feature{
+    padding:20px 14px;
+  }
+
+  .services{
+    grid-template-columns:1fr;
+  }
+
+  .gallery{
+    grid-template-columns:1fr;
+    grid-auto-rows:260px;
+  }
+
+  .work,
+  .big{
+    grid-column:span 1 !important;
+  }
+
+  .about-main{
+    padding:30px 24px;
+  }
+
+  footer{
+    flex-direction:column;
+    gap:5px;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="container nav">
+<div class="container nav">
 
-    <div class="brand">
-      <div class="x-logo"></div>
-      <div class="brand-name">
-        <strong>إكسل وإنجاز للمقاولات</strong>
-        <span>EXCEL & INJAZ CONTRACTING</span>
-      </div>
+  <div class="brand">
+    <div class="logo-x"></div>
+
+    <div class="brand-text">
+      <strong>إكسل وإنجاز للمقاولات</strong>
+      <span>EXCEL & INJAZ CONTRACTING</span>
     </div>
-
-    <nav>
-      <a href="#home">الرئيسية</a>
-      <a href="#services">خدماتنا</a>
-      <a href="#works">أعمالنا</a>
-      <a href="#about">من نحن</a>
-    </nav>
-
-    <div class="lang">
-      <span>AR</span>
-      <span>EN</span>
-    </div>
-
   </div>
+
+  <nav>
+    <a href="#home">الرئيسية</a>
+    <a href="#services">خدماتنا</a>
+    <a href="#works">أعمالنا</a>
+    <a href="#about">من نحن</a>
+  </nav>
+
+  <div class="lang">
+    <span class="active">AR</span>
+    <span>EN</span>
+  </div>
+
+</div>
 </header>
 
+<!-- HERO -->
 <section class="hero" id="home">
-  <div class="sun-glow"></div>
 
-  <div class="container">
-    <div class="hero-content">
-      <div class="eyebrow">حلول حديد متكاملة للمشاريع</div>
+<div class="container">
+<div class="hero-content">
 
-      <h1>
-        توريد • تصنيع • تركيب
-        <br>
-        <span>جميع أعمال الحدادة</span>
-      </h1>
-
-      <p>
-        تنفيذ أعمال الحديد والإنشاءات المعدنية للمشاريع التجارية والصناعية والخدمية،
-        من التجهيز والتصنيع وحتى التركيب بالموقع في الرياض ومختلف مناطق المملكة.
-      </p>
-
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#works">مشاهدة الأعمال</a>
-        <a class="btn btn-secondary" href="#about">عن المؤسسة</a>
-      </div>
-    </div>
+  <div class="hero-small">
+    حلول حديد متكاملة للمشاريع
   </div>
+
+  <h1>
+    توريد • تصنيع • تركيب
+    <br>
+    <span>جميع أعمال الحدادة</span>
+  </h1>
+
+  <p>
+    إكسل وإنجاز للمقاولات لتنفيذ أعمال الحديد والإنشاءات المعدنية،
+    من التوريد والتجهيز والتصنيع وحتى التركيب بالموقع.
+  </p>
+
+  <div class="buttons">
+    <a class="btn btn-main" href="#works">مشاهدة الأعمال</a>
+    <a class="btn btn-line" href="#services">خدماتنا</a>
+  </div>
+
+</div>
+</div>
+
 </section>
 
-<div class="container features-wrap">
-  <div class="features">
+<!-- FEATURES -->
+<div class="container features-holder">
+<div class="features">
 
-    <div class="feature">
-      <strong>توريد وتجهيز</strong>
-      <span>مواد وقطاعات حسب متطلبات المشروع</span>
+  <div class="feature">
+    <strong>توريد وتجهيز</strong>
+    <span>حديد وقطاعات حسب المشروع</span>
+  </div>
+
+  <div class="feature">
+    <strong>تصنيع حسب الطلب</strong>
+    <span>قص وثني ولحام وتجميع</span>
+  </div>
+
+  <div class="feature">
+    <strong>تركيب بالموقع</strong>
+    <span>تنفيذ وتركيب الأعمال المعدنية</span>
+  </div>
+
+  <div class="feature">
+    <strong>حلول متكاملة</strong>
+    <span>من القياس إلى التسليم</span>
+  </div>
+
+</div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+<div class="container">
+
+<div class="section-head">
+  <small>خدماتنا</small>
+  <h2>جميع أعمال الحدادة والإنشاءات المعدنية</h2>
+  <p>
+    توريد وتصنيع وتركيب أعمال الحديد للمشاريع التجارية والصناعية والخدمية.
+  </p>
+</div>
+
+<div class="services">
+
+  <div class="service">
+    <small>01</small>
+    <h3>هناجر ومستودعات</h3>
+    <p>تصنيع وتركيب الهياكل والمستودعات الحديدية.</p>
+  </div>
+
+  <div class="service">
+    <small>02</small>
+    <h3>هياكل وجمالونات</h3>
+    <p>كمرات وجمالونات وهياكل معدنية ثقيلة.</p>
+  </div>
+
+  <div class="service">
+    <small>03</small>
+    <h3>سلالم وهاندريل</h3>
+    <p>سلالم حديد وطوارئ وقفصية وهاندريل.</p>
+  </div>
+
+  <div class="service">
+    <small>04</small>
+    <h3>أسوار خارجية وبوابات</h3>
+    <p>أسوار مواقع ومصانع ومستودعات وبوابات حديدية.</p>
+  </div>
+
+  <div class="service">
+    <small>05</small>
+    <h3>تأسيس وهياكل المصاعد</h3>
+    <p>هياكل وكمرات وقواعد وتدعيمات المصاعد.</p>
+  </div>
+
+  <div class="service">
+    <small>06</small>
+    <h3>منصات وميزانين</h3>
+    <p>منصات عمل وميزانين وممرات ومشايات معدنية.</p>
+  </div>
+
+  <div class="service">
+    <small>07</small>
+    <h3>Pipe Racks و Grating</h3>
+    <p>أعمال صناعية وحوامل ومشايات معدنية.</p>
+  </div>
+
+  <div class="service">
+    <small>08</small>
+    <h3>قواعد وحوامل معدات</h3>
+    <p>تصنيع القواعد والدعامات والهياكل للمعدات.</p>
+  </div>
+
+  <div class="service">
+    <small>09</small>
+    <h3>رفوف مستودعات</h3>
+    <p>تصنيع وتركيب أعمال التخزين والرفوف المعدنية.</p>
+  </div>
+
+  <div class="service">
+    <small>10</small>
+    <h3>واجهات وكسوات معدنية</h3>
+    <p>تصنيع وتركيب التفاصيل والكسوات المعدنية.</p>
+  </div>
+
+  <div class="service">
+    <small>11</small>
+    <h3>أعمال ستانلس</h3>
+    <p>هاندريل وتفاصيل وأعمال ستانلس متنوعة.</p>
+  </div>
+
+  <div class="service">
+    <small>12</small>
+    <h3>قص ولحام وتجميع</h3>
+    <p>قص وثني وتخريم ولحام وتصنيع وتركيب.</p>
+  </div>
+
+</div>
+</div>
+</section>
+
+<!-- WORKS -->
+<section class="section works" id="works">
+<div class="container">
+
+<div class="section-head">
+  <small>معرض الأعمال</small>
+  <h2>أعمال حديد متنوعة للمشاريع</h2>
+  <p>نماذج توضيحية واقعية لمجالات الأعمال التي نقدمها.</p>
+</div>
+
+<div class="gallery">
+
+  <div class="work big">
+    <img
+      src="https://iqrorwxhpikllr5q.ldycdn.com/cloud/pkBpiKlkRllSlknirjmpj/Image_2025-08-18_161030_191.jpg"
+      alt="هياكل معدنية صناعية">
+    <div class="work-info">
+      <strong>هياكل معدنية صناعية</strong>
+      <span>توريد • تصنيع • تركيب</span>
     </div>
+  </div>
 
-    <div class="feature">
-      <strong>تصنيع حسب الطلب</strong>
-      <span>قص وثني ولحام وتجميع</span>
+  <div class="work five">
+    <img
+      src="https://hanagery.com/uploads/%D9%87%D9%86%D8%A7%D8%AC%D8%B1-19.jpg"
+      alt="هناجر ومستودعات">
+    <div class="work-info">
+      <strong>هناجر ومستودعات</strong>
+      <span>هياكل وجمالونات</span>
     </div>
+  </div>
 
-    <div class="feature">
-      <strong>تركيب بالموقع</strong>
-      <span>تنفيذ وتركيب منظم</span>
+  <div class="work five">
+    <img
+      src="https://ajc.sa/assets/img/projects/detail/09/2-b.jpg"
+      alt="أعمال صناعية">
+    <div class="work-info">
+      <strong>أعمال صناعية</strong>
+      <span>هياكل ومنشآت معدنية</span>
     </div>
+  </div>
 
-    <div class="feature">
-      <strong>حلول متكاملة</strong>
-      <span>من القياس والتصنيع إلى التسليم</span>
+  <div class="work four">
+    <img
+      src="https://images.pexels.com/photos/12003137/pexels-photo-12003137.jpeg?auto=compress&cs=tinysrgb&w=1000"
+      alt="سلالم وهاندريل">
+    <div class="work-info">
+      <strong>سلالم وهاندريل</strong>
+      <span>تصنيع وتركيب</span>
     </div>
+  </div>
 
+  <div class="work four">
+    <img
+      src="https://www.hitechfence.com/web/image/10735-e058395f/WhatsApp%20Image%202024-08-08%20at%2011.37.49%20AM%20%281%29.webp"
+      alt="أسوار خارجية">
+    <div class="work-info">
+      <strong>أسوار خارجية</strong>
+      <span>أسوار وحماية للمشاريع</span>
+    </div>
+  </div>
+
+  <div class="work four">
+    <img
+      src="https://images.pexels.com/photos/23964493/pexels-photo-23964493.jpeg?auto=compress&cs=tinysrgb&w=1000"
+      alt="سلالم حديد">
+    <div class="work-info">
+      <strong>سلالم حديد</strong>
+      <span>سلالم وممرات وهاندريل</span>
+    </div>
+  </div>
+
+  <div class="work six">
+    <img
+      src="https://www.zamilsteel.com/ssd/en/img/projects/1_32.jpg"
+      alt="إنشاءات معدنية">
+    <div class="work-info">
+      <strong>إنشاءات معدنية</strong>
+      <span>هياكل للمشاريع الكبيرة</span>
+    </div>
+  </div>
+
+  <div class="work six">
+    <img
+      src="https://menainfrastructure.com/wp-content/uploads/2013/02/qura-4.jpg"
+      alt="أعمال صناعية ثقيلة">
+    <div class="work-info">
+      <strong>أعمال صناعية ثقيلة</strong>
+      <span>هياكل ومنصات ومعدات</span>
+    </div>
+  </div>
+
+  <div class="work four">
+    <img
+      src="https://images.pexels.com/photos/32200451/pexels-photo-32200451.jpeg?auto=compress&cs=tinysrgb&w=900"
+      alt="تصنيع ولحام">
+    <div class="work-info">
+      <strong>تصنيع ولحام</strong>
+      <span>تجهيز الأعمال الحديدية</span>
+    </div>
+  </div>
+
+  <div class="work four">
+    <img
+      src="https://images.pexels.com/photos/9878862/pexels-photo-9878862.jpeg?auto=compress&cs=tinysrgb&w=900"
+      alt="منصات وممرات">
+    <div class="work-info">
+      <strong>منصات وممرات</strong>
+      <span>أعمال معدنية صناعية</span>
+    </div>
+  </div>
+
+  <div class="work four">
+    <img
+      src="https://images.pexels.com/photos/37354845/pexels-photo-37354845.jpeg?auto=compress&cs=tinysrgb&w=900"
+      alt="لحام وتجميع">
+    <div class="work-info">
+      <strong>لحام وتجميع</strong>
+      <span>تصنيع حسب متطلبات المشروع</span>
+    </div>
+  </div>
+
+</div>
+
+<p style="margin-top:18px;font-size:10px;color:#71808c;">
+الصور المعروضة توضيحية لمجالات الأعمال ولا تعني أنها مشاريع منفذة بواسطة إكسل وإنجاز.
+</p>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+<div class="container about">
+
+<div class="about-main">
+  <h2>إكسل وإنجاز للمقاولات</h2>
+  <p>
+    نقدم حلول توريد وتصنيع وتركيب أعمال الحديد والإنشاءات المعدنية
+    للمشاريع التجارية والصناعية والخدمية، وفق متطلبات الموقع والمخططات.
+  </p>
+</div>
+
+<div class="about-list">
+  <div>توريد وتجهيز الحديد والقطاعات</div>
+  <div>تصنيع حسب المخططات ومتطلبات المشروع</div>
+  <div>قص وثني وتخريم ولحام وتجميع</div>
+  <div>تركيب وتنفيذ بالموقع</div>
+  <div>الرياض – حي السلي</div>
+</div>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact">
+
+<div class="container">
+
+<div class="contact-grid">
+
+<div>
+  <div class="brand">
+    <div class="logo-x"></div>
+    <div class="brand-text">
+      <strong>إكسل وإنجاز للمقاولات</strong>
+      <span>EXCEL & INJAZ CONTRACTING</span>
+    </div>
+  </div>
+
+  <div class="contact-text">
+    توريد • تصنيع • تركيب جميع أعمال الحدادة والإنشاءات المعدنية
   </div>
 </div>
 
-<section id="services">
-  <div class="container">
+<div class="contact-info">
+  <a href="tel:0551889096">مسؤول المشاريع: 0551889096</a>
+  <a href="https://wa.me/966554726980">واتساب: 0554726980</a>
+  <a href="mailto:excel1lnjaz@gmail.com">excel1lnjaz@gmail.com</a>
+  <span>الرياض – حي السلي</span>
+</div>
 
-    <div class="section-head">
-      <small>خدماتنا</small>
-      <h2>جميع أعمال الحدادة والإنشاءات المعدنية</h2>
-      <p>
-        نقدم نطاقاً متنوعاً من أعمال الحديد للمشاريع، مع التركيز على التوريد والتصنيع والتركيب بالموقع.
-      </p>
-    </div>
+</div>
 
-    <div class="services">
+<footer>
+  <span>© 2026 Excel & Injaz Contracting</span>
+  <span class="cr">س.ت: 7038272063</span>
+</footer>
 
-      <div class="service">
-        <div class="num">01</div>
-        <h3>هناجر ومستودعات</h3>
-        <p>تصنيع وتركيب الهناجر والمباني والمستودعات الحديدية.</p>
-      </div>
-
-      <div class="service">
-        <div class="num">02</div>
-        <h3>هياكل وجمالونات</h3>
-        <p>كمرات وجمالونات وهياكل معدنية للمشاريع المختلفة.</p>
-      </div>
-
-      <div class="service">
-        <div class="num">03</div>
-        <h3>سلالم وهاندريل</h3>
-        <p>سلالم حديد، سلالم طوارئ، سلالم قفصية وهاندريل.</p>
-      </div>
-
-      <div class="service">
-        <div class="num">04</div>
-        <h3>أسوار خارجية وبوابات</h3>
-        <p>أسوار مشاريع ومصانع ومستودعات وبوابات حديدية.</p>
-      </div>
-
-      <div class="service">
-        <div class="num">05</div>
-        <h3>تأسيس وهياكل المصاعد</h3>
-        <p>تأسيس هياكل المصاعد والكمرات والقواعد والتدعيمات المعدنية.</p>
-      </div>
-
-      <div class="service">
-        <div class="num">06</div>
-        <h3>منصات وميزانين</h3>
-        <p>منصات عمل وميزانين وممرات ومشايات معدنية.</p>
-      </div>
-
-      <div class="service">
-        <div class="num">07</div>
-        <h3>Pipe Racks و Grating</h3>
-        <p>أعمال صناعية وحوامل وخطوط ومشايات شبكية معدنية.</p>
-      </div>
-
-      <div class="service">
-        <div class="num">08</div>
-        <h3>قواعد وحوامل معدات</h3>
-        <p>تصنيع قواعد وهياكل ودعامات وحوامل للمعدات.</p>
-      </div>
-
-      <div class="service">
-        <div class="num">09</div>
-        <h3>رفوف مستودعات</h3>
-        <p>تصنيع وتركيب رفوف وأعمال تنظيم وتخزين معدنية.</p>
-      </div>
-
-      <div class="service">
-        <div class="num">10</div>
-        <h3>واجهات وكسوات معدنية</h3>
-        <p>تنفيذ الكسوات والتفاصيل المعدنية للمباني.</p>
-      </div>
-
-      <div class="service">
-        <div class="num">11</div>
-        <h3>أعمال ستانلس</h3>
-        <p>هاندريل وتفاصيل وتصنيع وتركيب أعمال الستانلس.</p>
-      </div>
-
-      <div class="service">
-        <div class="num">12</div>
-        <h3>قص ولحام وتجميع</h3>
-        <p>قص وثني وتخريم ولحام وتصنيع وتجميع وتركيب الحديد.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="works" id="works">
-  <div class="container">
-
-    <div class="section-head">
-      <small>معرض الأعمال</small>
-      <h2>توريد وتصنيع وتركيب أعمال الحديد</h2>
-      <p>
-        نماذج توضيحية واقعية لمجالات الحدادة والإنشاءات المعدنية التي ننفذها.
-      </p>
-    </div>
-
-    <div class="work-grid">
-
-      <div class="work w1">
-        <img src="https://images.pexels.com/photos/29274538/pexels-photo-29274538.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="هياكل معدنية">
-        <div class="work-label">
-          <strong>هياكل معدنية ثقيلة</strong>
-          <span>تصنيع وتركيب</span>
-        </div>
-      </div>
-
-      <div class="work w2">
-        <img src="https://images.pexels.com/photos/16029880/pexels-photo-16029880.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="هناجر ومستودعات">
-        <div class="work-label">
-          <strong>هناجر ومستودعات</strong>
-          <span>هياكل وجمالونات</span>
-        </div>
-      </div>
-
-      <div class="work w3">
-        <img src="https://images.pexels.com/photos/32200451/pexels-photo-32200451.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="تصنيع ولحام">
-        <div class="work-label">
-          <strong>تصنيع ولحام</strong>
-          <span>داخل الورشة</span>
-        </div>
-      </div>
-
-      <div class="work w4">
-        <img src="https://images.pexels.com/photos/12003137/pexels-photo-12003137.jpeg?auto=compress&cs=tinysrgb&w=900" alt="سلالم وهاندريل">
-        <div class="work-label">
-          <strong>سلالم وهاندريل</strong>
-          <span>توريد وتصنيع وتركيب</span>
-        </div>
-      </div>
-
-      <div class="work w5">
-        <img src="https://images.pexels.com/photos/31517290/pexels-photo-31517290.jpeg?auto=compress&cs=tinysrgb&w=900" alt="أسوار وبوابات">
-        <div class="work-label">
-          <strong>أسوار خارجية وبوابات</strong>
-          <span>مشاريع ومواقع</span>
-        </div>
-      </div>
-
-      <div class="work w6">
-        <img src="https://images.pexels.com/photos/9878862/pexels-photo-9878862.jpeg?auto=compress&cs=tinysrgb&w=900" alt="منصات معدنية">
-        <div class="work-label">
-          <strong>منصات وممرات معدنية</strong>
-          <span>أعمال صناعية</span>
-        </div>
-      </div>
-
-      <div class="work w7">
-        <img src="https://images.pexels.com/photos/37354845/pexels-photo-37354845.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="لحام هياكل">
-        <div class="work-label">
-          <strong>لحام وتجميع الهياكل</strong>
-          <span>تصنيع معدني</span>
-        </div>
-      </div>
-
-      <div class="work w8">
-        <img src="https://images.pexels.com/photos/5843171/pexels-photo-5843171.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="مستودعات">
-        <div class="work-label">
-          <strong>هياكل المستودعات</strong>
-          <span>كمرات وجمالونات</span>
-        </div>
-      </div>
-
-      <div class="work w9">
-        <img src="https://images.pexels.com/photos/23964493/pexels-photo-23964493.jpeg?auto=compress&cs=tinysrgb&w=900" alt="سلالم معدنية">
-        <div class="work-label">
-          <strong>سلالم طوارئ</strong>
-          <span>حديد وهاندريل</span>
-        </div>
-      </div>
-
-      <div class="work w10">
-        <img src="https://images.pexels.com/photos/15508178/pexels-photo-15508178.jpeg?auto=compress&cs=tinysrgb&w=900" alt="أعمال صناعية">
-        <div class="work-label">
-          <strong>أعمال صناعية</strong>
-          <span>قطاعات ومواسير معدنية</span>
-        </div>
-      </div>
-
-      <div class="work w11">
-        <img src="https://images.pexels.com/photos/16708396/pexels-photo-16708396.jpeg?auto=compress&cs=tinysrgb&w=900" alt="كمرات حديد">
-        <div class="work-label">
-          <strong>كمرات وقطاعات حديد</strong>
-          <span>توريد وتجهيز</span>
-        </div>
-      </div>
-
-      <div class="work w12">
-        <img src="https://images.pexels.com/photos/32467386/pexels-photo-32467386.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="تركيب بالموقع">
-        <div class="work-label">
-          <strong>تركيب بالموقع</strong>
-          <span>أعمال هياكل معدنية</span>
-        </div>
-      </div>
-
-      <div class="work w13">
-        <img src="https://images.pexels.com/photos/16045267/pexels-photo-16045267.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="تصنيع الحديد">
-        <div class="work-label">
-          <strong>تصنيع وتجميع الحديد</strong>
-          <span>قص ولحام وتركيب</span>
-        </div>
-      </div>
-
-      <div class="work w14">
-        <img src="https://images.pexels.com/photos/5919806/pexels-photo-5919806.jpeg?auto=compress&cs=tinysrgb&w=900" alt="أسوار">
-        <div class="work-label">
-          <strong>أسوار خارجية</strong>
-          <span>حديد وشبوك حماية</span>
-        </div>
-      </div>
-
-      <div class="work w15">
-        <img src="https://images.pexels.com/photos/16300083/pexels-photo-16300083.jpeg?auto=compress&cs=tinysrgb&w=900" alt="سلالم خارجية">
-        <div class="work-label">
-          <strong>سلالم حديد خارجية</strong>
-          <span>تصنيع وتركيب</span>
-        </div>
-      </div>
-
-      <div class="work w16">
-        <img src="https://images.pexels.com/photos/37663560/pexels-photo-37663560.jpeg?auto=compress&cs=tinysrgb&w=900" alt="لحام">
-        <div class="work-label">
-          <strong>لحام وتجهيز بالموقع</strong>
-          <span>أعمال تنفيذية</span>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="gallery-note">
-      الصور المعروضة توضيحية لمجالات الأعمال ولا تعني أنها مشاريع منفذة بواسطة إكسل وإنجاز.
-    </div>
-
-  </div>
-</section>
-
-<section id="about">
-  <div class="container about">
-
-    <div class="about-card">
-      <h3>إكسل وإنجاز للمقاولات</h3>
-      <p>
-        نعمل في توريد وتصنيع وتركيب أعمال الحدادة والإنشاءات المعدنية،
-        ونقدم حلولاً مناسبة للمشاريع التجارية والصناعية والخدمية وفق متطلبات الموقع والمخططات.
-      </p>
-    </div>
-
-    <div class="about-list">
-      <div>توريد وتجهيز الحديد والقطاعات</div>
-      <div>تصنيع حسب المخططات ومتطلبات المشروع</div>
-      <div>قص وثني وتخريم ولحام وتجميع</div>
-      <div>تركيب وتنفيذ بالموقع</div>
-      <div>الرياض – حي السلي</div>
-    </div>
-
-  </div>
-</section>
-
-<section class="contact">
-  <div class="container">
-
-    <div class="contact-grid">
-
-      <div>
-        <div class="brand">
-          <div class="x-logo"></div>
-          <div class="brand-name">
-            <strong>إكسل وإنجاز للمقاولات</strong>
-            <span>EXCEL & INJAZ CONTRACTING</span>
-          </div>
-        </div>
-
-        <p class="contact-intro">
-          توريد • تصنيع • تركيب جميع أعمال الحدادة والإنشاءات المعدنية.
-        </p>
-      </div>
-
-      <div class="contact-info">
-        <a href="tel:0551889096">مسؤول المشاريع: 0551889096</a>
-        <a href="https://wa.me/966554726980">واتساب: 0554726980</a>
-        <a href="mailto:excel1lnjaz@gmail.com">excel1lnjaz@gmail.com</a>
-        <span>الرياض – حي السلي</span>
-      </div>
-
-    </div>
-
-    <footer>
-      <span>© 2026 Excel & Injaz Contracting</span>
-      <span class="cr">س.ت: 7038272063</span>
-    </footer>
-
-  </div>
+</div>
 </section>
 
 </body>
