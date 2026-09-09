@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
 
-<title>اكسل وانجاز للمقاولات</title>
+<title>اكسل وانجاز للمقاولات | Excel & Injaz Contracting</title>
 
 <style>
 :root{
@@ -32,44 +33,95 @@ body{
   color:var(--white);
   font-family:Arial,Tahoma,sans-serif;
   line-height:1.8;
+  overflow-x:hidden;
 }
 
-/* HEADER */
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.container{
+  width:min(1180px,92%);
+  margin:auto;
+}
+
+/* ================= HEADER ================= */
 
 header{
-  min-height:118px;
+  min-height:96px;
   border-bottom:1px solid var(--border);
   background:rgba(11,20,23,.97);
 }
 
 .header-inner{
-  width:min(1180px,92%);
-  min-height:118px;
+  width:min(1180px,94%);
+  min-height:96px;
   margin:auto;
 
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:22px;
+  gap:12px;
 }
 
 .brand{
   display:flex;
   align-items:center;
-  gap:16px;
+  gap:10px;
+  direction:rtl;
   min-width:0;
 }
 
+.brand-text{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  text-align:right;
+}
+
+.brand-name{
+  font-size:14px;
+  font-weight:800;
+  line-height:1.25;
+  white-space:nowrap;
+  letter-spacing:0;
+  word-spacing:0;
+  text-align:right;
+}
+
+.brand-line{
+  width:100%;
+  max-width:210px;
+  height:1px;
+  margin-top:5px;
+  background:
+    linear-gradient(
+      to left,
+      rgba(216,181,101,.90),
+      rgba(216,181,101,.15)
+    );
+}
+
+.brand-sub{
+  margin-top:5px;
+  font-size:9px;
+  font-weight:500;
+  color:var(--muted);
+  white-space:nowrap;
+  text-align:right;
+}
+
 .logo{
-  width:72px;
-  height:72px;
-  flex:0 0 72px;
+  width:58px;
+  height:58px;
+  flex:0 0 58px;
 
   display:flex;
   align-items:center;
   justify-content:center;
 
-  border-radius:22px;
+  border-radius:17px;
 
   background:
     linear-gradient(
@@ -79,183 +131,147 @@ header{
     );
 
   color:#101416;
-
-  font-size:28px;
+  font-family:Arial,sans-serif;
+  font-size:22px;
   font-weight:900;
   letter-spacing:-2px;
 }
 
-.brand-text{
-  text-align:right;
-  min-width:0;
-}
-
-.brand-name{
-  font-size:clamp(18px,2.3vw,28px);
-  font-weight:900;
-
-  line-height:1.25;
-
-  white-space:nowrap;
-}
-
-.brand-sub{
-  color:var(--muted);
-  font-size:14px;
-  margin-top:3px;
-}
-
 .lang{
   flex:0 0 auto;
-
-  padding:13px 28px;
-
-  border-radius:16px;
-
-  border:1px solid rgba(216,181,101,.45);
-
+  padding:9px 13px;
+  border-radius:12px;
+  border:1px solid rgba(216,181,101,.40);
   background:rgba(216,181,101,.05);
-
   color:var(--gold-soft);
-
-  font-size:18px;
+  font-size:13px;
   font-weight:800;
-
   cursor:pointer;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero{
   position:relative;
-  overflow:hidden;
-
-  min-height:570px;
-
+  min-height:540px;
   display:flex;
   align-items:center;
-  justify-content:center;
-
-  text-align:center;
+  overflow:hidden;
 
   background:
     radial-gradient(
       circle at center,
-      rgba(216,181,101,.055),
-      transparent 46%
+      rgba(216,181,101,.05),
+      transparent 48%
     );
 }
 
 .hero-watermark{
   position:absolute;
-
   left:50%;
   top:50%;
-
   transform:translate(-50%,-50%);
 
-  font-size:min(55vw,620px);
-
+  font-family:Arial,sans-serif;
+  font-size:min(54vw,560px);
   line-height:.8;
-
   font-weight:900;
 
-  color:rgba(216,181,101,.035);
-
+  color:rgba(216,181,101,.03);
   filter:blur(5px);
 
   pointer-events:none;
+  user-select:none;
 }
 
 .hero-content{
   position:relative;
   z-index:2;
+  width:min(1180px,92%);
+  margin:auto;
+  padding:70px 0;
+}
 
-  width:min(1000px,90%);
-
-  padding:75px 0;
+.hero-text-wrap{
+  width:min(760px,100%);
+  margin-left:auto;
+  text-align:right;
 }
 
 .hero-title{
-  font-size:clamp(38px,6vw,76px);
-
+  font-size:28px;
   font-weight:900;
-
-  line-height:1.25;
-
-  text-align:center;
-
+  line-height:1.3;
+  text-align:right;
   white-space:nowrap;
+  margin-bottom:10px;
+  letter-spacing:0;
+  word-spacing:0;
+}
 
-  margin-bottom:25px;
+.hero-title-line{
+  width:100%;
+  max-width:360px;
+  height:2px;
+  margin:0 0 20px auto;
+
+  background:
+    linear-gradient(
+      to left,
+      rgba(216,181,101,.95),
+      rgba(216,181,101,.15)
+    );
+
+  border-radius:999px;
 }
 
 .hero-description{
-  width:min(850px,100%);
-
-  margin:auto;
-
-  color:#c2c9cb;
-
-  font-size:clamp(17px,2.2vw,24px);
-
-  line-height:2;
-
-  text-align:center;
+  max-width:700px;
+  margin:0 0 0 auto;
+  font-size:15px;
+  line-height:1.9;
+  color:#bcc5c7;
+  text-align:right;
 }
 
-/* SECTION */
+/* ================= SECTIONS ================= */
 
 .section{
-  padding:80px 0;
-
+  padding:72px 0;
   border-top:1px solid rgba(255,255,255,.035);
-}
-
-.container{
-  width:min(1180px,92%);
-  margin:auto;
 }
 
 .section-title{
   text-align:center;
-
-  margin-bottom:40px;
+  margin-bottom:34px;
 }
 
 .section-title h2{
-  font-size:clamp(30px,4.5vw,48px);
-
+  font-size:30px;
   line-height:1.3;
-
-  margin-bottom:8px;
+  margin-bottom:7px;
 }
 
 .section-title p{
+  font-size:14px;
+  line-height:1.8;
   color:var(--muted);
-
-  font-size:16px;
 }
 
-/* SERVICES */
+/* ================= SERVICES ================= */
 
 .services-grid{
   display:grid;
-
-  grid-template-columns:
-    repeat(4,1fr);
-
-  gap:16px;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
 }
 
 .service{
-  min-height:165px;
-
-  padding:25px 21px;
+  min-height:auto;
+  padding:20px;
 
   border:1px solid var(--border);
-
-  border-radius:22px;
+  border-radius:18px;
 
   background:
     linear-gradient(
@@ -265,184 +281,192 @@ header{
     );
 
   text-align:right;
-
   transition:.25s;
 }
 
 .service:hover{
   transform:translateY(-3px);
-
-  border-color:
-    rgba(216,181,101,.30);
+  border-color:rgba(216,181,101,.30);
 }
 
 .service-number{
   color:var(--gold);
-
-  font-size:13px;
-
+  font-size:12px;
   font-weight:900;
-
-  margin-bottom:10px;
+  margin-bottom:8px;
 }
 
 .service h3{
-  font-size:18px;
-
-  line-height:1.5;
-
-  margin-bottom:7px;
+  font-size:16px;
+  line-height:1.45;
+  margin-bottom:5px;
 }
 
 .service p{
-  color:var(--muted);
-
-  font-size:13px;
-
+  font-size:12px;
   line-height:1.7;
+  color:var(--muted);
 }
 
-/* ABOUT */
+/* ================= ABOUT ================= */
 
 .about-box{
-  width:min(1000px,100%);
-
+  width:min(980px,100%);
   margin:auto;
+  padding:42px 30px;
 
-  padding:55px 45px;
-
-  border-radius:28px;
-
+  border-radius:24px;
   border:1px solid var(--border);
-
-  background:#162126;
+  background:var(--panel);
 
   text-align:center;
 }
 
 .about-box h2{
-  font-size:clamp(32px,5vw,58px);
-
-  line-height:1.25;
-
-  margin-bottom:28px;
-
-  white-space:nowrap;
+  font-size:28px;
+  font-weight:900;
+  line-height:1.3;
+  margin-bottom:18px;
 }
 
 .about-box p{
   color:#c3cacc;
-
-  font-size:18px;
-
-  line-height:2;
-
-  max-width:850px;
-
+  font-size:15px;
+  line-height:1.9;
+  max-width:780px;
   margin:auto;
 }
 
-/* CONTACT */
+/* ================= CONTACT ================= */
 
 .contact-box{
-  padding:42px;
+  padding:34px 28px;
 
-  border-radius:26px;
-
+  border-radius:24px;
   border:1px solid rgba(216,181,101,.20);
 
   background:
     linear-gradient(
       135deg,
-      rgba(216,181,101,.055),
+      rgba(216,181,101,.05),
       #162126
     );
 }
 
 .contact-title{
   text-align:center;
-
-  font-size:36px;
-
-  margin-bottom:10px;
+  font-size:30px;
+  margin-bottom:7px;
 }
 
 .contact-sub{
   text-align:center;
-
   color:var(--muted);
-
-  margin-bottom:30px;
+  font-size:14px;
+  margin-bottom:24px;
 }
 
 .contact-grid{
   display:grid;
-
-  grid-template-columns:
-    repeat(3,1fr);
-
-  gap:14px;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
 }
 
 .contact-item{
   display:block;
-
-  padding:20px;
-
-  border-radius:17px;
-
+  padding:17px;
+  border-radius:15px;
   border:1px solid var(--border);
-
   background:rgba(255,255,255,.025);
-
   text-align:center;
 }
 
 .contact-item small{
   display:block;
-
   color:var(--muted);
-
-  margin-bottom:4px;
+  margin-bottom:3px;
+  font-size:12px;
 }
 
 .contact-item strong{
   color:var(--white);
-
-  font-size:16px;
-
+  font-size:15px;
   direction:ltr;
-
   display:inline-block;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
-  padding:30px 0 35px;
-
+  padding:28px 0 32px;
   border-top:1px solid var(--border);
-
   text-align:center;
-
   color:var(--muted);
-
-  font-size:13px;
+  font-size:12px;
 }
 
 .cr{
-  margin-top:5px;
-
-  color:#aeb8bb;
+  margin-top:4px;
+  color:#aeb8bb !important;
+  -webkit-text-fill-color:#aeb8bb !important;
 }
 
-/* ENGLISH */
+/* ================= ENGLISH ================= */
 
 html[lang="en"]{
   direction:ltr;
 }
 
+html[lang="en"] body{
+  direction:ltr;
+}
+
+html[lang="en"] .brand{
+  direction:ltr;
+}
+
 html[lang="en"] .brand-text{
+  align-items:flex-start;
+  text-align:left;
+}
+
+html[lang="en"] .brand-name,
+html[lang="en"] .brand-sub{
+  text-align:left;
+}
+
+html[lang="en"] .brand-line{
+  background:
+    linear-gradient(
+      to right,
+      rgba(216,181,101,.90),
+      rgba(216,181,101,.15)
+    );
+}
+
+html[lang="en"] .hero-text-wrap{
+  margin-left:0;
+  margin-right:auto;
+  text-align:left;
+}
+
+html[lang="en"] .hero-title{
+  text-align:left;
+}
+
+html[lang="en"] .hero-title-line{
+  margin:0 auto 20px 0;
+
+  background:
+    linear-gradient(
+      to right,
+      rgba(216,181,101,.95),
+      rgba(216,181,101,.15)
+    );
+}
+
+html[lang="en"] .hero-description{
+  margin:0 auto 0 0;
   text-align:left;
 }
 
@@ -450,17 +474,12 @@ html[lang="en"] .service{
   text-align:left;
 }
 
-html[lang="en"] .contact-item strong{
-  direction:ltr;
-}
-
-/* MOBILE */
+/* ================= TABLET ================= */
 
 @media(max-width:900px){
 
   .services-grid{
-    grid-template-columns:
-      repeat(2,1fr);
+    grid-template-columns:repeat(2,1fr);
   }
 
   .contact-grid{
@@ -469,64 +488,78 @@ html[lang="en"] .contact-item strong{
 
 }
 
-@media(max-width:650px){
+/* ================= MOBILE ================= */
 
-  header,
-  .header-inner{
-    min-height:100px;
-  }
+@media(max-width:650px){
 
   .header-inner{
     width:94%;
-    gap:10px;
-  }
-
-  .logo{
-    width:60px;
-    height:60px;
-    flex-basis:60px;
-
-    border-radius:18px;
-
-    font-size:23px;
-  }
-
-  .brand{
-    gap:10px;
+    min-height:92px;
   }
 
   .brand-name{
-    font-size:17px;
+    font-size:12px;
   }
 
   .brand-sub{
-    font-size:11px;
+    font-size:8px;
+  }
+
+  .logo{
+    width:54px;
+    height:54px;
+    flex-basis:54px;
+    font-size:20px;
   }
 
   .lang{
-    padding:10px 15px;
-
-    border-radius:13px;
-
-    font-size:15px;
+    padding:8px 11px;
+    font-size:12px;
   }
 
   .hero{
-    min-height:510px;
+    min-height:500px;
+  }
+
+  .hero-content{
+    width:92%;
+    padding:60px 0;
+  }
+
+  .hero-watermark{
+    font-size:250px;
   }
 
   .hero-title{
-    font-size:39px;
+    font-size:24px;
+    line-height:1.25;
+    white-space:nowrap;
+  }
 
-    white-space:normal;
-
-    margin-bottom:24px;
+  .hero-title-line{
+    max-width:300px;
+    margin-bottom:18px;
   }
 
   .hero-description{
-    font-size:17px;
+    font-size:14px;
+    line-height:1.9;
+  }
 
-    line-height:2;
+  .section{
+    padding:58px 0;
+  }
+
+  .section-title{
+    margin-bottom:28px;
+  }
+
+  .section-title h2{
+    font-size:27px;
+  }
+
+  .section-title p{
+    font-size:13px;
   }
 
   .services-grid{
@@ -534,572 +567,368 @@ html[lang="en"] .contact-item strong{
   }
 
   .service{
-    min-height:auto;
-
-    padding:22px;
+    padding:19px;
   }
 
   .about-box{
-    padding:40px 24px;
+    padding:34px 22px;
   }
 
   .about-box h2{
-    font-size:35px;
-
-    white-space:normal;
+    font-size:26px;
   }
 
   .about-box p{
-    font-size:16px;
+    font-size:14px;
   }
 
   .contact-box{
-    padding:28px 20px;
+    padding:26px 18px;
   }
 
   .contact-title{
-    font-size:31px;
+    font-size:27px;
   }
 
-  .hero-watermark{
-    font-size:270px;
+}
+
+/* ================= VERY SMALL ================= */
+
+@media(max-width:390px){
+
+  .brand-name{
+    font-size:11px;
+  }
+
+  .brand-sub{
+    font-size:7px;
+  }
+
+  .logo{
+    width:50px;
+    height:50px;
+    flex-basis:50px;
+    font-size:18px;
+  }
+
+  .hero-title{
+    font-size:22px;
   }
 
 }
 </style>
 </head>
 
-
 <body>
-
-<!-- HEADER -->
 
 <header>
 
-<div class="header-inner">
+  <div class="header-inner">
 
-<div class="brand">
+    <div class="brand">
 
-<div class="logo">
-EX
-</div>
+      <div class="brand-text">
 
-<div class="brand-text">
+        <div
+          class="brand-name"
+          data-ar="اكسل وانجاز للمقاولات"
+          data-en="Excel & Injaz Contracting">
+          اكسل وانجاز للمقاولات
+        </div>
 
-<div
-class="brand-name"
-data-ar="اكسل وانجاز للمقاولات"
-data-en="Excel & Injaz Contracting">
-اكسل وانجاز للمقاولات
-</div>
+        <div class="brand-line"></div>
 
-<div
-class="brand-sub"
-data-ar="جميع أعمال الحديد والحدادة"
-data-en="Steel & Metal Works">
-جميع أعمال الحديد والحدادة
-</div>
+        <div
+          class="brand-sub"
+          data-ar="جميع أعمال الحديد والحدادة"
+          data-en="Steel & Metal Works">
+          جميع أعمال الحديد والحدادة
+        </div>
 
-</div>
+      </div>
 
-</div>
+      <div class="logo">EX</div>
 
+    </div>
 
-<button
-class="lang"
-id="languageButton"
-onclick="changeLanguage()">
-English
-</button>
+    <button
+      class="lang"
+      id="languageButton"
+      onclick="changeLanguage()">
+      English
+    </button>
 
-</div>
+  </div>
 
 </header>
 
 
-
-<!-- HERO -->
-
 <section class="hero">
 
-<div class="hero-watermark">
-EX
-</div>
+  <div class="hero-watermark">EX</div>
 
-<div class="hero-content">
+  <div class="hero-content">
 
-<h1
-class="hero-title"
-data-ar="اكسل وانجاز للمقاولات"
-data-en="Excel & Injaz Contracting">
-اكسل وانجاز للمقاولات
-</h1>
+    <div class="hero-text-wrap">
 
-<p
-class="hero-description"
-data-ar="متخصصون في تنفيذ وتصنيع وتركيب جميع أعمال الحديد والحدادة والإنشاءات المعدنية للمشاريع الإنشائية والتجارية والصناعية والسكنية، وفق متطلبات ومخططات المشروع."
-data-en="Specialized in the execution, fabrication and installation of steel, metal and structural works for construction, commercial, industrial and residential projects according to project requirements and drawings.">
-متخصصون في تنفيذ وتصنيع وتركيب جميع أعمال الحديد والحدادة والإنشاءات المعدنية للمشاريع الإنشائية والتجارية والصناعية والسكنية، وفق متطلبات ومخططات المشروع.
-</p>
+      <h1
+        class="hero-title"
+        data-ar="اكسل وانجاز للمقاولات"
+        data-en="Excel & Injaz Contracting">
+        اكسل وانجاز للمقاولات
+      </h1>
 
-</div>
+      <div class="hero-title-line"></div>
+
+      <p
+        class="hero-description"
+        data-ar="متخصصون في تنفيذ وتصنيع وتركيب جميع أعمال الحديد والحدادة والإنشاءات المعدنية للمشاريع الإنشائية والتجارية والصناعية والسكنية، وفق متطلبات ومخططات المشروع."
+        data-en="Specialized in the execution, fabrication and installation of steel, metal and structural works for construction, commercial, industrial and residential projects according to project requirements and drawings.">
+        متخصصون في تنفيذ وتصنيع وتركيب جميع أعمال الحديد والحدادة والإنشاءات المعدنية للمشاريع الإنشائية والتجارية والصناعية والسكنية، وفق متطلبات ومخططات المشروع.
+      </p>
+
+    </div>
+
+  </div>
 
 </section>
 
-
-
-<!-- SERVICES -->
 
 <section class="section" id="services">
 
-<div class="container">
+  <div class="container">
 
-<div class="section-title">
+    <div class="section-title">
 
-<h2
-data-ar="جميع أعمال الحديد والحدادة"
-data-en="Complete Steel & Metal Works">
-جميع أعمال الحديد والحدادة
-</h2>
+      <h2
+        data-ar="جميع أعمال الحديد والحدادة"
+        data-en="Complete Steel & Metal Works">
+        جميع أعمال الحديد والحدادة
+      </h2>
 
-<p
-data-ar="تنفيذ وتصنيع وتركيب مختلف الأعمال الحديدية والمعدنية."
-data-en="Execution, fabrication and installation of steel and metal works.">
-تنفيذ وتصنيع وتركيب مختلف الأعمال الحديدية والمعدنية.
-</p>
+      <p
+        data-ar="تنفيذ وتصنيع وتركيب مختلف الأعمال الحديدية والمعدنية."
+        data-en="Execution, fabrication and installation of steel and metal works.">
+        تنفيذ وتصنيع وتركيب مختلف الأعمال الحديدية والمعدنية.
+      </p>
 
-</div>
+    </div>
 
+    <div class="services-grid">
 
-<div class="services-grid">
+      <div class="service">
+        <div class="service-number">01</div>
+        <h3 data-ar="الهياكل والمنشآت المعدنية" data-en="Steel Structures">الهياكل والمنشآت المعدنية</h3>
+        <p data-ar="تصنيع وتركيب الهياكل الحديدية." data-en="Fabrication and installation of steel structures.">تصنيع وتركيب الهياكل الحديدية.</p>
+      </div>
 
+      <div class="service">
+        <div class="service-number">02</div>
+        <h3 data-ar="الهناجر والمستودعات" data-en="Warehouses & Steel Sheds">الهناجر والمستودعات</h3>
+        <p data-ar="تنفيذ المنشآت والمستودعات الحديدية." data-en="Steel warehouses and sheds.">تنفيذ المنشآت والمستودعات الحديدية.</p>
+      </div>
 
-<div class="service">
-<div class="service-number">01</div>
-<h3
-data-ar="الهياكل والمنشآت المعدنية"
-data-en="Steel Structures">
-الهياكل والمنشآت المعدنية
-</h3>
-<p
-data-ar="تصنيع وتركيب الهياكل الحديدية."
-data-en="Fabrication and installation of steel structures.">
-تصنيع وتركيب الهياكل الحديدية.
-</p>
-</div>
+      <div class="service">
+        <div class="service-number">03</div>
+        <h3 data-ar="السلالم الحديدية" data-en="Steel Staircases">السلالم الحديدية</h3>
+        <p data-ar="سلالم داخلية وخارجية وخدمات." data-en="Internal, external and service staircases.">سلالم داخلية وخارجية وخدمات.</p>
+      </div>
 
+      <div class="service">
+        <div class="service-number">04</div>
+        <h3 data-ar="الهاندريل والدرابزين" data-en="Handrails & Guardrails">الهاندريل والدرابزين</h3>
+        <p data-ar="هاندريل ودرابزين للسلالم والممرات." data-en="Handrails and guardrails.">هاندريل ودرابزين للسلالم والممرات.</p>
+      </div>
 
-<div class="service">
-<div class="service-number">02</div>
-<h3
-data-ar="الهناجر والمستودعات"
-data-en="Warehouses & Steel Sheds">
-الهناجر والمستودعات
-</h3>
-<p
-data-ar="تنفيذ المنشآت والمستودعات الحديدية."
-data-en="Steel warehouses and sheds.">
-تنفيذ المنشآت والمستودعات الحديدية.
-</p>
-</div>
+      <div class="service">
+        <div class="service-number">05</div>
+        <h3 data-ar="الأسوار الحديدية" data-en="Steel Fences">الأسوار الحديدية</h3>
+        <p data-ar="أسوار وحواجز حديدية." data-en="Steel fences and barriers.">أسوار وحواجز حديدية.</p>
+      </div>
 
+      <div class="service">
+        <div class="service-number">06</div>
+        <h3 data-ar="الأبواب والبوابات" data-en="Steel Doors & Gates">الأبواب والبوابات</h3>
+        <p data-ar="تصنيع وتركيب الأبواب والبوابات الحديدية." data-en="Steel doors and gates.">تصنيع وتركيب الأبواب والبوابات الحديدية.</p>
+      </div>
 
-<div class="service">
-<div class="service-number">03</div>
-<h3
-data-ar="السلالم الحديدية"
-data-en="Steel Staircases">
-السلالم الحديدية
-</h3>
-<p
-data-ar="سلالم داخلية وخارجية وخدمات."
-data-en="Internal, external and service staircases.">
-سلالم داخلية وخارجية وخدمات.
-</p>
-</div>
+      <div class="service">
+        <div class="service-number">07</div>
+        <h3 data-ar="المظلات والسواتر" data-en="Canopies & Shades">المظلات والسواتر</h3>
+        <p data-ar="مظلات وهياكل وسواتر معدنية." data-en="Metal canopies, structures and shades.">مظلات وهياكل وسواتر معدنية.</p>
+      </div>
 
+      <div class="service">
+        <div class="service-number">08</div>
+        <h3 data-ar="تأسيس وهياكل المصاعد" data-en="Elevator Steel Structures">تأسيس وهياكل المصاعد</h3>
+        <p data-ar="هياكل وتجهيزات حديدية للمصاعد." data-en="Steel structures for elevators.">هياكل وتجهيزات حديدية للمصاعد.</p>
+      </div>
 
-<div class="service">
-<div class="service-number">04</div>
-<h3
-data-ar="الهاندريل والدرابزين"
-data-en="Handrails & Guardrails">
-الهاندريل والدرابزين
-</h3>
-<p
-data-ar="هاندريل ودرابزين للسلالم والممرات."
-data-en="Handrails and guardrails.">
-هاندريل ودرابزين للسلالم والممرات.
-</p>
-</div>
+      <div class="service">
+        <div class="service-number">09</div>
+        <h3 data-ar="المنصات والممرات" data-en="Platforms & Walkways">المنصات والممرات</h3>
+        <p data-ar="منصات وممرات حديدية." data-en="Steel platforms and walkways.">منصات وممرات حديدية.</p>
+      </div>
 
+      <div class="service">
+        <div class="service-number">10</div>
+        <h3 data-ar="Grating والشبكات الحديدية" data-en="Grating & Steel Flooring">Grating والشبكات الحديدية</h3>
+        <p data-ar="شبكات وأرضيات معدنية." data-en="Metal grating and steel flooring.">شبكات وأرضيات معدنية.</p>
+      </div>
 
-<div class="service">
-<div class="service-number">05</div>
-<h3
-data-ar="الأسوار الحديدية"
-data-en="Steel Fences">
-الأسوار الحديدية
-</h3>
-<p
-data-ar="أسوار وحواجز حديدية."
-data-en="Steel fences and barriers.">
-أسوار وحواجز حديدية.
-</p>
-</div>
+      <div class="service">
+        <div class="service-number">11</div>
+        <h3 data-ar="سلالم الأقفاص" data-en="Cage Ladders">سلالم الأقفاص</h3>
+        <p data-ar="سلالم خدمات وطوارئ." data-en="Service and emergency ladders.">سلالم خدمات وطوارئ.</p>
+      </div>
 
+      <div class="service">
+        <div class="service-number">12</div>
+        <h3 data-ar="القواعد والحوامل والدعامات" data-en="Bases, Supports & Brackets">القواعد والحوامل والدعامات</h3>
+        <p data-ar="قواعد وحوامل ودعامات حديدية." data-en="Steel bases, supports and brackets.">قواعد وحوامل ودعامات حديدية.</p>
+      </div>
 
-<div class="service">
-<div class="service-number">06</div>
-<h3
-data-ar="الأبواب والبوابات"
-data-en="Steel Doors & Gates">
-الأبواب والبوابات
-</h3>
-<p
-data-ar="تصنيع وتركيب الأبواب والبوابات الحديدية."
-data-en="Steel doors and gates.">
-تصنيع وتركيب الأبواب والبوابات الحديدية.
-</p>
-</div>
+      <div class="service">
+        <div class="service-number">13</div>
+        <h3 data-ar="القص واللحام والتشكيل" data-en="Cutting, Welding & Forming">القص واللحام والتشكيل</h3>
+        <p data-ar="قص ولحام وتشكيل الحديد." data-en="Steel cutting, welding and forming.">قص ولحام وتشكيل الحديد.</p>
+      </div>
 
+      <div class="service">
+        <div class="service-number">14</div>
+        <h3 data-ar="أعمال الستانلس ستيل" data-en="Stainless Steel Works">أعمال الستانلس ستيل</h3>
+        <p data-ar="تصنيع وتركيب أعمال الستانلس." data-en="Stainless steel fabrication and installation.">تصنيع وتركيب أعمال الستانلس.</p>
+      </div>
 
-<div class="service">
-<div class="service-number">07</div>
-<h3
-data-ar="المظلات والسواتر"
-data-en="Canopies & Shades">
-المظلات والسواتر
-</h3>
-<p
-data-ar="مظلات وهياكل وسواتر معدنية."
-data-en="Metal canopies, structures and shades.">
-مظلات وهياكل وسواتر معدنية.
-</p>
-</div>
+      <div class="service">
+        <div class="service-number">15</div>
+        <h3 data-ar="القص CNC والديكورات الحديدية" data-en="CNC Cutting & Metal Decoration">القص CNC والديكورات الحديدية</h3>
+        <p data-ar="قص وتشكيل وتصاميم معدنية." data-en="CNC cutting and metal designs.">قص وتشكيل وتصاميم معدنية.</p>
+      </div>
 
+      <div class="service">
+        <div class="service-number">16</div>
+        <h3 data-ar="التصنيع حسب المخططات" data-en="Custom Fabrication">التصنيع حسب المخططات</h3>
+        <p data-ar="تنفيذ حسب المقاسات والمخططات." data-en="Custom fabrication according to drawings.">تنفيذ حسب المقاسات والمخططات.</p>
+      </div>
 
-<div class="service">
-<div class="service-number">08</div>
-<h3
-data-ar="تأسيس وهياكل المصاعد"
-data-en="Elevator Steel Structures">
-تأسيس وهياكل المصاعد
-</h3>
-<p
-data-ar="هياكل وتجهيزات حديدية للمصاعد."
-data-en="Steel structures for elevators.">
-هياكل وتجهيزات حديدية للمصاعد.
-</p>
-</div>
+    </div>
 
-
-<div class="service">
-<div class="service-number">09</div>
-<h3
-data-ar="المنصات والممرات"
-data-en="Platforms & Walkways">
-المنصات والممرات
-</h3>
-<p
-data-ar="منصات وممرات حديدية."
-data-en="Steel platforms and walkways.">
-منصات وممرات حديدية.
-</p>
-</div>
-
-
-<div class="service">
-<div class="service-number">10</div>
-<h3
-data-ar="Grating والشبكات الحديدية"
-data-en="Grating & Steel Flooring">
-Grating والشبكات الحديدية
-</h3>
-<p
-data-ar="شبكات وأرضيات معدنية."
-data-en="Metal grating and steel flooring.">
-شبكات وأرضيات معدنية.
-</p>
-</div>
-
-
-<div class="service">
-<div class="service-number">11</div>
-<h3
-data-ar="سلالم الأقفاص"
-data-en="Cage Ladders">
-سلالم الأقفاص
-</h3>
-<p
-data-ar="سلالم خدمات وطوارئ."
-data-en="Service and emergency ladders.">
-سلالم خدمات وطوارئ.
-</p>
-</div>
-
-
-<div class="service">
-<div class="service-number">12</div>
-<h3
-data-ar="القواعد والحوامل والدعامات"
-data-en="Bases, Supports & Brackets">
-القواعد والحوامل والدعامات
-</h3>
-<p
-data-ar="قواعد وحوامل ودعامات حديدية."
-data-en="Steel bases, supports and brackets.">
-قواعد وحوامل ودعامات حديدية.
-</p>
-</div>
-
-
-<div class="service">
-<div class="service-number">13</div>
-<h3
-data-ar="القص واللحام والتشكيل"
-data-en="Cutting, Welding & Forming">
-القص واللحام والتشكيل
-</h3>
-<p
-data-ar="قص ولحام وتشكيل الحديد."
-data-en="Steel cutting, welding and forming.">
-قص ولحام وتشكيل الحديد.
-</p>
-</div>
-
-
-<div class="service">
-<div class="service-number">14</div>
-<h3
-data-ar="أعمال الستانلس ستيل"
-data-en="Stainless Steel Works">
-أعمال الستانلس ستيل
-</h3>
-<p
-data-ar="تصنيع وتركيب أعمال الستانلس."
-data-en="Stainless steel fabrication and installation.">
-تصنيع وتركيب أعمال الستانلس.
-</p>
-</div>
-
-
-<div class="service">
-<div class="service-number">15</div>
-<h3
-data-ar="القص CNC والديكورات الحديدية"
-data-en="CNC Cutting & Metal Decoration">
-القص CNC والديكورات الحديدية
-</h3>
-<p
-data-ar="قص وتشكيل وتصاميم معدنية."
-data-en="CNC cutting and metal designs.">
-قص وتشكيل وتصاميم معدنية.
-</p>
-</div>
-
-
-<div class="service">
-<div class="service-number">16</div>
-<h3
-data-ar="التصنيع حسب المخططات"
-data-en="Custom Fabrication">
-التصنيع حسب المخططات
-</h3>
-<p
-data-ar="تنفيذ حسب المقاسات والمخططات."
-data-en="Custom fabrication according to drawings.">
-تنفيذ حسب المقاسات والمخططات.
-</p>
-</div>
-
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
-
-
-<!-- ABOUT -->
 
 <section class="section">
 
-<div class="container">
+  <div class="container">
 
-<div class="about-box">
+    <div class="about-box">
 
-<h2
-data-ar="اكسل وانجاز للمقاولات"
-data-en="Excel & Injaz Contracting">
-اكسل وانجاز للمقاولات
-</h2>
+      <h2
+        data-ar="اكسل وانجاز للمقاولات"
+        data-en="Excel & Injaz Contracting">
+        اكسل وانجاز للمقاولات
+      </h2>
 
-<p
-data-ar="نقدم حلولًا متكاملة في أعمال الحديد والحدادة والإنشاءات المعدنية، من التصنيع إلى التركيب، وفق متطلبات المشروع والمخططات."
-data-en="We provide integrated steel, metal and structural solutions, from fabrication to installation, according to project requirements and drawings.">
-نقدم حلولًا متكاملة في أعمال الحديد والحدادة والإنشاءات المعدنية، من التصنيع إلى التركيب، وفق متطلبات المشروع والمخططات.
-</p>
+      <p
+        data-ar="نقدم حلولًا متكاملة في أعمال الحديد والحدادة والإنشاءات المعدنية، من التصنيع إلى التركيب، وفق متطلبات المشروع والمخططات."
+        data-en="We provide integrated steel, metal and structural solutions, from fabrication to installation, according to project requirements and drawings.">
+        نقدم حلولًا متكاملة في أعمال الحديد والحدادة والإنشاءات المعدنية، من التصنيع إلى التركيب، وفق متطلبات المشروع والمخططات.
+      </p>
 
-</div>
+    </div>
 
-</div>
+  </div>
 
 </section>
 
-
-
-<!-- CONTACT -->
 
 <section class="section" id="contact">
 
-<div class="container">
+  <div class="container">
 
-<div class="contact-box">
+    <div class="contact-box">
 
-<h2
-class="contact-title"
-data-ar="تواصل معنا"
-data-en="Contact Us">
-تواصل معنا
-</h2>
+      <h2
+        class="contact-title"
+        data-ar="تواصل معنا"
+        data-en="Contact Us">
+        تواصل معنا
+      </h2>
 
-<p
-class="contact-sub"
-data-ar="للاستفسار والتنسيق بشأن أعمال الحديد والحدادة والمشاريع."
-data-en="For inquiries and coordination regarding steel and metal works.">
-للاستفسار والتنسيق بشأن أعمال الحديد والحدادة والمشاريع.
-</p>
+      <p
+        class="contact-sub"
+        data-ar="للاستفسار والتنسيق بشأن أعمال الحديد والحدادة والمشاريع."
+        data-en="For inquiries and coordination regarding steel and metal works.">
+        للاستفسار والتنسيق بشأن أعمال الحديد والحدادة والمشاريع.
+      </p>
 
+      <div class="contact-grid">
 
-<div class="contact-grid">
+        <a href="tel:0551889096" class="contact-item">
+          <small data-ar="مسؤول المشاريع" data-en="Projects Manager">مسؤول المشاريع</small>
+          <strong>0551889096</strong>
+        </a>
 
+        <a href="https://wa.me/966554726980" target="_blank" class="contact-item">
+          <small>WhatsApp</small>
+          <strong>0554726980</strong>
+        </a>
 
-<a
-href="tel:0551889096"
-class="contact-item">
+        <a href="mailto:excel1lnjaz@gmail.com" class="contact-item">
+          <small>Email</small>
+          <strong>excel1lnjaz@gmail.com</strong>
+        </a>
 
-<small
-data-ar="مسؤول المشاريع"
-data-en="Projects Manager">
-مسؤول المشاريع
-</small>
+      </div>
 
-<strong>
-0551889096
-</strong>
+    </div>
 
-</a>
-
-
-<a
-href="https://wa.me/966554726980"
-target="_blank"
-class="contact-item">
-
-<small>
-WhatsApp
-</small>
-
-<strong>
-0554726980
-</strong>
-
-</a>
-
-
-<a
-href="mailto:excel1lnjaz@gmail.com"
-class="contact-item">
-
-<small>
-Email
-</small>
-
-<strong>
-excel1lnjaz@gmail.com
-</strong>
-
-</a>
-
-
-</div>
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
-</main>
-
-
-
-<!-- FOOTER -->
 
 <footer>
 
-<div class="container">
+  <div class="container">
 
-<div
-data-ar="© 2026 اكسل وانجاز للمقاولات — جميع الحقوق محفوظة"
-data-en="© 2026 Excel & Injaz Contracting — All Rights Reserved">
-© 2026 اكسل وانجاز للمقاولات — جميع الحقوق محفوظة
-</div>
+    <div
+      data-ar="© 2026 اكسل وانجاز للمقاولات — جميع الحقوق محفوظة"
+      data-en="© 2026 Excel & Injaz Contracting — All Rights Reserved">
+      © 2026 اكسل وانجاز للمقاولات — جميع الحقوق محفوظة
+    </div>
 
-<div
-class="cr"
-data-ar="السجل التجاري: 7038272063"
-data-en="Commercial Registration: 7038272063">
-السجل التجاري: 7038272063
-</div>
+    <div
+      class="cr"
+      data-ar="السجل التجاري: 7038272063"
+      data-en="Commercial Registration: 7038272063">
+      السجل التجاري: 7038272063
+    </div>
 
-</div>
+  </div>
 
 </footer>
 
 
-
 <script>
-
 let language = "ar";
 
 function changeLanguage(){
 
-  language =
-    language === "ar"
-    ? "en"
-    : "ar";
+  language = language === "ar" ? "en" : "ar";
 
-  document.documentElement.lang =
-    language;
+  document.documentElement.lang = language;
+  document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
 
-  document.documentElement.dir =
-    language === "ar"
-    ? "rtl"
-    : "ltr";
-
-  document.querySelectorAll(
-    "[data-ar][data-en]"
-  ).forEach(function(element){
-
-    element.textContent =
-      element.getAttribute(
-        "data-" + language
-      );
-
+  document.querySelectorAll("[data-ar][data-en]").forEach(function(element){
+    element.textContent = element.getAttribute("data-" + language);
   });
 
-  document.getElementById(
-    "languageButton"
-  ).textContent =
-    language === "ar"
-    ? "English"
-    : "العربية";
-
+  document.getElementById("languageButton").textContent =
+    language === "ar" ? "English" : "العربية";
 }
-
 </script>
 
 </body>
