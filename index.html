@@ -2,553 +2,1153 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>إكسل وإنجاز للمقاولات | Excel & Injaz Contracting</title>
 
 <style>
 :root{
-  --navy:#061f36;
-  --navy2:#0a3559;
-  --blue:#2580bd;
+  --navy:#06263f;
+  --navy2:#073653;
+  --blue:#008ee8;
   --white:#fff;
-  --bg:#f4f7f9;
-  --text:#092a45;
-  --muted:#718797;
+  --light:#f7f9fb;
+  --line:#d9e2e9;
+  --text:#0b2b44;
+  --muted:#788c9a;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Tahoma,Arial,sans-serif;background:#fff;color:var(--text)}
-a{text-decoration:none;color:inherit}
-img{width:100%;height:100%;object-fit:cover;display:block}
 
-/* HEADER */
-header{
-  background:var(--navy);
-  position:relative;
-  z-index:50;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
-.nav{
-  max-width:1400px;
-  height:84px;
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Tahoma,Arial,sans-serif;
+  background:#fff;
+  color:var(--text);
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+  height:78px;
+  background:var(--navy);
+  color:#fff;
+}
+
+.header-inner{
+  max-width:1450px;
+  height:100%;
   margin:auto;
-  padding:0 25px;
+  padding:0 42px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:25px;
-}
-.brand{display:flex;align-items:center;gap:13px}
-.xlogo{
-  width:55px;height:55px;position:relative;flex:none;
-}
-.xlogo:before,.xlogo:after{
-  content:"";position:absolute;left:21px;top:-2px;
-  width:13px;height:59px;border-radius:2px;
-}
-.xlogo:before{transform:rotate(39deg);background:#fff}
-.xlogo:after{transform:rotate(-39deg);background:#70b4dd}
-.brand strong{display:block;color:#fff;font-size:17px}
-.brand small{
-  display:block;color:#91a9ba;font-size:7px;
-  direction:ltr;letter-spacing:1.5px;margin-top:4px
-}
-.menu{display:flex;gap:32px;color:#d5e0e7;font-size:13px;font-weight:bold}
-.menu a:hover{color:#fff}
-.tools{display:flex;align-items:center;gap:9px}
-.lang{
-  padding:3px;background:#0a2b48;border-radius:7px;
-  border:1px solid rgba(255,255,255,.12)
-}
-.lang button{
-  border:0;background:transparent;color:#9fb3c1;
-  padding:7px 9px;border-radius:5px;font-size:10px;font-weight:bold;cursor:pointer
-}
-.lang .active{background:#fff;color:var(--navy)}
-.contactTop{
-  padding:11px 16px;border:1px solid rgba(255,255,255,.5);
-  border-radius:6px;color:#fff;font-size:11px;font-weight:bold
 }
 
-/* HERO */
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.x-logo{
+  position:relative;
+  width:54px;
+  height:55px;
+  flex:none;
+}
+
+.x-logo:before,
+.x-logo:after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:20px;
+  width:13px;
+  height:57px;
+}
+
+.x-logo:before{
+  transform:rotate(38deg);
+  background:#fff;
+}
+
+.x-logo:after{
+  transform:rotate(-38deg);
+  background:#118fd7;
+}
+
+.brand-text strong{
+  display:block;
+  font-size:18px;
+}
+
+.brand-text small{
+  display:block;
+  font-size:8px;
+  direction:ltr;
+  letter-spacing:1.2px;
+  color:#c6d5df;
+  margin-top:4px;
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  gap:42px;
+  font-size:13px;
+  font-weight:bold;
+}
+
+.nav a{
+  padding:30px 0 23px;
+  border-bottom:3px solid transparent;
+}
+
+.nav a.active,
+.nav a:hover{
+  border-color:var(--blue);
+}
+
+.whatsapp-top{
+  background:var(--blue);
+  padding:12px 18px;
+  border-radius:9px;
+  font-size:12px;
+  font-weight:bold;
+  box-shadow:0 5px 18px rgba(0,142,232,.2);
+}
+
+/* ================= HERO ================= */
+
 .hero{
-  min-height:640px;
+  min-height:735px;
   position:relative;
   overflow:hidden;
-  background:#e8edf1;
+  background:#102e43;
 }
-.heroPhoto{
-  position:absolute;inset:0;
+
+.hero-photo{
+  position:absolute;
+  inset:0;
   background:
-    linear-gradient(90deg,
-      rgba(255,255,255,.99) 0%,
-      rgba(255,255,255,.96) 29%,
-      rgba(255,255,255,.72) 44%,
-      rgba(255,255,255,.08) 67%,
-      rgba(6,31,54,.12) 100%),
-    url("https://images.pexels.com/photos/12171800/pexels-photo-12171800.jpeg?auto=compress&cs=tinysrgb&w=2000")
-    center/cover no-repeat;
+  linear-gradient(
+    90deg,
+    rgba(4,29,49,.97) 0%,
+    rgba(4,29,49,.90) 29%,
+    rgba(4,29,49,.48) 52%,
+    rgba(4,29,49,.04) 78%
+  ),
+  url("https://images.pexels.com/photos/12171800/pexels-photo-12171800.jpeg?auto=compress&cs=tinysrgb&w=2000")
+  center/cover no-repeat;
 }
-.heroPhoto:after{
-  content:"";position:absolute;left:5%;bottom:4%;
-  width:260px;height:260px;border-radius:50%;
-  background:radial-gradient(circle,
-    rgba(255,243,183,.96) 0%,
-    rgba(255,204,93,.55) 25%,
-    rgba(255,171,62,.18) 47%,
-    transparent 70%);
+
+/* giant transparent X */
+
+.hero-x{
+  position:absolute;
+  width:230px;
+  height:260px;
+  left:55px;
+  top:70px;
+  opacity:.22;
+  z-index:2;
 }
-.heroInner{
-  max-width:1400px;min-height:640px;margin:auto;padding:70px 32px;
-  position:relative;z-index:4;display:flex;align-items:center
+
+.hero-x:before,
+.hero-x:after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:90px;
+  width:45px;
+  height:265px;
 }
-.heroText{max-width:610px}
-.eyebrow{font-size:11px;color:#4e6d83;font-weight:bold;margin-bottom:18px}
+
+.hero-x:before{
+  transform:rotate(38deg);
+  background:#fff;
+}
+
+.hero-x:after{
+  transform:rotate(-38deg);
+  background:#1599e3;
+}
+
+/* logo mounted on warehouse */
+
+.warehouse-logo{
+  position:absolute;
+  top:110px;
+  right:110px;
+  z-index:4;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:13px 18px;
+  background:rgba(6,38,63,.16);
+}
+
+.warehouse-logo .x-logo{
+  width:48px;
+  height:50px;
+}
+
+.warehouse-logo strong{
+  color:#092b45;
+  display:block;
+  font-size:16px;
+}
+
+.warehouse-logo small{
+  display:block;
+  direction:ltr;
+  font-size:7px;
+  color:#0d557e;
+  margin-top:3px;
+}
+
+.hero-content{
+  position:relative;
+  z-index:5;
+  max-width:1450px;
+  min-height:735px;
+  margin:auto;
+  padding:165px 48px 130px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-end;
+}
+
+.hero-copy{
+  width:520px;
+  margin-left:auto;
+  direction:rtl;
+}
+
 .hero h1{
-  font-size:58px;line-height:1.2;color:var(--navy);letter-spacing:-1px
+  color:#fff;
+  font-size:54px;
+  line-height:1.23;
+  margin-bottom:16px;
 }
-.hero h1 span{color:var(--blue)}
+
+.hero h1 span{
+  display:block;
+  color:var(--blue);
+}
+
 .hero p{
-  margin-top:18px;max-width:560px;color:#526f84;
-  font-size:15px;line-height:2;font-weight:bold
+  color:#fff;
+  max-width:510px;
+  line-height:2;
+  font-size:15px;
 }
-.heroButtons{display:flex;gap:10px;margin-top:27px}
-.btn{
-  height:47px;padding:0 21px;border-radius:6px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:12px;font-weight:bold
-}
-.primary{background:var(--navy);color:#fff}
-.secondary{background:#fff;border:1px solid #bccbd5;color:var(--navy)}
 
-/* logo on building */
-.buildingLogo{
-  position:absolute;z-index:5;left:17%;top:90px;
-  display:flex;align-items:center;gap:10px;
-  padding:10px 15px;background:rgba(5,27,46,.58);
-  border:1px solid rgba(255,255,255,.2);
-  border-radius:5px
+.hero-buttons{
+  display:flex;
+  gap:10px;
+  margin-top:22px;
 }
-.buildingLogo .xlogo{width:40px;height:40px}
-.buildingLogo .xlogo:before,.buildingLogo .xlogo:after{
-  height:43px;width:9px;left:15px
-}
-.buildingLogo strong{color:#fff;font-size:11px}
-.buildingLogo small{display:block;color:#b7cad7;font-size:6px;direction:ltr;margin-top:3px}
 
-/* FEATURES */
-.features{background:#fff;border-bottom:1px solid #e1e8ed}
-.featuresInner{
-  max-width:1250px;margin:auto;padding:19px 10px;
-  display:grid;grid-template-columns:repeat(4,1fr)
+.btn-blue,
+.btn-outline{
+  height:48px;
+  padding:0 20px;
+  border-radius:6px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-size:12px;
+  font-weight:bold;
 }
-.feature{text-align:center;padding:12px 20px;border-left:1px solid #e0e7ec}
-.feature:last-child{border-left:0}
-.icon{
-  width:45px;height:45px;border-radius:50%;background:#eef4f8;
-  margin:0 auto 8px;display:flex;align-items:center;justify-content:center;
-  color:var(--navy);font-size:18px
-}
-.feature strong{display:block;font-size:12px;margin-bottom:5px}
-.feature small{color:#84949f;font-size:8px}
 
-/* WORK */
-.work{background:var(--bg);padding:58px 12px 65px}
-.title{text-align:center;max-width:800px;margin:auto}
-.title small{color:var(--blue);font-weight:bold;font-size:10px}
-.title h2{font-size:30px;color:var(--navy);margin-top:7px}
-.title p{color:#7a8c99;font-size:11px;margin-top:8px}
+.btn-blue{
+  background:var(--blue);
+  color:#fff;
+}
+
+.btn-outline{
+  border:1px solid rgba(255,255,255,.8);
+  color:#fff;
+}
+
+/* mini trust boxes */
+
+.hero-trust{
+  position:absolute;
+  bottom:25px;
+  left:48px;
+  z-index:6;
+  display:flex;
+  gap:25px;
+}
+
+.trust{
+  min-width:140px;
+  display:flex;
+  align-items:center;
+  gap:11px;
+  color:#fff;
+  padding-left:23px;
+  border-left:1px solid rgba(255,255,255,.25);
+}
+
+.trust:last-child{
+  border:0;
+}
+
+.trust-icon{
+  font-size:26px;
+}
+
+.trust strong{
+  display:block;
+  font-size:10px;
+}
+
+.trust small{
+  display:block;
+  font-size:7px;
+  margin-top:4px;
+  color:#d5e2ea;
+}
+
+/* ================= SERVICES STRIP ================= */
+
+.service-strip{
+  background:#fff;
+  border-bottom:1px solid var(--line);
+}
+
+.service-strip-inner{
+  max-width:1400px;
+  margin:auto;
+  padding:28px 20px;
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+}
+
+.service-mini{
+  text-align:center;
+  border-left:1px solid #dbe4ea;
+  padding:5px 15px;
+}
+
+.service-mini:last-child{
+  border-left:0;
+}
+
+.service-mini .icon{
+  width:52px;
+  height:42px;
+  margin:0 auto 8px;
+  color:var(--navy);
+  font-size:30px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.service-mini strong{
+  display:block;
+  font-size:11px;
+}
+
+/* ================= WORK ================= */
+
+.work{
+  background:#fff;
+  padding:48px 12px 18px;
+}
+
+.work-head{
+  text-align:center;
+}
+
+.work-label{
+  color:var(--blue);
+  font-size:13px;
+  font-weight:bold;
+}
+
+.work-head h2{
+  font-size:29px;
+  margin-top:10px;
+  color:var(--navy);
+}
+
+.work-head p{
+  color:#7b8f9e;
+  font-size:11px;
+  margin-top:6px;
+}
 
 .filters{
-  max-width:1300px;margin:24px auto 15px;
-  display:flex;justify-content:center;flex-wrap:wrap;gap:6px
+  max-width:1200px;
+  margin:24px auto 16px;
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  flex-wrap:wrap;
 }
+
 .filter{
-  background:#fff;border:1px solid #d2dde5;color:#486176;
-  padding:9px 13px;border-radius:5px;font-size:9px;cursor:pointer
+  min-width:125px;
+  padding:10px 13px;
+  border:1px solid #d7e0e7;
+  border-radius:5px;
+  background:#f9fbfc;
+  color:var(--navy);
+  cursor:pointer;
+  font-size:10px;
+  font-weight:bold;
 }
-.filter.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+.filter.active{
+  color:#fff;
+  background:var(--navy);
+  border-color:var(--navy);
+}
+
+/* ================= GALLERY ================= */
 
 .gallery{
-  max-width:1380px;margin:auto;
-  display:grid;grid-template-columns:repeat(5,1fr);gap:7px
+  max-width:1420px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:6px;
 }
+
 .card{
-  height:190px;position:relative;overflow:hidden;
-  border-radius:5px;background:#dce4e9
+  height:220px;
+  position:relative;
+  overflow:hidden;
+  background:#dbe2e7;
 }
-.card img{transition:.35s}
-.card:hover img{transform:scale(1.05)}
+
+.card img{
+  transition:.35s;
+}
+
+.card:hover img{
+  transform:scale(1.04);
+}
+
 .card:after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(to top,rgba(4,28,48,.94),rgba(4,28,48,.15) 55%,transparent)
-}
-.cardName{
-  position:absolute;z-index:3;bottom:0;right:0;left:0;
-  padding:11px;color:#fff;font-size:10px;font-weight:bold
-}
-.note{
-  text-align:center;color:#8c9ba6;font-size:8px;
-  margin:15px auto 0;max-width:900px
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(4,26,44,.92),transparent 48%);
 }
 
-/* FOOTER */
-footer{background:var(--navy);color:#fff;padding:42px 20px 14px}
-.footerMain{
-  max-width:1300px;margin:auto;
-  display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px
-}
-.footerBrand{display:flex;gap:12px;align-items:center}
-.footerBrand strong{font-size:15px}
-.footerBrand small{display:block;color:#829aaa;font-size:6px;direction:ltr;margin-top:4px}
-.col h3{font-size:10px;margin-bottom:10px}
-.col,.col a{font-size:9px;color:#a8bac6;line-height:2.1}
-.bottom{
-  max-width:1300px;margin:30px auto 0;padding-top:12px;
-  border-top:1px solid rgba(255,255,255,.08);
-  display:flex;justify-content:space-between;
-  color:#668094;font-size:7px
+.card-title{
+  position:absolute;
+  z-index:3;
+  bottom:0;
+  right:0;
+  left:0;
+  padding:12px;
+  color:#fff;
+  font-size:11px;
+  font-weight:bold;
 }
 
-.en{display:none}
-body.english{direction:ltr}
-body.english .ar{display:none!important}
-body.english .en{display:inline!important}
+.gallery-note{
+  text-align:center;
+  color:#9aa7b0;
+  font-size:8px;
+  margin:13px 0 25px;
+}
 
-/* MOBILE */
+/* ================= FOOTER ================= */
+
+.footer{
+  background:var(--navy);
+  color:#fff;
+  padding:40px 40px 15px;
+}
+
+.footer-inner{
+  max-width:1400px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr 1fr;
+  gap:45px;
+}
+
+.footer-brand{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+}
+
+.footer-brand strong{
+  display:block;
+  font-size:18px;
+  margin-top:8px;
+}
+
+.footer-brand small{
+  display:block;
+  direction:ltr;
+  letter-spacing:1.5px;
+  color:#a8bbc8;
+  font-size:8px;
+  margin-top:5px;
+}
+
+.footer-brand p{
+  font-size:10px;
+  color:#9db1be;
+  margin-top:15px;
+}
+
+.footer-col h3{
+  font-size:11px;
+  margin-bottom:13px;
+}
+
+.footer-col,
+.footer-col a{
+  display:block;
+  color:#c4d2dc;
+  font-size:10px;
+  line-height:2.2;
+}
+
+.footer-bottom{
+  max-width:1400px;
+  margin:25px auto 0;
+  border-top:1px solid rgba(255,255,255,.1);
+  padding-top:12px;
+  color:#7891a2;
+  font-size:8px;
+  display:flex;
+  justify-content:space-between;
+}
+
+/* ================= MOBILE ================= */
+
 @media(max-width:900px){
-  .menu{display:none}
+  .nav{display:none}
   .gallery{grid-template-columns:repeat(3,1fr)}
+  .service-strip-inner{grid-template-columns:repeat(3,1fr)}
 }
+
 @media(max-width:650px){
-  .nav{height:70px;padding:0 11px}
-  .xlogo{width:40px;height:40px}
-  .xlogo:before,.xlogo:after{width:9px;height:43px;left:15px}
-  .brand strong{font-size:10px}
-  .brand small{font-size:5px}
-  .contactTop{display:none}
 
-  .hero{min-height:620px}
-  .heroPhoto{
+  .header{height:66px}
+
+  .header-inner{
+    padding:0 11px;
+  }
+
+  .x-logo{
+    width:37px;
+    height:39px;
+  }
+
+  .x-logo:before,
+  .x-logo:after{
+    height:40px;
+    width:9px;
+    left:14px;
+  }
+
+  .brand-text strong{
+    font-size:10px;
+  }
+
+  .brand-text small{
+    font-size:5px;
+  }
+
+  .whatsapp-top{
+    padding:10px;
+    font-size:9px;
+  }
+
+  .hero{
+    min-height:640px;
+  }
+
+  .hero-photo{
     background:
-      linear-gradient(to bottom,
-        rgba(255,255,255,.05) 0%,
-        rgba(255,255,255,.08) 42%,
-        rgba(255,255,255,.96) 61%,
-        #fff 75%),
-      url("https://images.pexels.com/photos/12171800/pexels-photo-12171800.jpeg?auto=compress&cs=tinysrgb&w=1200")
-      center top/100% 390px no-repeat;
+    linear-gradient(
+      to top,
+      rgba(4,29,49,.97) 0%,
+      rgba(4,29,49,.80) 40%,
+      rgba(4,29,49,.12) 70%
+    ),
+    url("https://images.pexels.com/photos/12171800/pexels-photo-12171800.jpeg?auto=compress&cs=tinysrgb&w=1100")
+    center/cover no-repeat;
   }
-  .buildingLogo{left:auto;right:14px;top:25px;transform:scale(.75)}
-  .heroInner{min-height:620px;padding:330px 18px 35px;align-items:flex-start}
-  .hero h1{font-size:38px}
-  .hero p{font-size:11px;line-height:1.9}
-  .eyebrow{font-size:8px}
-  .btn{height:43px;padding:0 15px;font-size:10px}
 
-  .featuresInner{grid-template-columns:1fr 1fr;padding:0}
-  .feature{border-bottom:1px solid #e4eaee}
-  .feature:nth-child(2){border-left:0}
+  .warehouse-logo{
+    top:25px;
+    right:15px;
+    transform:scale(.68);
+    transform-origin:right top;
+  }
 
-  .work{padding:45px 6px}
-  .title h2{font-size:23px}
+  .hero-x{
+    width:120px;
+    height:140px;
+    left:5px;
+    top:70px;
+  }
+
+  .hero-x:before,
+  .hero-x:after{
+    height:145px;
+    width:24px;
+    left:47px;
+  }
+
+  .hero-content{
+    min-height:640px;
+    padding:260px 18px 120px;
+    align-items:flex-start;
+  }
+
+  .hero-copy{
+    width:100%;
+    margin:0;
+  }
+
+  .hero h1{
+    font-size:37px;
+  }
+
+  .hero p{
+    font-size:11px;
+    line-height:1.9;
+  }
+
+  .hero-trust{
+    bottom:14px;
+    left:12px;
+    right:12px;
+    gap:4px;
+    justify-content:space-between;
+  }
+
+  .trust{
+    min-width:0;
+    padding:5px;
+    border:0;
+  }
+
+  .trust-icon{
+    font-size:18px;
+  }
+
+  .trust strong{
+    font-size:8px;
+  }
+
+  .trust small{
+    font-size:6px;
+  }
+
+  .service-strip-inner{
+    grid-template-columns:repeat(3,1fr);
+    padding:18px 5px;
+  }
+
+  .service-mini{
+    padding:10px 4px;
+    border-bottom:1px solid #e1e7eb;
+  }
+
+  .service-mini strong{
+    font-size:9px;
+  }
+
+  .work{
+    padding-top:35px;
+  }
+
+  .work-head h2{
+    font-size:23px;
+  }
+
   .filters{
-    flex-wrap:nowrap;justify-content:flex-start;
-    overflow-x:auto;padding-bottom:6px
+    overflow-x:auto;
+    flex-wrap:nowrap;
+    justify-content:flex-start;
+    padding-bottom:7px;
   }
-  .filter{white-space:nowrap}
-  .gallery{grid-template-columns:1fr 1fr;gap:5px}
-  .card{height:145px}
-  .cardName{font-size:8px;padding:8px}
 
-  .footerMain{grid-template-columns:1fr}
-  .bottom{display:block;text-align:center;line-height:2}
+  .filter{
+    min-width:max-content;
+  }
+
+  .gallery{
+    grid-template-columns:1fr 1fr;
+    gap:4px;
+  }
+
+  .card{
+    height:155px;
+  }
+
+  .card-title{
+    font-size:8px;
+    padding:8px;
+  }
+
+  .footer{
+    padding:35px 18px 14px;
+  }
+
+  .footer-inner{
+    grid-template-columns:1fr;
+    gap:25px;
+  }
+
+  .footer-bottom{
+    display:block;
+    text-align:center;
+    line-height:2;
+  }
 }
+
 </style>
 </head>
 
 <body>
 
-<header>
-<div class="nav">
+<header class="header">
 
-  <div class="brand">
-    <div class="xlogo"></div>
-    <div>
-      <strong class="ar">إكسل وإنجاز للمقاولات</strong>
-      <strong class="en">Excel & Injaz Contracting</strong>
-      <small>EXCEL & INJAZ CONTRACTING</small>
-    </div>
-  </div>
+<div class="header-inner">
 
-  <nav class="menu">
-    <a href="#home"><span class="ar">الرئيسية</span><span class="en">Home</span></a>
-    <a href="#work"><span class="ar">أعمالنا</span><span class="en">Our Work</span></a>
-    <a href="#contact"><span class="ar">تواصل معنا</span><span class="en">Contact</span></a>
-  </nav>
+<div class="brand">
 
-  <div class="tools">
-    <div class="lang">
-      <button id="ar" class="active">AR</button>
-      <button id="en">EN</button>
-    </div>
-    <a class="contactTop" href="https://wa.me/966554726980" target="_blank">تواصل معنا</a>
-  </div>
+<div class="x-logo"></div>
+
+<div class="brand-text">
+<strong>إكسل وإنجاز للمقاولات</strong>
+<small>EXCEL & INJAZ CONTRACTING</small>
+</div>
 
 </div>
+
+
+<nav class="nav">
+<a href="#home" class="active">الرئيسية</a>
+<a href="#about">من نحن</a>
+<a href="#work">أعمالنا</a>
+<a href="#services">خدماتنا</a>
+<a href="#contact">تواصل معنا</a>
+</nav>
+
+
+<a href="https://wa.me/966554726980"
+target="_blank"
+class="whatsapp-top">
+
+◉ تواصل معنا
+
+</a>
+
+</div>
+
 </header>
 
+
 <section class="hero" id="home">
-  <div class="heroPhoto"></div>
 
-  <div class="buildingLogo">
-    <div class="xlogo"></div>
-    <div>
-      <strong>إكسل وإنجاز</strong>
-      <small>EXCEL & INJAZ</small>
-    </div>
-  </div>
+<div class="hero-photo"></div>
 
-  <div class="heroInner">
-    <div class="heroText">
+<div class="hero-x"></div>
 
-      <div class="eyebrow ar">مقاولات حديدية • إنشاءات معدنية • حلول عملية</div>
-      <div class="eyebrow en">STEEL WORKS • METAL STRUCTURES • CONTRACTING</div>
 
-      <h1 class="ar">نبني لك أساس أقوى<br><span>لمشاريعك</span></h1>
-      <h1 class="en">Strong Foundations<br><span>For Your Projects</span></h1>
+<div class="warehouse-logo">
 
-      <p class="ar">
-        تنفيذ أعمال الحديد والإنشاءات المعدنية بجودة ودقة،
-        للمشاريع بمختلف أحجامها، من الهياكل والهناجر والمستودعات
-        إلى المظلات والأسوار والسلالم والهاندريل.
-      </p>
+<div class="x-logo"></div>
 
-      <p class="en">
-        Steel and metal construction solutions for projects of different sizes,
-        including structures, warehouses, hangars, canopies, fences,
-        stairs and handrails.
-      </p>
-
-      <div class="heroButtons">
-        <a class="btn primary" href="https://wa.me/966554726980" target="_blank">
-          <span class="ar">تواصل معنا ←</span><span class="en">Contact Us →</span>
-        </a>
-        <a class="btn secondary" href="#work">
-          <span class="ar">أعمالنا</span><span class="en">Our Work</span>
-        </a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="features">
-<div class="featuresInner">
-  <div class="feature"><div class="icon">◆</div><strong>جودة عالية</strong><small>مواد ممتازة وتنفيذ احترافي</small></div>
-  <div class="feature"><div class="icon">◷</div><strong>الالتزام بالمواعيد</strong><small>تنظيم العمل حسب متطلبات المشروع</small></div>
-  <div class="feature"><div class="icon">⚙</div><strong>تنفيذ متخصص</strong><small>حلول لمختلف الأعمال المعدنية</small></div>
-  <div class="feature"><div class="icon">▦</div><strong>حلول متكاملة</strong><small>من التجهيز إلى التركيب</small></div>
+<div>
+<strong>إكسل وإنجاز للمقاولات</strong>
+<small>EXCEL & INJAZ CONTRACTING</small>
 </div>
+
+</div>
+
+
+<div class="hero-content">
+
+<div class="hero-copy">
+
+<h1>
+نبني لك أساس أقوى
+<span>لمشاريعك</span>
+</h1>
+
+<p>
+متخصصون في أعمال الحديد والإنشاءات المعدنية والمستودعات
+والهناجر والمظلات والأسوار والسلالم والهاندريل وغيرها
+من أعمال الحدادة بجودة عالية وتنفيذ احترافي.
+</p>
+
+
+<div class="hero-buttons">
+
+<a href="https://wa.me/966554726980"
+target="_blank"
+class="btn-blue">
+◉ تواصل معنا
+</a>
+
+<a href="#work"
+class="btn-outline">
+↓ معرض الأعمال
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="hero-trust">
+
+<div class="trust">
+<div class="trust-icon">◆</div>
+<div>
+<strong>جودة عالية</strong>
+<small>مواد ممتازة</small>
+</div>
+</div>
+
+<div class="trust">
+<div class="trust-icon">◷</div>
+<div>
+<strong>التزام بالمواعيد</strong>
+<small>تنفيذ حسب الجدول</small>
+</div>
+</div>
+
+<div class="trust">
+<div class="trust-icon">♟</div>
+<div>
+<strong>خبرة عملية</strong>
+<small>حلول مناسبة للمشروع</small>
+</div>
+</div>
+
+</div>
+
 </section>
+
+
+<section class="service-strip" id="services">
+
+<div class="service-strip-inner">
+
+<div class="service-mini">
+<div class="icon">⌂</div>
+<strong>مستودعات وهناجر</strong>
+</div>
+
+<div class="service-mini">
+<div class="icon">◇</div>
+<strong>هياكل معدنية</strong>
+</div>
+
+<div class="service-mini">
+<div class="icon">⌁</div>
+<strong>مظلات</strong>
+</div>
+
+<div class="service-mini">
+<div class="icon">╫</div>
+<strong>أسوار وبوابات</strong>
+</div>
+
+<div class="service-mini">
+<div class="icon">▟</div>
+<strong>سلالم وهاندريل</strong>
+</div>
+
+<div class="service-mini">
+<div class="icon">▥</div>
+<strong>تأسيس مصاعد</strong>
+</div>
+
+</div>
+
+</section>
+
 
 <section class="work" id="work">
 
-<div class="title">
-  <small>أعمالنا</small>
-  <h2>مجموعة من أعمال الحديد والإنشاءات المعدنية</h2>
-  <p>نقدم حلولاً متنوعة تناسب مختلف المشاريع</p>
+<div class="work-head">
+
+<div class="work-label">── أعمالنا ──</div>
+
+<h2>نماذج من مجالات أعمالنا</h2>
+
+<p>
+صور توضيحية واقعية لمجالات الحديد والإنشاءات المعدنية
+</p>
+
 </div>
 
+
 <div class="filters">
-  <button class="filter active" data-filter="all">الكل</button>
-  <button class="filter" data-filter="warehouse">مستودعات وهناجر</button>
-  <button class="filter" data-filter="structure">هياكل معدنية</button>
-  <button class="filter" data-filter="canopy">مظلات</button>
-  <button class="filter" data-filter="gate">أسوار وبوابات</button>
-  <button class="filter" data-filter="stairs">سلالم وهاندريل</button>
-  <button class="filter" data-filter="elevator">تأسيس مصاعد</button>
-  <button class="filter" data-filter="other">أعمال متنوعة</button>
+
+<button class="filter active" data-filter="all">
+الكل
+</button>
+
+<button class="filter" data-filter="warehouse">
+مستودعات وهناجر
+</button>
+
+<button class="filter" data-filter="structure">
+هياكل معدنية
+</button>
+
+<button class="filter" data-filter="canopy">
+مظلات
+</button>
+
+<button class="filter" data-filter="gate">
+أسوار وبوابات
+</button>
+
+<button class="filter" data-filter="stairs">
+سلالم وهاندريل
+</button>
+
+<button class="filter" data-filter="elevator">
+تأسيس مصاعد
+</button>
+
 </div>
+
 
 <div class="gallery">
 
 <div class="card" data-cat="structure">
-<img src="https://images.pexels.com/photos/32239084/pexels-photo-32239084.jpeg?auto=compress&cs=tinysrgb&w=800">
-<div class="cardName">هياكل معدنية</div>
+<img src="https://images.pexels.com/photos/32239084/pexels-photo-32239084.jpeg?auto=compress&cs=tinysrgb&w=900">
+<div class="card-title">هيكل معدني لمشروع تجاري</div>
 </div>
 
-<div class="card" data-cat="warehouse">
-<img src="https://images.pexels.com/photos/12171800/pexels-photo-12171800.jpeg?auto=compress&cs=tinysrgb&w=800">
-<div class="cardName">مستودعات وهناجر</div>
-</div>
 
 <div class="card" data-cat="canopy">
-<img src="https://images.pexels.com/photos/8192657/pexels-photo-8192657.jpeg?auto=compress&cs=tinysrgb&w=800">
-<div class="cardName">مظلات مواقف سيارات</div>
+<img src="https://images.pexels.com/photos/8192657/pexels-photo-8192657.jpeg?auto=compress&cs=tinysrgb&w=900">
+<div class="card-title">مظلات مواقف سيارات</div>
 </div>
 
-<div class="card" data-cat="gate">
-<img src="https://images.pexels.com/photos/31517290/pexels-photo-31517290.jpeg?auto=compress&cs=tinysrgb&w=800">
-<div class="cardName">أسوار وبوابات</div>
+
+<div class="card" data-cat="warehouse">
+<img src="https://images.pexels.com/photos/12171800/pexels-photo-12171800.jpeg?auto=compress&cs=tinysrgb&w=900">
+<div class="card-title">هنجر صناعي</div>
 </div>
+
+
+<div class="card" data-cat="warehouse">
+<img src="https://images.pexels.com/photos/5843171/pexels-photo-5843171.jpeg?auto=compress&cs=tinysrgb&w=900">
+<div class="card-title">مستودع معدني داخلي</div>
+</div>
+
+
+<div class="card" data-cat="canopy">
+<img src="https://images.pexels.com/photos/8192657/pexels-photo-8192657.jpeg?auto=compress&cs=tinysrgb&w=900">
+<div class="card-title">مظلات خارجية</div>
+</div>
+
+
+<div class="card" data-cat="warehouse">
+<img src="https://images.pexels.com/photos/16029880/pexels-photo-16029880.jpeg?auto=compress&cs=tinysrgb&w=900">
+<div class="card-title">مستودع معدني</div>
+</div>
+
+
+<div class="card" data-cat="gate">
+<img src="https://images.pexels.com/photos/5919806/pexels-photo-5919806.jpeg?auto=compress&cs=tinysrgb&w=900">
+<div class="card-title">سور حديدي خارجي</div>
+</div>
+
 
 <div class="card" data-cat="stairs">
-<img src="https://images.pexels.com/photos/12003137/pexels-photo-12003137.jpeg?auto=compress&cs=tinysrgb&w=800">
-<div class="cardName">سلالم وهاندريل</div>
+<img src="https://images.pexels.com/photos/12003137/pexels-photo-12003137.jpeg?auto=compress&cs=tinysrgb&w=900">
+<div class="card-title">سلالم وهاندريل داخلي</div>
 </div>
 
-<div class="card" data-cat="warehouse">
-<img src="https://images.pexels.com/photos/16029880/pexels-photo-16029880.jpeg?auto=compress&cs=tinysrgb&w=800">
-<div class="cardName">هياكل مستودعات</div>
-</div>
-
-<div class="card" data-cat="structure">
-<img src="https://images.pexels.com/photos/2383650/pexels-photo-2383650.jpeg?auto=compress&cs=tinysrgb&w=800">
-<div class="cardName">تركيب هياكل معدنية</div>
-</div>
-
-<div class="card" data-cat="warehouse">
-<img src="https://images.pexels.com/photos/12706241/pexels-photo-12706241.jpeg?auto=compress&cs=tinysrgb&w=800">
-<div class="cardName">رفوف وتجهيز مستودعات</div>
-</div>
-
-<div class="card" data-cat="warehouse">
-<img src="https://images.pexels.com/photos/5843171/pexels-photo-5843171.jpeg?auto=compress&cs=tinysrgb&w=800">
-<div class="cardName">مستودعات داخلية</div>
-</div>
-
-<div class="card" data-cat="other">
-<img src="https://images.pexels.com/photos/15508178/pexels-photo-15508178.jpeg?auto=compress&cs=tinysrgb&w=800">
-<div class="cardName">توريد وتجهيز الحديد</div>
-</div>
-
-<div class="card" data-cat="structure">
-<img src="https://images.pexels.com/photos/1804170/pexels-photo-1804170.jpeg?auto=compress&cs=tinysrgb&w=800">
-<div class="cardName">جمالونات معدنية</div>
-</div>
-
-<div class="card" data-cat="other">
-<img src="https://images.pexels.com/photos/16708396/pexels-photo-16708396.jpeg?auto=compress&cs=tinysrgb&w=800">
-<div class="cardName">قواعد ومساند معدنية</div>
-</div>
 
 <div class="card" data-cat="gate">
-<img src="https://images.pexels.com/photos/5919806/pexels-photo-5919806.jpeg?auto=compress&cs=tinysrgb&w=800">
-<div class="cardName">أسوار حماية</div>
+<img src="https://images.pexels.com/photos/31517290/pexels-photo-31517290.jpeg?auto=compress&cs=tinysrgb&w=900">
+<div class="card-title">بوابة حديدية</div>
 </div>
+
+
+<div class="card" data-cat="structure">
+<img src="https://images.pexels.com/photos/2383650/pexels-photo-2383650.jpeg?auto=compress&cs=tinysrgb&w=900">
+<div class="card-title">تركيب هياكل معدنية</div>
+</div>
+
 
 <div class="card" data-cat="warehouse">
-<img src="https://images.pexels.com/photos/5759147/pexels-photo-5759147.jpeg?auto=compress&cs=tinysrgb&w=800">
-<div class="cardName">تجهيز مستودعات</div>
+<img src="https://images.pexels.com/photos/12706241/pexels-photo-12706241.jpeg?auto=compress&cs=tinysrgb&w=900">
+<div class="card-title">تجهيزات داخل مستودع</div>
 </div>
 
-<div class="card" data-cat="other">
-<img src="https://images.pexels.com/photos/36122954/pexels-photo-36122954.jpeg?auto=compress&cs=tinysrgb&w=800">
-<div class="cardName">أعمال وتجهيزات حديد</div>
-</div>
-
-<div class="card" data-cat="warehouse">
-<img src="https://images.pexels.com/photos/11667731/pexels-photo-11667731.jpeg?auto=compress&cs=tinysrgb&w=800">
-<div class="cardName">أسقف وهياكل معدنية</div>
-</div>
-
-<div class="card" data-cat="other">
-<img src="https://images.pexels.com/photos/36126305/pexels-photo-36126305.jpeg?auto=compress&cs=tinysrgb&w=800">
-<div class="cardName">منصات معدنية</div>
-</div>
 
 <div class="card" data-cat="elevator">
-<img src="https://images.pexels.com/photos/32239084/pexels-photo-32239084.jpeg?auto=compress&cs=tinysrgb&w=800">
-<div class="cardName">تأسيس هياكل المصاعد</div>
-</div>
-
-<div class="card" data-cat="canopy">
-<img src="https://images.pexels.com/photos/8192657/pexels-photo-8192657.jpeg?auto=compress&cs=tinysrgb&w=800">
-<div class="cardName">مظلات خارجية</div>
-</div>
-
-<div class="card" data-cat="stairs">
-<img src="https://images.pexels.com/photos/12003137/pexels-photo-12003137.jpeg?auto=compress&cs=tinysrgb&w=800">
-<div class="cardName">درابزين حديد وهاندريل</div>
+<img src="https://images.pexels.com/photos/16708396/pexels-photo-16708396.jpeg?auto=compress&cs=tinysrgb&w=900">
+<div class="card-title">أعمال وتأسيس هياكل معدنية</div>
 </div>
 
 </div>
 
-<div class="note">
+
+<div class="gallery-note">
 الصور المعروضة توضيحية لمجالات الأعمال وليست توثيقًا لمشاريع منفذة باسم إكسل وإنجاز.
 </div>
 
 </section>
 
-<footer id="contact">
-<div class="footerMain">
 
-<div class="footerBrand">
-  <div class="xlogo"></div>
-  <div>
-    <strong>إكسل وإنجاز للمقاولات</strong>
-    <small>EXCEL & INJAZ CONTRACTING</small>
-  </div>
+<footer class="footer" id="contact">
+
+<div class="footer-inner">
+
+<div class="footer-brand">
+
+<div class="x-logo"></div>
+
+<div>
+<strong>إكسل وإنجاز للمقاولات</strong>
+<small>EXCEL & INJAZ CONTRACTING</small>
+<p>شريكك في تنفيذ الأعمال المعدنية</p>
 </div>
 
-<div class="col">
-<h3>مسؤول المشاريع</h3>
-<a href="tel:0551889096">0551889096</a>
 </div>
 
-<div class="col">
-<h3>التواصل</h3>
-<a href="https://wa.me/966554726980" target="_blank">واتساب 0554726980</a>
-<a href="mailto:excel1lnjaz@gmail.com">excel1lnjaz@gmail.com</a>
+
+<div class="footer-col">
+
+<h3>معلومات التواصل</h3>
+
+<a href="https://wa.me/966554726980" target="_blank">
+واتساب 0554726980
+</a>
+
+<a href="tel:0551889096">
+0551889096
+</a>
+
+<a href="mailto:excel1lnjaz@gmail.com">
+excel1lnjaz@gmail.com
+</a>
+
 </div>
 
-<div class="col">
-<h3>الموقع</h3>
+
+<div class="footer-col">
+
+<h3>موقعنا</h3>
+
 <div>الرياض - حي السلي</div>
+
 <div>المملكة العربية السعودية</div>
-</div>
 
 </div>
 
-<div class="bottom">
-<span>© 2026 إكسل وإنجاز للمقاولات</span>
+
+<div class="footer-col">
+
+<h3>روابط سريعة</h3>
+
+<a href="#home">الرئيسية</a>
+<a href="#work">أعمالنا</a>
+<a href="#services">خدماتنا</a>
+<a href="#contact">تواصل معنا</a>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+<span>جميع الحقوق محفوظة © 2026</span>
+
 <span>السجل التجاري: 7038272063</span>
+
 </div>
+
 </footer>
 
-<script>
-const filters=document.querySelectorAll(".filter");
-const cards=document.querySelectorAll(".card");
 
-filters.forEach(btn=>{
- btn.onclick=()=>{
-  filters.forEach(b=>b.classList.remove("active"));
-  btn.classList.add("active");
-  const f=btn.dataset.filter;
-  cards.forEach(card=>{
-   card.style.display=(f==="all"||card.dataset.cat===f)?"block":"none";
-  });
- };
+<script>
+
+const filters =
+document.querySelectorAll(".filter");
+
+const cards =
+document.querySelectorAll(".card");
+
+filters.forEach(button => {
+
+button.addEventListener("click", function(){
+
+filters.forEach(btn =>
+btn.classList.remove("active")
+);
+
+this.classList.add("active");
+
+const category =
+this.dataset.filter;
+
+cards.forEach(card => {
+
+if(
+category === "all" ||
+card.dataset.cat === category
+){
+
+card.style.display = "block";
+
+}else{
+
+card.style.display = "none";
+
+}
+
 });
 
-const ar=document.getElementById("ar");
-const en=document.getElementById("en");
+});
 
-ar.onclick=()=>{
- document.body.classList.remove("english");
- document.documentElement.dir="rtl";
- document.documentElement.lang="ar";
- ar.classList.add("active");
- en.classList.remove("active");
-};
+});
 
-en.onclick=()=>{
- document.body.classList.add("english");
- document.documentElement.dir="ltr";
- document.documentElement.lang="en";
- en.classList.add("active");
- ar.classList.remove("active");
-};
 </script>
 
 </body>
